@@ -1,5 +1,3 @@
-# Vistle - A Data-parallel Distributed System for Scientific Visualization in VR
-
 Vistle is an extensible software environment that integrates simulations on supercomputers,
 post-processing and parallel interactive visualization in immersive virtual environments.
 
