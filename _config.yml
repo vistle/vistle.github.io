@@ -2,4 +2,4 @@ theme: jekyll-theme-slate
 title: Vistle
 description: A Distributed Data-parallel System for Scientific Visualization in VR
 github:
-  repository_url: htttps://github.com/vistle/vistle
+  repository_url: https://github.com/vistle/vistle
