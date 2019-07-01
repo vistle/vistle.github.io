@@ -20,4 +20,10 @@ Visualization parameters can be manipulated from within the virtual environment.
 The Vistle system is modular and can be extended easily with additional visualization algorithms.
 Source code is available on [GitHub](https://github.com/vistle/vistle "Vistle Repository at GitHub") and licensed under the LPGL.
 
-![Graphical Workflow Editor](vistle-nodecoration.png)
+![CAVE](vistle-cave.png)
+Visualization of flow in a pump turbine in CAVE at HLRS, simulation conducted
+by [IHS](https://www.ihs.uni-stuttgart.de).
+
+![Graphical Workflow Editor](vistle-gui.png)
+Graphical workflow editor
+
