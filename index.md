@@ -19,3 +19,5 @@ Visualization parameters can be manipulated from within the virtual environment.
 
 The Vistle system is modular and can be extended easily with additional visualization algorithms.
 Source code is available on [GitHub](https://github.com/vistle/vistle "Vistle Repository at GitHub") and licensed under the LPGL.
+
+![Graphical Workflow Editor](vistle-nodecoration.png)
