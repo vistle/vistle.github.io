@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
+    {% if page.dir == "/api/doxygen/" %}
+    {% include doxygen-css.html %}
+    {% endif %}
+
 {% seo %}
   </head>
 
@@ -30,25 +34,32 @@
     </div>
 
     <!-- NAVIGATION -->
-    <div id="nav">
-      <div id="nbar">
+    <div id="navigation">
+      <div id="navigationbar">
         <ul>
           {% if page.dir == "/" %}
-          <li id="selected">
+          <li id="navselected">
           {% else %}
           <li>
           {% endif %}
               <a href="/index.html">Overview</a></li>
 
           {% if page.dir == "/architecture/" %}
-          <li id="selected">
+          <li id="navselected">
           {% else %}
           <li>
           {% endif %}
               <a href="/architecture/architecture.html">Architecture</a></li>
 
+          {% if page.dir == "/api/" or page.dir == "/api/doxygen/" %}
+          <li id="navselected">
+          {% else %}
+          <li>
+          {% endif %}
+              <a href="/api/doxygen/index.html">API</a></li>
+
           {% if page.dir == "/gallery/" %}
-          <li id="selected">
+          <li id="navselected">
           {% else %}
           <li>
           {% endif %}

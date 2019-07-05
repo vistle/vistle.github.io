@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 
-#nav {
+#navigation {
   height: 30px;
   background: #0071C5;
   position: relative;
@@ -13,7 +13,7 @@
   min-width: 520px;
   margin: 0 auto;
 }
-#nbar {
+#navigationbar {
   position: relative;
   width: auto;
   height: 30px;
@@ -21,27 +21,28 @@
   padding : 0 0 0 0;
   font: bold 12px/25px Verdana, Arial, Tahoma, Sans-serif;
 }
-#nbar ul {
+#navigationbar ul {
   float: left;
   list-style : none;
   margin: 0;
   padding: 0;
   padding-top: 2px;
 }
-#nbar ul li {
+#navigationbar ul li {
   display: inline;
 }
-#nbar ul li a {
+#navigationbar ul li a {
   display: block;
   float: left;
   padding: 0 10px;
   color: #BFBFBF;
   text-decoration: none;
+  font: bold 12px/25px Verdana, Arial, Tahoma, Sans-serif;
 }
-#nbar ul li a:hover {
+#navigationbar ul li a:hover {
   color: #FAFAFA;
 }
-#nbar ul li#selected a {
+#navigationbar ul li#navselected a {
   color: #fff;
 }
 
