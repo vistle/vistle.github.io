@@ -29,15 +29,34 @@
         </header>
     </div>
 
-     <div id="nav">
+    <!-- NAVIGATION -->
+    {{ page.dir }}
+    <div id="nav">
       <div id="nbar">
         <ul>
-          <li id="selected"><a href="/index.html">Overview</a></li>
-          <li><a href="/architecture/architecture.html">Architecture</a></li>
-          <li><a href="/gallery/gallery.html">Gallery</a></li>
+          {% if page.dir == "/" %}
+          <li id="selected">
+          {% else %}
+          <li>
+          {% endif %}
+              <a href="/index.html">Overview</a></li>
+
+          {% if page.dir == "/architecture/" %}
+          <li id="selected">
+          {% else %}
+          <li>
+          {% endif %}
+              <a href="/architecture/architecture.html">Architecture</a></li>
+
+          {% if page.dir == "/gallery/" %}
+          <li id="selected">
+          {% else %}
+          <li>
+          {% endif %}
+              <a href="/gallery/gallery.html">Gallery</a></li>
         </ul>
       </div>
-      </div>
+    </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">

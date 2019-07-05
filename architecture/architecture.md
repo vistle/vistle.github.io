@@ -72,7 +72,7 @@ but it has proven to be difficult to realize that in a portable manner.
 Now we use `mpirun` for spawning independent MPI jobs on the same nodes.
 The figure shows the process layout within a cluster.
 
-![Vistle on a single cluster](vistle-cluster.pdf)
+![Vistle on a single cluster](vistle-cluster.png)
 <br>
 *Process layout, control flow and data flow within a single cluster:
 controller and modules are realized as MPI processes.
@@ -128,7 +128,7 @@ Life time of data objects is managed with reference counting.
 Caching of input objects for modules is implemented by simply keeping a
 reference to the objects.
 
-![Parallel class hierarchies for data objects](vistle-dataobjects.pdf)<br>
+![Parallel class hierarchies for data objects](vistle-dataobjects.png)<br>
 *Parallel class hierarchies for data objects residing in shared memory
 and accessor objects providing polymorphic behavior for modules.*
 
@@ -264,10 +264,10 @@ These figures show runtime and parallel efficiency.
 Isosurface extraction is interactive at rates of more than 20/s
 and runtime does not increase until full parallelism is reached.
 
-![Runtime of iso-surface extraction on 1 to 16 nodes](isosurface-runtime.pdf)
+![Runtime of iso-surface extraction on 1 to 16 nodes](isosurface-runtime.png)
 *Isosurface extraction on 13 timesteps of 5.8 million moving unstructured cells,
 runtime in s.*
-![Parallel efficiency of iso-surface extraction on 1 to 16 nodes](isosurface-efficiency.pdf)
+![Parallel efficiency of iso-surface extraction on 1 to 16 nodes](isosurface-efficiency.png)
 *Isosurface extraction on 13 timesteps of 5.8 million moving unstructured cells,
 parallel efficiency.*
 
