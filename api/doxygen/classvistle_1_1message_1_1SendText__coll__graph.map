@@ -1,0 +1,5 @@
+<map id="vistle::message::SendText" name="vistle::message::SendText">
+<area shape="rect" id="node1" title="send text messages to user interfaces" alt="" coords="22,165,198,191"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,214,117"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="22,5,197,31"/>
+</map>
