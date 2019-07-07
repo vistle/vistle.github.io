@@ -6,7 +6,7 @@
 
 #navigation {
   height: 30px;
-  background: #0071C5;
+  background: #0090ff;
   position: relative;
 
   max-width: 640px;
@@ -18,7 +18,8 @@
   height: 30px;
   margin: 0;
   padding : 0 0 0 0;
-  font: bold 12px/25px Verdana, Arial, Tahoma, Sans-serif;
+  font: "Roboto", Helvetica, Arial, Sans-serif;
+  font-weight: bold;
 }
 #navigationbar ul {
   float: left;
@@ -36,10 +37,11 @@
   padding: 0 10px;
   color: #BFBFBF;
   text-decoration: none;
-  font: bold 12px/25px Verdana, Arial, Tahoma, Sans-serif;
+  font: "Roboto", Helvetica, Arial, Sans-serif;
+  font-weight: bold;
 }
 #navigationbar ul li a:hover {
-  color: #FAFAFA;
+  text-decoration: underline;
 }
 #navigationbar ul li#navselected a {
   color: #fff;
@@ -53,7 +55,6 @@ table {
  }
 
 th {
-  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
   background: #373737;
   color: #fff;
