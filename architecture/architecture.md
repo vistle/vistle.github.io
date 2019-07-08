@@ -16,7 +16,7 @@ available at [link.springer.com](http://link.springer.com)).
 > For low latency, a combination of parallel remote and local rendering is possible.
 
 
-# Overview
+## Overview
 [Vistle](https://github.com/vistle/vistle) is a modular and extensible implementation
 of the visualization pipeline (Moreland, 2013[^pipelines]).
 It integrates simulations on supercomputers, post-processing and parallel interactive
@@ -33,7 +33,7 @@ each of which is a parallel MPI program that uses OpenMP within nodes.
 Shared memory is used for transfering data between modules within a single node,
 MPI within a cluster, TCP across clusters.
 
-# Related Work
+## Related Work
 Data parallelism is available in several distributed systems based on the
 visualization pipeline:
 [VisIt](https://visit.llnl.gov/) (Ahern et al., 2011[^visit])
@@ -61,9 +61,9 @@ Its render component [OpenCOVER](https://www.hlrs.de/opencover)
 (Rantzau et al., 1998[^cover]) builds on [OpenSceneGraph](http://www.openscenegraph.org).
 
 
-# Process Model
+## Process Model
 
-## Multi-process Model With One MPI Process Per Module
+### Multi-process Model With One MPI Process Per Module
 In Vistle, modules in the visualization pipeline are realized as individual MPI processes.
 In order for the shared memory mechanism to work, equivalent ranks of
 different processes have to be placed on the same host.
@@ -92,7 +92,7 @@ On systems where the VR renderer OpenCOVER is required, this mode has to be used
 as it is possible to run more than one instance of OpenCOVER within one address space.
 
 
-## Single-process Model With a One MPI Process
+### Single-process Model With a One MPI Process
 Alternatively, Vistle can be configured to use a single MPI process by disabling
 the CMake option `VISTLE_MULTI_PROCESS`.
 As modules execute simultaneously on dedicated threads,
@@ -100,7 +100,7 @@ this requires an MPI implementation that supports `MPI_THREAD_MULTIPLE`.
 This is the only mode of operation possible on
 [Hazel Hen](https://www.hlrs.de/systems/cray-xc40-hazel-hen/), the Cray XC40 system at HLRS.
 
-## Additional Parallelism
+### Additional Parallelism
 Within individual nodes, OpenMP is used to exploit all available cores.
 We work on implementing the most important algorithms with the parallel
 building blocks supplied by [Thrust](https://thrust.github.io)
@@ -111,7 +111,7 @@ unstructured meshes of the same magnitude as
 has been achieved in PISTON (Lo et al., 2012[^piston]) for structured grids.
 
 
-# Data Management
+## Data Management
 
 All data objects are created in shared memory managed by
 [Boost.Interprocess](https://www.boost.org/doc/libs/release/doc/html/interprocess.html).
@@ -174,7 +174,7 @@ Objects from previous pipeline runs can be cached by retaining a reference,
 so that not the complete pipeline has to be reexecuted if only some module parameters change.
 
 
-# Control Flow and Message System
+## Control Flow and Message System
 
 The central instance for managing the execution on each cluster is the hub,
 which connects to the cluster manager on rank 0.
@@ -193,7 +193,7 @@ and communicate the execution state of a module.
 
 Work flow descriptions are stored as Python scripts and are interpreted by the hub.
 
-# Modules
+## Modules
 
 Modules are implemented by deriving from the module base class.
 During construction, a module should define its input and output ports as well
@@ -211,7 +211,7 @@ implemented by modules.
 Compared to parallel invocation of `compute()`, this has lower
 synchronization overhead.
 
-# User Interface
+## User Interface
 User interfaces attach to or detach from a Vistle session dynamically at
 run-time.
 User interfaces connect to the controller's rank 0.
@@ -234,7 +234,7 @@ configured visualization pipeline easy to understand.
 *Configuration of a visualization workflow in Vistle's graphical user interface,
 the right part shows the parameters of the selected module.*
 
-# Rendering
+## Rendering
 Vistle is geared towards immersive virtual environments, where low latency is
 very important.
 In order to allow for using the COVISE VR render system
@@ -252,7 +252,7 @@ There is also the ray caster DisCOVERay based on [Embree](http://embree.org)
 (Wald et al., 2014[^embree]) running entirely on the CPU,
 which enables access to remote resources without GPUs.
 
-# First Results
+## First Results
 Performance of the system was evaluated with the visualization of
 the simulation of a pump turbine.
 The simulation was conducted by the
@@ -282,14 +282,14 @@ However, these costs are only relevant when in-situ visualization is
 actively used, as Vistle's modular design requires only a small component for 
 interfacing with the visualization tool to remain in memory all the time.
 
-# Current Status and Future Work
+## Current Status and Future Work
 The next mile stones that we aim to achieve are to
 couple the system to OpenFOAM.
 Additionally, the scalability of the system will be improved by making better
 use of OpenMP and acceleration hardware.
 
 
-# Acknowledgments
+## Acknowledgments
 This work has been supported in part by the CRESTA project that has received
 funding from the European Community’s Seventh Framework Programme
 (ICT-2011.9.13).
