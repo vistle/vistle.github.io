@@ -1,0 +1,15 @@
+<map id="rhr/depthquant.h" name="rhr/depthquant.h">
+<area shape="rect" id="node1" title="Depth quantization for remote hybrid rendering." alt="" coords="343,5,462,31"/>
+<area shape="rect" id="node2" href="$compdecomp_8cpp.html" title=" " alt="" coords="5,79,152,104"/>
+<area shape="rect" id="node3" href="$depthbench_8cpp.html" title=" " alt="" coords="60,152,196,177"/>
+<area shape="rect" id="node4" href="$depthcompare_8h.html" title=" " alt="" coords="227,79,365,104"/>
+<area shape="rect" id="node6" href="$depthtest_8cpp.html" title=" " alt="" coords="395,152,517,177"/>
+<area shape="rect" id="node7" href="$depthquant_8cpp.html" title=" " alt="" coords="440,79,573,104"/>
+<area shape="rect" id="node8" href="$rfbext_8h.html" title="RFB protocol extensions for remote hybrid rendering (RHR)" alt="" coords="676,79,762,104"/>
+<area shape="rect" id="node10" href="$rhrserver_8cpp.html" title="RhrServer plugin class." alt="" coords="602,225,721,251"/>
+<area shape="rect" id="node5" href="$depthcompare_8cpp.html" title=" " alt="" coords="220,152,372,177"/>
+<area shape="rect" id="node9" href="$rfbext_8cpp.html" title=" " alt="" coords="698,152,798,177"/>
+<area shape="rect" id="node11" href="$rhrserver_8h.html" title="RhrServer class." alt="" coords="822,152,927,177"/>
+<area shape="rect" id="node12" href="$rhrcontroller_8h.html" title=" " alt="" coords="796,225,953,251"/>
+<area shape="rect" id="node13" href="$parrendmgr_8h.html" title=" " alt="" coords="797,299,952,324"/>
+</map>

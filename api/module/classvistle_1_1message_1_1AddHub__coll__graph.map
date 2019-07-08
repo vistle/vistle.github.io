@@ -1,0 +1,5 @@
+<map id="vistle::message::AddHub" name="vistle::message::AddHub">
+<area shape="rect" id="node1" title="announce that a slave hub has connected" alt="" coords="13,165,182,191"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,190,117"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="11,5,185,31"/>
+</map>

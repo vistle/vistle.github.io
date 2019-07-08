@@ -1,0 +1,5 @@
+<map id="vistle::message::ModuleExit" name="vistle::message::ModuleExit">
+<area shape="rect" id="node1" title="notify that a module has quit" alt="" coords="29,165,216,191"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,240,117"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="35,5,210,31"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="vistle::message::Quit" name="vistle::message::Quit">
+<area shape="rect" id="node1" title="request all modules to quit for terminating the session" alt="" coords="20,165,165,191"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,180,117"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="5,5,180,31"/>
+</map>
