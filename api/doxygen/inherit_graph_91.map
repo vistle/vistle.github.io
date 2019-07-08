@@ -1,9 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structvistle_1_1rfbMsg.html" title="basic RFB message header" alt="" coords="5,129,105,155"/>
-<area shape="rect" id="node2" href="$structvistle_1_1animationMsg.html" title="animation time step on client or no. of animation steps on server changed" alt="" coords="153,5,295,31"/>
-<area shape="rect" id="node3" href="$structvistle_1_1boundsMsg.html" title="send scene bounding sphere from server to client" alt="" coords="160,55,288,80"/>
-<area shape="rect" id="node4" href="$structvistle_1_1lightsMsg.html" title="send lighting parameters from client to server" alt="" coords="167,104,282,129"/>
-<area shape="rect" id="node5" href="$structvistle_1_1matricesMsg.html" title="send matrices from client to server" alt="" coords="157,153,292,179"/>
-<area shape="rect" id="node6" href="$structvistle_1_1tileMsg.html" title="send image tile from server to client" alt="" coords="174,203,275,228"/>
-<area shape="rect" id="node7" href="$structvistle_1_1variantMsg.html" title=" " alt="" coords="162,252,286,277"/>
-</map>

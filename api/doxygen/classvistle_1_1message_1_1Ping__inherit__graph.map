@@ -1,5 +1,0 @@
-<map id="vistle::message::Ping" name="vistle::message::Ping">
-<area shape="rect" id="node1" title="debug: request a reply containing character &#39;c&#39;" alt="" coords="19,165,166,191"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,180,117"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="5,5,180,31"/>
-</map>

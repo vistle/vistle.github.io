@@ -1,0 +1,18 @@
+# Doxyfile 1.8.15
+
+@INCLUDE = Doxyfile.include
+
+OUTPUT_DIRECTORY       = "module"
+GENERATE_TAGFILE       = module.doxytags
+
+INPUT                  = \
+                         $(VISTLE_DIR)/vistle/util \
+                         $(VISTLE_DIR)/vistle/core \
+                         $(VISTLE_DIR)/vistle/module/module.md \
+                         $(VISTLE_DIR)/vistle/module/module.h \
+                         $(VISTLE_DIR)/vistle/module/module_impl.h \
+                         $(VISTLE_DIR)/vistle/module/module.cpp \
+                         $(VISTLE_DIR)/vistle/module/reader.h \
+                         $(VISTLE_DIR)/vistle/module/reader.cpp
+
+                            #$(VISTLE_DIR)/vistle/module/reader_impl.h \

@@ -1,4 +1,0 @@
-<map id="vistle::matricesMsg" name="vistle::matricesMsg">
-<area shape="rect" id="node1" title="send matrices from client to server" alt="" coords="5,79,140,104"/>
-<area shape="rect" id="node2" href="$structvistle_1_1rfbMsg.html" title="basic RFB message header" alt="" coords="23,5,123,31"/>
-</map>

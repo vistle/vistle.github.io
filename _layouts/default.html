@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-    {% if page.dir == "/api/doxygen/" %}
+    {% if page.dir == "/api/module/" or page.dir == "/api/renderer/" %}
     {% include doxygen-css.html %}
     {% endif %}
 
@@ -51,12 +51,12 @@
           {% endif %}
               <a href="/architecture/architecture.html">Architecture</a></li>
 
-          {% if page.dir == "/api/" or page.dir == "/api/doxygen/" %}
+          {% if page.dir == "/api/" or page.dir == "/api/module/" or page.dir == "/api/renderer/" %}
           <li id="navselected">
           {% else %}
           <li>
           {% endif %}
-              <a href="/api/doxygen/index.html">API</a></li>
+              <a href="/api/api.html">API</a></li>
 
           {% if page.dir == "/gallery/" %}
           <li id="navselected">

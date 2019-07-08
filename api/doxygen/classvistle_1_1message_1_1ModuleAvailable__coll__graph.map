@@ -1,5 +1,0 @@
-<map id="vistle::message::ModuleAvailable" name="vistle::message::ModuleAvailable">
-<area shape="rect" id="node1" title="announce availability of a module to UI" alt="" coords="5,179,224,204"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="27,79,202,131"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="27,5,202,31"/>
-</map>

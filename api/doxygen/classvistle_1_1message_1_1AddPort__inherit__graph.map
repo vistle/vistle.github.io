@@ -1,5 +1,0 @@
-<map id="vistle::message::AddPort" name="vistle::message::AddPort">
-<area shape="rect" id="node1" title="notification that a module has created an input/output port" alt="" coords="18,165,187,191"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,199,117"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="15,5,189,31"/>
-</map>

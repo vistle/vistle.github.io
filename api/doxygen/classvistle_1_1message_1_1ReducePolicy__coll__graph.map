@@ -1,5 +1,0 @@
-<map id="vistle::message::ReducePolicy" name="vistle::message::ReducePolicy">
-<area shape="rect" id="node1" title="control whether/when prepare() and reduce() are called" alt="" coords="38,165,240,191"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,273,117"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="52,5,227,31"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="vistle::lightsMsg" name="vistle::lightsMsg">
-<area shape="rect" id="node1" title="send lighting parameters from client to server" alt="" coords="66,105,181,131"/>
-<area shape="rect" id="node2" href="$structvistle_1_1rfbMsg.html" title="basic RFB message header" alt="" coords="5,12,105,37"/>
-<area shape="rect" id="node3" href="$structvistle_1_1lightsMsg_1_1Light.html" title="store parameters for one OpenGL light source" alt="" coords="130,5,253,44"/>
-</map>

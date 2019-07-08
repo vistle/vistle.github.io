@@ -1,4 +1,0 @@
-<map id="vistle::boundsMsg" name="vistle::boundsMsg">
-<area shape="rect" id="node1" title="send scene bounding sphere from server to client" alt="" coords="5,79,133,104"/>
-<area shape="rect" id="node2" href="$structvistle_1_1rfbMsg.html" title="basic RFB message header" alt="" coords="19,5,119,31"/>
-</map>
