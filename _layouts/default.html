@@ -58,6 +58,13 @@
           {% endif %}
               <a href="/api/">API</a></li>
 
+          {% if page.dir == "/publications/" %}
+          <li id="navselected">
+          {% else %}
+          <li>
+          {% endif %}
+              <a href="/publications/">Publications</a></li>
+
           {% if page.dir == "/gallery/" %}
           <li id="navselected">
           {% else %}
