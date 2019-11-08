@@ -89,7 +89,7 @@ stages of the pipeline without requiring a multi-thread aware MPI implementation
 This mode of operation is selected at compile-time by enabling the
 CMake option `VISTLE_MULTI_PROCESS`.
 On systems where the VR renderer OpenCOVER is required, this mode has to be used,
-as it is possible to run more than one instance of OpenCOVER within one address space.
+as it is not possible to run more than one instance of OpenCOVER within one address space.
 
 
 ### Single-process Model With a One MPI Process
