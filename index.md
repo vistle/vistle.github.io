@@ -2,7 +2,7 @@ Vistle is an extensible software environment that integrates simulations on supe
 post-processing and parallel interactive visualization in immersive virtual environments.
 
 It is under active development at [HLRS](https://www.hlrs.de "HLRS Web Page") since 2012
-within the European project [CRESTA](https://cresta-project.eu) and
+within the European project [CRESTA](https://www.hlrs.de/about-us/research/past-projects/cresta/) and
 [bwVisu](http://bwvisu.de). The objective is to provide a highly scalable successor to
 [COVISE](https://www.hlrs.de/covise), exploiting data, task and pipeline parallelism in hybrid shared and distributed memory
 environments with acceleration hardware. Domain decompositions used during simulation can be reused for visualization.
