@@ -1,7 +1,9 @@
 <map id="vistle::message::RequestTunnel" name="vistle::message::RequestTunnel">
-<area shape="rect" id="node1" title="request hub to listen on TCP port and forward incoming connections" alt="" coords="168,207,338,245"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,93,295,132"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="63,12,237,37"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="318,100,398,125"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="295,5,421,44"/>
+<area shape="rect" id="node1" title="request hub to listen on TCP port and forward incoming connections" alt="" coords="169,393,340,435"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,275,296,316"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="63,191,238,218"/>
+<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="83,95,219,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="77,5,224,32"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="320,282,400,309"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="297,184,423,225"/>
 </map>

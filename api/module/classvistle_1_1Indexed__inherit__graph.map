@@ -1,15 +1,15 @@
 <map id="vistle::Indexed" name="vistle::Indexed">
-<area shape="rect" id="node1" title=" " alt="" coords="182,385,288,411"/>
-<area shape="rect" id="node11" href="$classvistle_1_1Lines.html" title=" " alt="" coords="63,459,154,484"/>
-<area shape="rect" id="node12" href="$classvistle_1_1Polygons.html" title=" " alt="" coords="178,459,292,484"/>
-<area shape="rect" id="node13" href="$classvistle_1_1UnstructuredGrid.html" title=" " alt="" coords="316,459,477,484"/>
-<area shape="rect" id="node2" href="$classvistle_1_1Coords.html" title=" " alt="" coords="100,312,202,337"/>
-<area shape="rect" id="node3" href="$classvistle_1_1Vec.html" title=" " alt="" coords="9,239,165,264"/>
-<area shape="rect" id="node4" href="$classvistle_1_1DataBase.html" title=" " alt="" coords="28,165,146,191"/>
-<area shape="rect" id="node5" href="$classvistle_1_1Object.html" title=" " alt="" coords="38,92,136,117"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,5,150,44"/>
-<area shape="rect" id="node7" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="175,12,355,37"/>
-<area shape="rect" id="node8" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="180,165,349,191"/>
-<area shape="rect" id="node10" href="$classvistle_1_1ElementInterface.html" title=" " alt="" coords="241,239,401,264"/>
-<area shape="rect" id="node9" href="$classvistle_1_1CelltreeInterface.html" title=" " alt="" coords="227,312,414,337"/>
+<area shape="rect" id="node1" title=" " alt="" coords="183,393,290,420"/>
+<area shape="rect" id="node11" href="$classvistle_1_1Lines.html" title=" " alt="" coords="63,468,155,495"/>
+<area shape="rect" id="node12" href="$classvistle_1_1Polygons.html" title=" " alt="" coords="179,468,294,495"/>
+<area shape="rect" id="node13" href="$classvistle_1_1UnstructuredGrid.html" title=" " alt="" coords="318,468,478,495"/>
+<area shape="rect" id="node2" href="$classvistle_1_1Coords.html" title=" " alt="" coords="101,319,204,345"/>
+<area shape="rect" id="node3" href="$classvistle_1_1Vec.html" title=" " alt="" coords="8,244,167,271"/>
+<area shape="rect" id="node4" href="$classvistle_1_1DataBase.html" title=" " alt="" coords="28,169,147,196"/>
+<area shape="rect" id="node5" href="$classvistle_1_1Object.html" title=" " alt="" coords="38,95,137,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,5,151,47"/>
+<area shape="rect" id="node7" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="175,13,355,39"/>
+<area shape="rect" id="node8" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="180,169,349,196"/>
+<area shape="rect" id="node10" href="$classvistle_1_1ElementInterface.html" title=" " alt="" coords="242,244,402,271"/>
+<area shape="rect" id="node9" href="$classvistle_1_1CelltreeInterface.html" title=" " alt="" coords="228,319,416,345"/>
 </map>

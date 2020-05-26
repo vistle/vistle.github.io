@@ -1,9 +1,11 @@
 <map id="core/vector.h" name="core/vector.h">
-<area shape="rect" id="node1" title=" " alt="" coords="199,5,296,31"/>
-<area shape="rect" id="node2" href="$scalar_8h.html" title=" " alt="" coords="9,79,76,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="100,79,158,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="182,79,314,104"/>
-<area shape="rect" id="node6" title=" " alt="" coords="338,79,499,104"/>
-<area shape="rect" id="node7" title=" " alt="" coords="523,79,684,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,152,79,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="223,5,321,32"/>
+<area shape="rect" id="node2" href="$scalar_8h.html" title=" " alt="" coords="19,80,85,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="104,155,163,181"/>
+<area shape="rect" id="node5" href="$math_8h.html" title=" " alt="" coords="165,80,248,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="273,80,402,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="426,80,585,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="609,80,767,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,80,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="187,155,261,181"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="vistle::message::FileQueryResult" name="vistle::message::FileQueryResult">
-<area shape="rect" id="node1" title=" " alt="" coords="49,165,227,204"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,271,117"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="51,5,226,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="49,351,228,392"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,260,272,301"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="51,184,226,211"/>
+<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="71,95,207,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="65,5,212,32"/>
 </map>

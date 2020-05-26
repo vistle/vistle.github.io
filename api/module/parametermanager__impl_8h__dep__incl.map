@@ -1,9 +1,9 @@
 <map id="core/parametermanager_impl.h" name="core/parametermanager_impl.h">
-<area shape="rect" id="node1" title=" " alt="" coords="107,5,271,44"/>
-<area shape="rect" id="node2" href="$parametermanager_8h.html" title=" " alt="" coords="102,92,276,117"/>
-<area shape="rect" id="node3" href="$parametermanager_8cpp.html" title=" " alt="" coords="5,165,194,191"/>
-<area shape="rect" id="node4" href="$module_8h.html" title=" " alt="" coords="218,165,342,191"/>
-<area shape="rect" id="node5" href="$module_8cpp.html" title=" " alt="" coords="135,239,273,264"/>
-<area shape="rect" id="node6" href="$reader_8h.html" title=" " alt="" coords="297,239,415,264"/>
-<area shape="rect" id="node7" href="$reader_8cpp.html" title=" " alt="" coords="290,312,422,337"/>
+<area shape="rect" id="node1" title=" " alt="" coords="105,5,264,47"/>
+<area shape="rect" id="node2" href="$parametermanager_8h.html" title=" " alt="" coords="100,95,269,121"/>
+<area shape="rect" id="node3" href="$parametermanager_8cpp.html" title=" " alt="" coords="5,169,188,196"/>
+<area shape="rect" id="node4" href="$module_8h.html" title=" " alt="" coords="212,169,333,196"/>
+<area shape="rect" id="node5" href="$module_8cpp.html" title=" " alt="" coords="131,244,265,271"/>
+<area shape="rect" id="node6" href="$reader_8h.html" title=" " alt="" coords="290,244,405,271"/>
+<area shape="rect" id="node7" href="$reader_8cpp.html" title=" " alt="" coords="283,319,411,345"/>
 </map>

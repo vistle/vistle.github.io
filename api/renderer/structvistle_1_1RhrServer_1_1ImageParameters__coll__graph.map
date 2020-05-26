@@ -1,5 +1,4 @@
 <map id="vistle::RhrServer::ImageParameters" name="vistle::RhrServer::ImageParameters">
-<area shape="rect" id="node1" title=" " alt="" coords="143,105,270,144"/>
-<area shape="rect" id="node2" href="$structvistle_1_1DepthCompressionParameters.html" title=" " alt="" coords="5,5,179,44"/>
-<area shape="rect" id="node3" href="$namespacevistle.html#structvistle_1_1RgbaCompressionParameters" title=" " alt="" coords="202,12,441,37"/>
+<area shape="rect" id="node1" title=" " alt="" coords="44,109,172,151"/>
+<area shape="rect" id="node2" href="$structvistle_1_1CompressionParameters.html#structvistle_1_1CompressionParameters_1_1RgbaCompressionParameters" title=" " alt="" coords="5,5,211,47"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="vistle::message::AddParameter" name="vistle::message::AddParameter">
-<area shape="rect" id="node1" title="notification that a module has created a parameter" alt="" coords="40,165,247,191"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,281,117"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="56,5,231,31"/>
+<area shape="rect" id="node1" title="notification that a module has created a parameter" alt="" coords="40,169,245,196"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,80,280,121"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="55,5,230,32"/>
 </map>

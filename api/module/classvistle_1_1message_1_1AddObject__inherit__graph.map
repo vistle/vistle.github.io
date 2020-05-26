@@ -1,5 +1,5 @@
 <map id="vistle::message::AddObject" name="vistle::message::AddObject">
-<area shape="rect" id="node1" title="add an object to the input queue of an input port" alt="" coords="26,165,208,191"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,229,117"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="30,5,204,31"/>
+<area shape="rect" id="node1" title="add an object to the input queue of an input port" alt="" coords="27,169,209,196"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,80,231,121"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="31,5,205,32"/>
 </map>

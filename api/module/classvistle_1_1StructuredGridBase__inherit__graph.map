@@ -1,10 +1,10 @@
 <map id="vistle::StructuredGridBase" name="vistle::StructuredGridBase">
-<area shape="rect" id="node1" title=" " alt="" coords="162,299,338,324"/>
-<area shape="rect" id="node6" href="$classvistle_1_1RectilinearGrid.html" title=" " alt="" coords="5,372,153,397"/>
-<area shape="rect" id="node7" href="$classvistle_1_1StructuredGrid.html" title=" " alt="" coords="177,372,323,397"/>
-<area shape="rect" id="node8" href="$classvistle_1_1UniformGrid.html" title=" " alt="" coords="347,372,478,397"/>
-<area shape="rect" id="node2" href="$classvistle_1_1GridInterface.html" title=" " alt="" coords="182,225,318,251"/>
-<area shape="rect" id="node3" href="$classvistle_1_1ElementInterface.html" title=" " alt="" coords="170,152,330,177"/>
-<area shape="rect" id="node4" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="165,79,334,104"/>
-<area shape="rect" id="node5" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="160,5,340,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="162,304,337,331"/>
+<area shape="rect" id="node6" href="$classvistle_1_1RectilinearGrid.html" title=" " alt="" coords="5,379,152,405"/>
+<area shape="rect" id="node7" href="$classvistle_1_1StructuredGrid.html" title=" " alt="" coords="177,379,322,405"/>
+<area shape="rect" id="node8" href="$classvistle_1_1UniformGrid.html" title=" " alt="" coords="347,379,477,405"/>
+<area shape="rect" id="node2" href="$classvistle_1_1GridInterface.html" title=" " alt="" coords="181,229,317,256"/>
+<area shape="rect" id="node3" href="$classvistle_1_1ElementInterface.html" title=" " alt="" coords="169,155,329,181"/>
+<area shape="rect" id="node4" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="165,80,334,107"/>
+<area shape="rect" id="node5" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="159,5,339,32"/>
 </map>

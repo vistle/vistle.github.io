@@ -1,11 +1,11 @@
 <map id="vistle::Tubes" name="vistle::Tubes">
-<area shape="rect" id="node1" title=" " alt="" coords="131,459,227,484"/>
-<area shape="rect" id="node2" href="$classvistle_1_1CoordsWithRadius.html" title=" " alt="" coords="94,385,264,411"/>
-<area shape="rect" id="node3" href="$classvistle_1_1Coords.html" title=" " alt="" coords="128,312,230,337"/>
-<area shape="rect" id="node4" href="$classvistle_1_1Vec.html" title=" " alt="" coords="44,239,200,264"/>
-<area shape="rect" id="node5" href="$classvistle_1_1DataBase.html" title=" " alt="" coords="38,165,155,191"/>
-<area shape="rect" id="node6" href="$classvistle_1_1Object.html" title=" " alt="" coords="48,92,145,117"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,5,150,44"/>
-<area shape="rect" id="node8" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="175,12,355,37"/>
-<area shape="rect" id="node9" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="180,165,349,191"/>
+<area shape="rect" id="node1" title=" " alt="" coords="132,468,229,495"/>
+<area shape="rect" id="node2" href="$classvistle_1_1CoordsWithRadius.html" title=" " alt="" coords="95,393,266,420"/>
+<area shape="rect" id="node3" href="$classvistle_1_1Coords.html" title=" " alt="" coords="129,319,232,345"/>
+<area shape="rect" id="node4" href="$classvistle_1_1Vec.html" title=" " alt="" coords="43,244,201,271"/>
+<area shape="rect" id="node5" href="$classvistle_1_1DataBase.html" title=" " alt="" coords="37,169,156,196"/>
+<area shape="rect" id="node6" href="$classvistle_1_1Object.html" title=" " alt="" coords="47,95,146,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="5,5,151,47"/>
+<area shape="rect" id="node8" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="175,13,355,39"/>
+<area shape="rect" id="node9" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="180,169,349,196"/>
 </map>

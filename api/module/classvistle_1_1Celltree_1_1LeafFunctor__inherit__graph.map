@@ -1,4 +1,5 @@
 <map id="vistle::Celltree&lt; Scalar, Index, NumDimensions &gt;::LeafFunctor" name="vistle::Celltree&lt; Scalar, Index, NumDimensions &gt;::LeafFunctor">
-<area shape="rect" id="node1" title="return whether further cells have to be visited" alt="" coords="12,5,186,57"/>
-<area shape="rect" id="node2" href="$classvistle_1_1PointInclusionFunctor.html" title=" " alt="" coords="5,105,193,144"/>
+<area shape="rect" id="node1" title="return whether further cells have to be visited" alt="" coords="5,43,180,99"/>
+<area shape="rect" id="node2" href="$classvistle_1_1LineIntersectionFunctor.html" title=" " alt="" coords="245,5,398,61"/>
+<area shape="rect" id="node3" href="$classvistle_1_1PointInclusionFunctor.html" title=" " alt="" coords="228,86,415,127"/>
 </map>

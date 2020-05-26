@@ -1,5 +1,5 @@
 <map id="vistle::message::RemoveParameter" name="vistle::message::RemoveParameter">
-<area shape="rect" id="node1" title="notification that a module has removed a parameter" alt="" coords="5,179,238,204"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="33,79,211,131"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="34,5,209,31"/>
+<area shape="rect" id="node1" title="notification that a module has removed a parameter" alt="" coords="5,184,236,211"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="31,80,210,136"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="33,5,208,32"/>
 </map>

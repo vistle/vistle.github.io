@@ -1,5 +1,7 @@
 <map id="vistle::message::CancelExecute" name="vistle::message::CancelExecute">
-<area shape="rect" id="node1" title="trigger execution of a module function" alt="" coords="45,165,255,191"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,294,117"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="62,5,237,31"/>
+<area shape="rect" id="node1" title="trigger execution of a module function" alt="" coords="46,351,257,377"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,260,297,301"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="64,184,239,211"/>
+<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="83,95,219,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="78,5,225,32"/>
 </map>

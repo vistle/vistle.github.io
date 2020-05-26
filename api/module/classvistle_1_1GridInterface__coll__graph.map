@@ -1,6 +1,6 @@
 <map id="vistle::GridInterface" name="vistle::GridInterface">
-<area shape="rect" id="node1" title=" " alt="" coords="27,225,163,251"/>
-<area shape="rect" id="node2" href="$classvistle_1_1ElementInterface.html" title=" " alt="" coords="15,152,175,177"/>
-<area shape="rect" id="node3" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="11,79,180,104"/>
-<area shape="rect" id="node4" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="5,5,185,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="27,229,163,256"/>
+<area shape="rect" id="node2" href="$classvistle_1_1ElementInterface.html" title=" " alt="" coords="15,155,175,181"/>
+<area shape="rect" id="node3" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="11,80,180,107"/>
+<area shape="rect" id="node4" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="5,5,185,32"/>
 </map>

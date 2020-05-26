@@ -1,4 +1,5 @@
 <map id="vistle::Celltree&lt; Scalar, Index, NumDimensions &gt;::VisitFunctor" name="vistle::Celltree&lt; Scalar, Index, NumDimensions &gt;::VisitFunctor">
-<area shape="rect" id="node1" title=" " alt="" coords="12,5,187,57"/>
-<area shape="rect" id="node2" href="$classvistle_1_1PointVisitationFunctor.html" title=" " alt="" coords="5,105,194,144"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,180,87"/>
+<area shape="rect" id="node2" href="$classvistle_1_1LineVisitationFunctor.html" title=" " alt="" coords="231,5,414,47"/>
+<area shape="rect" id="node3" href="$classvistle_1_1PointVisitationFunctor.html" title=" " alt="" coords="228,71,417,112"/>
 </map>

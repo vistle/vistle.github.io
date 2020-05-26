@@ -1,6 +1,6 @@
 <map id="vistle::Empty" name="vistle::Empty">
-<area shape="rect" id="node1" title=" " alt="" coords="123,165,220,191"/>
-<area shape="rect" id="node2" href="$classvistle_1_1Object.html" title=" " alt="" coords="122,92,220,117"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,150,44"/>
-<area shape="rect" id="node4" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="175,12,355,37"/>
+<area shape="rect" id="node1" title=" " alt="" coords="122,169,221,196"/>
+<area shape="rect" id="node2" href="$classvistle_1_1Object.html" title=" " alt="" coords="122,95,221,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,151,47"/>
+<area shape="rect" id="node4" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="175,13,355,39"/>
 </map>

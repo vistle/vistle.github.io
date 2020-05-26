@@ -1,0 +1,7 @@
+<map id="vistle::message::CloseConnection" name="vistle::message::CloseConnection">
+<area shape="rect" id="node1" title="terminate a socket connection" alt="" coords="5,365,228,392"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="29,260,204,316"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="29,184,204,211"/>
+<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="49,95,185,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="43,5,190,32"/>
+</map>

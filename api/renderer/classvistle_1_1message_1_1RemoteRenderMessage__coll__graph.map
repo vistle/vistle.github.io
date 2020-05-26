@@ -1,5 +1,7 @@
 <map id="vistle::message::RemoteRenderMessage" name="vistle::message::RemoteRenderMessage">
-<area shape="rect" id="node1" title=" " alt="" coords="6,179,217,217"/>
-<area shape="rect" id="node2" href="/Users/ma/git/vistle.github.io/api/module.doxytags$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,217,131"/>
-<area shape="rect" id="node3" href="/Users/ma/git/vistle.github.io/api/module.doxytags$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="24,5,198,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,365,216,407"/>
+<area shape="rect" id="node2" href="/Users/ma/git/vistle.github.io/api/module.doxytags$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="6,260,215,316"/>
+<area shape="rect" id="node3" href="/Users/ma/git/vistle.github.io/api/module.doxytags$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="23,184,198,211"/>
+<area shape="rect" id="node4" href="/Users/ma/git/vistle.github.io/api/module.doxytags$structvistle_1_1shm__name__t.html" title=" " alt="" coords="43,95,179,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="37,5,184,32"/>
 </map>

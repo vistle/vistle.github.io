@@ -1,5 +1,5 @@
 <map id="vistle::message::Disconnect" name="vistle::message::Disconnect">
-<area shape="rect" id="node1" title="disconnect an output port from an input port of another module" alt="" coords="30,165,217,191"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,79,241,117"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="36,5,211,31"/>
+<area shape="rect" id="node1" title="disconnect an output port from an input port of another module" alt="" coords="31,169,219,196"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,80,245,121"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="38,5,213,32"/>
 </map>
