@@ -1,52 +1,88 @@
 <map id="core/unstr.h" name="core/unstr.h">
-<area shape="rect" id="node1" title=" " alt="" coords="3028,5,3119,32"/>
-<area shape="rect" id="node2" href="$shm_8h.html" title=" " alt="" coords="1889,229,1948,256"/>
-<area shape="rect" id="node15" href="$enum_8h.html" title=" " alt="" coords="2521,550,2607,577"/>
-<area shape="rect" id="node38" href="$indexed_8h.html" title=" " alt="" coords="3066,80,3145,107"/>
-<area shape="rect" id="node47" href="$grid_8h.html" title=" " alt="" coords="2903,155,2958,181"/>
-<area shape="rect" id="node49" href="$celltypes_8h.html" title=" " alt="" coords="3707,386,3792,413"/>
-<area shape="rect" id="node50" href="$unstr__impl_8h.html" title=" " alt="" coords="3757,80,3851,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="2779,707,2848,733"/>
-<area shape="rect" id="node4" title=" " alt="" coords="1795,468,1845,495"/>
-<area shape="rect" id="node5" title=" " alt="" coords="2032,304,2091,331"/>
-<area shape="rect" id="node6" title=" " alt="" coords="331,386,392,413"/>
-<area shape="rect" id="node7" title=" " alt="" coords="1820,379,1967,420"/>
-<area shape="rect" id="node8" title=" " alt="" coords="1991,379,2142,420"/>
-<area shape="rect" id="node9" title=" " alt="" coords="2167,379,2369,420"/>
-<area shape="rect" id="node10" href="$archives__config_8h.html" title=" " alt="" coords="1494,468,1618,495"/>
-<area shape="rect" id="node19" href="$allocator_8h.html" title=" " alt="" coords="2773,632,2854,659"/>
-<area shape="rect" id="node20" href="$core_2export_8h.html" title=" " alt="" coords="2895,550,2964,577"/>
-<area shape="rect" id="node21" href="$index_8h.html" title=" " alt="" coords="3185,550,3249,577"/>
-<area shape="rect" id="node33" href="$exception_8h.html" title=" " alt="" coords="43,468,154,495"/>
-<area shape="rect" id="node34" href="$shmname_8h.html" title=" " alt="" coords="1604,386,1695,413"/>
-<area shape="rect" id="node35" href="$shmdata_8h.html" title=" " alt="" coords="320,304,403,331"/>
-<area shape="rect" id="node36" href="$shm__reference_8h.html" title=" " alt="" coords="1342,304,1461,331"/>
-<area shape="rect" id="node37" href="$shm__impl_8h.html" title=" " alt="" coords="1439,386,1529,413"/>
-<area shape="rect" id="node11" title=" " alt="" coords="254,550,319,577"/>
-<area shape="rect" id="node12" title=" " alt="" coords="3025,632,3085,659"/>
-<area shape="rect" id="node13" title=" " alt="" coords="2323,550,2395,577"/>
-<area shape="rect" id="node14" title=" " alt="" coords="2645,632,2704,659"/>
-<area shape="rect" id="node18" href="$buffer_8h.html" title=" " alt="" coords="2631,550,2718,577"/>
-<area shape="rect" id="node22" title=" " alt="" coords="1813,550,2016,577"/>
-<area shape="rect" id="node23" title=" " alt="" coords="2041,550,2247,577"/>
-<area shape="rect" id="node24" title=" " alt="" coords="343,543,470,584"/>
-<area shape="rect" id="node25" title=" " alt="" coords="494,543,621,584"/>
-<area shape="rect" id="node26" title=" " alt="" coords="645,550,803,577"/>
-<area shape="rect" id="node27" title=" " alt="" coords="828,550,991,577"/>
-<area shape="rect" id="node28" title=" " alt="" coords="1015,550,1135,577"/>
-<area shape="rect" id="node29" title=" " alt="" coords="1159,550,1302,577"/>
-<area shape="rect" id="node30" title=" " alt="" coords="1327,543,1463,584"/>
-<area shape="rect" id="node31" title=" " alt="" coords="1487,543,1614,584"/>
-<area shape="rect" id="node32" title=" " alt="" coords="1638,543,1789,584"/>
-<area shape="rect" id="node16" title=" " alt="" coords="1287,632,1342,659"/>
-<area shape="rect" id="node17" title=" " alt="" coords="2464,632,2621,659"/>
-<area shape="rect" id="node39" href="$scalar_8h.html" title=" " alt="" coords="3560,468,3627,495"/>
-<area shape="rect" id="node40" href="$coords_8h.html" title=" " alt="" coords="2751,155,2823,181"/>
-<area shape="rect" id="node44" href="$celltree_8h.html" title=" " alt="" coords="3125,155,3200,181"/>
-<area shape="rect" id="node45" href="$vertexownerlist_8h.html" title=" " alt="" coords="3354,229,3475,256"/>
-<area shape="rect" id="node46" href="$indexed__impl_8h.html" title=" " alt="" coords="2992,155,3101,181"/>
-<area shape="rect" id="node41" href="$object_8h.html" title=" " alt="" coords="2550,304,2618,331"/>
-<area shape="rect" id="node43" href="$geometry_8h.html" title=" " alt="" coords="2989,229,3075,256"/>
-<area shape="rect" id="node42" href="$vector_8h.html" title=" " alt="" coords="3078,386,3146,413"/>
-<area shape="rect" id="node48" href="$database_8h.html" title=" " alt="" coords="2878,229,2965,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="327,5,418,32"/>
+<area shape="rect" id="node2" href="$shm_8h.html" title=" " alt="" coords="3545,767,3603,793"/>
+<area shape="rect" id="node20" href="$enum_8h.html" title=" " alt="" coords="1291,1266,1412,1293"/>
+<area shape="rect" id="node61" href="$indexed_8h.html" title=" " alt="" coords="435,80,513,107"/>
+<area shape="rect" id="node85" href="$grid_8h.html" title=" " alt="" coords="1571,304,1625,331"/>
+<area shape="rect" id="node86" href="$celltypes_8h.html" title=" " alt="" coords="123,938,209,965"/>
+<area shape="rect" id="node3" title=" " alt="" coords="2219,1423,2289,1449"/>
+<area shape="rect" id="node4" title=" " alt="" coords="2335,1184,2386,1211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="3437,849,3495,875"/>
+<area shape="rect" id="node6" title=" " alt="" coords="3374,1109,3435,1136"/>
+<area shape="rect" id="node7" title=" " alt="" coords="3520,849,3567,875"/>
+<area shape="rect" id="node8" href="$boost__interprocess__config_8h.html" title=" " alt="" coords="3484,931,3672,972"/>
+<area shape="rect" id="node10" title=" " alt="" coords="3643,841,3793,883"/>
+<area shape="rect" id="node11" title=" " alt="" coords="3818,841,3965,883"/>
+<area shape="rect" id="node12" title=" " alt="" coords="3989,841,4129,883"/>
+<area shape="rect" id="node13" title=" " alt="" coords="4154,841,4357,883"/>
+<area shape="rect" id="node14" title=" " alt="" coords="3336,849,3412,875"/>
+<area shape="rect" id="node15" href="$archives__config_8h.html" title=" " alt="" coords="3749,1184,3873,1211"/>
+<area shape="rect" id="node24" href="$allocator_8h.html" title=" " alt="" coords="2845,1348,2927,1375"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1787,1266,1857,1293"/>
+<area shape="rect" id="node26" href="$index_8h.html" title=" " alt="" coords="417,1266,481,1293"/>
+<area shape="rect" id="node39" href="$exception_8h.html" title=" " alt="" coords="4261,1027,4407,1054"/>
+<area shape="rect" id="node42" href="$shmname_8h.html" title=" " alt="" coords="3849,1109,3939,1136"/>
+<area shape="rect" id="node43" href="$shmdata_8h.html" title=" " alt="" coords="4103,1027,4186,1054"/>
+<area shape="rect" id="node44" href="$shm__reference_8h.html" title=" " alt="" coords="3091,849,3209,875"/>
+<area shape="rect" id="node50" href="$shm__impl_8h.html" title=" " alt="" coords="2773,849,2863,875"/>
+<area shape="rect" id="node9" title=" " alt="" coords="3519,1020,3672,1061"/>
+<area shape="rect" id="node16" title=" " alt="" coords="4921,1266,4987,1293"/>
+<area shape="rect" id="node17" title=" " alt="" coords="524,1348,584,1375"/>
+<area shape="rect" id="node18" title=" " alt="" coords="4825,1266,4897,1293"/>
+<area shape="rect" id="node19" title=" " alt="" coords="1438,1348,1497,1375"/>
+<area shape="rect" id="node23" href="$buffer_8h.html" title=" " alt="" coords="2825,1266,2947,1293"/>
+<area shape="rect" id="node28" title=" " alt="" coords="3729,1266,3888,1293"/>
+<area shape="rect" id="node29" title=" " alt="" coords="3913,1266,4075,1293"/>
+<area shape="rect" id="node30" title=" " alt="" coords="4099,1266,4219,1293"/>
+<area shape="rect" id="node31" title=" " alt="" coords="4244,1266,4387,1293"/>
+<area shape="rect" id="node32" title=" " alt="" coords="4411,1259,4547,1300"/>
+<area shape="rect" id="node33" title=" " alt="" coords="4572,1259,4699,1300"/>
+<area shape="rect" id="node34" title=" " alt="" coords="2971,1259,3100,1300"/>
+<area shape="rect" id="node35" title=" " alt="" coords="3125,1266,3231,1293"/>
+<area shape="rect" id="node36" title=" " alt="" coords="3256,1266,3385,1293"/>
+<area shape="rect" id="node37" title=" " alt="" coords="3409,1266,3536,1293"/>
+<area shape="rect" id="node38" title=" " alt="" coords="3561,1266,3705,1293"/>
+<area shape="rect" id="node21" title=" " alt="" coords="2735,1348,2789,1375"/>
+<area shape="rect" id="node22" title=" " alt="" coords="1255,1348,1413,1375"/>
+<area shape="rect" id="node27" title=" " alt="" coords="306,1348,381,1375"/>
+<area shape="rect" id="node40" title=" " alt="" coords="4328,1109,4407,1136"/>
+<area shape="rect" id="node41" href="$util_2export_8h.html" title=" " alt="" coords="2587,1109,2657,1136"/>
+<area shape="rect" id="node45" href="$shm__array_8h.html" title=" " alt="" coords="2851,938,2945,965"/>
+<area shape="rect" id="node49" title=" " alt="" coords="4001,931,4131,972"/>
+<area shape="rect" id="node46" title=" " alt="" coords="3230,1027,3291,1054"/>
+<area shape="rect" id="node47" title=" " alt="" coords="3123,1027,3206,1054"/>
+<area shape="rect" id="node48" href="$tools_8h.html" title=" " alt="" coords="2723,1027,2841,1054"/>
+<area shape="rect" id="node51" title=" " alt="" coords="2969,938,3113,965"/>
+<area shape="rect" id="node52" title=" " alt="" coords="2396,938,2525,965"/>
+<area shape="rect" id="node53" title=" " alt="" coords="2916,1027,3048,1054"/>
+<area shape="rect" id="node54" title=" " alt="" coords="3137,938,3307,965"/>
+<area shape="rect" id="node55" href="$scalars_8h.html" title=" " alt="" coords="2550,938,2625,965"/>
+<area shape="rect" id="node59" href="$celltreenode_8h.html" title=" " alt="" coords="537,938,640,965"/>
+<area shape="rect" id="node56" title=" " alt="" coords="2537,1027,2598,1054"/>
+<area shape="rect" id="node57" href="$ssize__t_8h.html" title=" " alt="" coords="2331,1027,2462,1054"/>
+<area shape="rect" id="node58" title=" " alt="" coords="2062,1027,2206,1054"/>
+<area shape="rect" id="node60" href="$scalar_8h.html" title=" " alt="" coords="5,1027,73,1054"/>
+<area shape="rect" id="node62" href="$coords_8h.html" title=" " alt="" coords="1774,155,1846,181"/>
+<area shape="rect" id="node83" href="$celltree_8h.html" title=" " alt="" coords="741,453,815,480"/>
+<area shape="rect" id="node84" href="$vertexownerlist_8h.html" title=" " alt="" coords="1124,528,1245,555"/>
+<area shape="rect" id="node63" href="$object_8h.html" title=" " alt="" coords="2176,603,2244,629"/>
+<area shape="rect" id="node76" href="$vec_8h.html" title=" " alt="" coords="1816,304,1871,331"/>
+<area shape="rect" id="node78" href="$shm__obj__ref_8h.html" title=" " alt="" coords="3583,453,3687,480"/>
+<area shape="rect" id="node81" href="$geometry_8h.html" title=" " alt="" coords="1456,528,1543,555"/>
+<area shape="rect" id="node82" href="$normals_8h.html" title=" " alt="" coords="1771,229,1849,256"/>
+<area shape="rect" id="node64" href="$sysdep_8h.html" title=" " alt="" coords="2241,938,2371,965"/>
+<area shape="rect" id="node65" title=" " alt="" coords="2163,677,2292,719"/>
+<area shape="rect" id="node66" href="$objectmeta_8h.html" title=" " alt="" coords="1867,685,1964,711"/>
+<area shape="rect" id="node67" href="$vector_8h.html" title=" " alt="" coords="1001,767,1070,793"/>
+<area shape="rect" id="node74" href="$dimensions_8h.html" title=" " alt="" coords="1989,685,2087,711"/>
+<area shape="rect" id="node68" title=" " alt="" coords="915,938,974,965"/>
+<area shape="rect" id="node69" href="$math_8h.html" title=" " alt="" coords="740,849,859,875"/>
+<area shape="rect" id="node71" title=" " alt="" coords="1300,849,1429,875"/>
+<area shape="rect" id="node72" title=" " alt="" coords="935,849,1093,875"/>
+<area shape="rect" id="node73" title=" " alt="" coords="1117,849,1276,875"/>
+<area shape="rect" id="node70" title=" " alt="" coords="817,938,891,965"/>
+<area shape="rect" id="node75" title=" " alt="" coords="1973,767,2132,793"/>
+<area shape="rect" id="node77" href="$database_8h.html" title=" " alt="" coords="1832,379,1919,405"/>
+<area shape="rect" id="node80" href="$shmvector_8h.html" title=" " alt="" coords="2480,603,2575,629"/>
+<area shape="rect" id="node79" href="$shm__obj__ref__impl_8h.html" title=" " alt="" coords="3880,528,4015,555"/>
 </map>

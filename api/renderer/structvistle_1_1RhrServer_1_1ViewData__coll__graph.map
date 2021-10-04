@@ -1,6 +1,4 @@
 <map id="vistle::RhrServer::ViewData" name="vistle::RhrServer::ViewData">
-<area shape="rect" id="node1" title=" " alt="" coords="245,64,373,105"/>
-<area shape="rect" id="node2" href="$structvistle_1_1RhrServer_1_1ViewParameters.html" title=" " alt="" coords="15,5,143,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="13,71,146,98"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,123,153,164"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,124,133,165"/>
+<area shape="rect" id="node2" href="$structvistle_1_1RhrServer_1_1ViewParameters.html" title=" " alt="" coords="5,5,133,47"/>
 </map>

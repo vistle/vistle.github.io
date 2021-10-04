@@ -1,8 +1,6 @@
 <map id="vistle::ObjectData" name="vistle::ObjectData">
-<area shape="rect" id="node1" title=" " alt="" coords="190,273,317,300"/>
-<area shape="rect" id="node2" href="$structvistle_1_1ShmData.html" title=" " alt="" coords="195,184,311,211"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,95,131,121"/>
-<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="185,95,321,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="180,5,327,32"/>
-<area shape="rect" id="node6" href="$classvistle_1_1Meta.html" title=" " alt="" coords="336,184,427,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="74,184,201,211"/>
+<area shape="rect" id="node2" href="$structvistle_1_1ShmData.html" title=" " alt="" coords="15,95,131,121"/>
+<area shape="rect" id="node3" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node4" href="$classvistle_1_1Meta.html" title=" " alt="" coords="156,95,247,121"/>
 </map>

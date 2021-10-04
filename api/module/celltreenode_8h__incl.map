@@ -1,9 +1,8 @@
 <map id="core/celltreenode.h" name="core/celltreenode.h">
-<area shape="rect" id="node1" title=" " alt="" coords="87,5,219,32"/>
-<area shape="rect" id="node2" href="$core_2export_8h.html" title=" " alt="" coords="23,80,92,107"/>
-<area shape="rect" id="node4" href="$scalar_8h.html" title=" " alt="" coords="120,80,187,107"/>
-<area shape="rect" id="node6" href="$index_8h.html" title=" " alt="" coords="211,80,275,107"/>
-<area shape="rect" id="node3" href="$util_2export_8h.html" title=" " alt="" coords="5,155,96,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="120,155,195,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="219,155,279,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="67,5,199,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,75,107"/>
+<area shape="rect" id="node3" href="$scalar_8h.html" title=" " alt="" coords="99,80,167,107"/>
+<area shape="rect" id="node5" href="$index_8h.html" title=" " alt="" coords="192,80,256,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="96,155,171,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="195,155,255,181"/>
 </map>

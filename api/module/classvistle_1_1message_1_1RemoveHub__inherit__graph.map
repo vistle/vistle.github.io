@@ -1,0 +1,5 @@
+<map id="vistle::message::RemoveHub" name="vistle::message::RemoveHub">
+<area shape="rect" id="node1" title="request that a slave hub be deleted" alt="" coords="30,169,225,196"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,80,249,121"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="40,5,215,32"/>
+</map>

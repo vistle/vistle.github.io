@@ -1,7 +1,9 @@
 <map id="vistle::ArrayLoader" name="vistle::ArrayLoader">
-<area shape="rect" id="node1" title=" " alt="" coords="113,228,244,255"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,109,195,151"/>
-<area shape="rect" id="node3" href="$structvistle_1_1ArrayLoader_1_1ArrayOwner.html" title=" " alt="" coords="35,5,165,47"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="219,117,299,143"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="195,5,322,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="681,49,812,75"/>
+<area shape="rect" id="node2" title=" " alt="" coords="461,17,541,43"/>
+<area shape="rect" id="node3" title=" " alt="" coords="239,5,366,47"/>
+<area shape="rect" id="node4" href="$classvistle_1_1yas__iarchive.html" title=" " alt="" coords="433,74,568,101"/>
+<area shape="rect" id="node5" href="$structvistle_1_1yas__binary__iarchive.html" title=" " alt="" coords="221,71,384,141"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,27,172,97"/>
+<area shape="rect" id="node7" title=" " alt="" coords="19,122,159,178"/>
 </map>

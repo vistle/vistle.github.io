@@ -1,5 +1,10 @@
 <map id="vistle::ArraySaver" name="vistle::ArraySaver">
-<area shape="rect" id="node1" title=" " alt="" coords="5,185,132,212"/>
-<area shape="rect" id="node2" title="STL class." alt="" coords="29,96,109,123"/>
-<area shape="rect" id="node3" title="STL class." alt="" coords="5,5,132,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="707,67,833,94"/>
+<area shape="rect" id="node2" title=" " alt="" coords="495,27,575,54"/>
+<area shape="rect" id="node3" title=" " alt="" coords="259,5,386,47"/>
+<area shape="rect" id="node4" href="$classvistle_1_1yas__oarchive.html" title=" " alt="" coords="465,93,604,119"/>
+<area shape="rect" id="node5" href="$structvistle_1_1yas__binary__oarchive.html" title=" " alt="" coords="237,71,408,141"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,27,180,97"/>
+<area shape="rect" id="node7" title=" " alt="" coords="23,122,163,178"/>
+<area shape="rect" id="node8" href="$structvistle_1_1CompressionSettings.html" title=" " alt="" coords="229,166,416,193"/>
 </map>

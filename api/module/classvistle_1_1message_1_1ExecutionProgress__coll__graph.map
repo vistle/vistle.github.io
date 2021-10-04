@@ -1,7 +1,6 @@
 <map id="vistle::message::ExecutionProgress" name="vistle::message::ExecutionProgress">
-<area shape="rect" id="node1" title="steer execution stages" alt="" coords="12,365,192,407"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,260,199,316"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="15,184,189,211"/>
-<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="34,95,170,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="29,5,175,32"/>
+<area shape="rect" id="node1" title="steer execution stages" alt="" coords="12,276,192,317"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,171,199,227"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="15,95,189,121"/>
+<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="34,5,170,32"/>
 </map>

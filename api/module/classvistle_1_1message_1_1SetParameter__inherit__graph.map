@@ -1,5 +1,5 @@
 <map id="vistle::message::SetParameter" name="vistle::message::SetParameter">
-<area shape="rect" id="node1" title="request parameter value update or notify that a parameter value has been changed" alt="" coords="39,169,242,196"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,80,276,121"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="53,5,228,32"/>
+<area shape="rect" id="node1" title="request parameter value update or notify that a parameter value has been changed" alt="" coords="41,169,243,196"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,80,279,121"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="55,5,229,32"/>
 </map>

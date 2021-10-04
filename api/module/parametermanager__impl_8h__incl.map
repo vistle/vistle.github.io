@@ -1,11 +1,4 @@
 <map id="core/parametermanager_impl.h" name="core/parametermanager_impl.h">
-<area shape="rect" id="node1" title=" " alt="" coords="201,5,360,47"/>
-<area shape="rect" id="node2" href="$assert_8h.html" title=" " alt="" coords="231,95,330,121"/>
-<area shape="rect" id="node3" href="$exception_8h.html" title=" " alt="" coords="53,169,164,196"/>
-<area shape="rect" id="node7" href="$tools_8h.html" title=" " alt="" coords="189,169,271,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="295,169,367,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="391,169,461,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,244,84,271"/>
-<area shape="rect" id="node5" title=" " alt="" coords="203,244,257,271"/>
-<area shape="rect" id="node6" href="$util_2export_8h.html" title=" " alt="" coords="109,244,178,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="52,95,117,121"/>
 </map>

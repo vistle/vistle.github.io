@@ -1,14 +1,6 @@
 <map id="vistle::RenderObject" name="vistle::RenderObject">
-<area shape="rect" id="node1" title=" " alt="" coords="115,585,257,612"/>
-<area shape="rect" id="node2" title=" " alt="" coords="40,467,193,508"/>
-<area shape="rect" id="node3" href="/Users/ma/git/vistle.github.io/api/module.doxytags$classvistle_1_1Object.html" title=" " alt="" coords="67,370,166,397"/>
-<area shape="rect" id="node4" href="/Users/ma/git/vistle.github.io/api/module.doxytags$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="5,273,185,300"/>
-<area shape="rect" id="node5" href="/Users/ma/git/vistle.github.io/api/module.doxytags$structvistle_1_1ObjectData.html" title=" " alt="" coords="209,273,336,300"/>
-<area shape="rect" id="node6" href="/Users/ma/git/vistle.github.io/api/module.doxytags$structvistle_1_1ShmData.html" title=" " alt="" coords="215,184,331,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="25,95,150,121"/>
-<area shape="rect" id="node8" href="/Users/ma/git/vistle.github.io/api/module.doxytags$structvistle_1_1shm__name__t.html" title=" " alt="" coords="205,95,341,121"/>
-<area shape="rect" id="node9" title=" " alt="" coords="199,5,346,32"/>
-<area shape="rect" id="node10" href="/Users/ma/git/vistle.github.io/api/module.doxytags$classvistle_1_1Meta.html" title=" " alt="" coords="355,184,446,211"/>
-<area shape="rect" id="node11" title="STL class." alt="" coords="218,474,298,501"/>
-<area shape="rect" id="node12" title="STL class." alt="" coords="195,363,321,404"/>
+<area shape="rect" id="node1" title=" " alt="" coords="69,215,210,241"/>
+<area shape="rect" id="node2" title=" " alt="" coords="29,103,109,130"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,132,47"/>
+<area shape="rect" id="node4" title=" " alt="" coords="133,96,287,137"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="vistle::message::SetParameterChoices" name="vistle::message::SetParameterChoices">
-<area shape="rect" id="node1" title="set list of choice descriptions for a choice parameter" alt="" coords="8,184,211,225"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,80,213,136"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="22,5,197,32"/>
+<area shape="rect" id="node1" title="set list of choice descriptions for a choice parameter" alt="" coords="9,184,211,225"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,80,215,136"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="23,5,197,32"/>
 </map>

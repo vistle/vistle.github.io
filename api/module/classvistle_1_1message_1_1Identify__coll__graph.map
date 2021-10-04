@@ -1,8 +1,6 @@
 <map id="vistle::message::Identify" name="vistle::message::Identify">
-<area shape="rect" id="node1" title="indicate the kind of a communication partner" alt="" coords="159,364,324,391"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,260,192,301"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="11,184,186,211"/>
-<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="31,95,167,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="25,5,172,32"/>
-<area shape="rect" id="node6" title=" " alt="" coords="216,267,363,294"/>
+<area shape="rect" id="node1" title="indicate the kind of a communication partner" alt="" coords="17,261,182,288"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,171,193,212"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="12,95,187,121"/>
+<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="31,5,167,32"/>
 </map>

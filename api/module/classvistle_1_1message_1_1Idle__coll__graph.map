@@ -1,7 +1,6 @@
 <map id="vistle::message::Idle" name="vistle::message::Idle">
-<area shape="rect" id="node1" title="indicate that a module has finished computing" alt="" coords="21,351,164,377"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,260,180,301"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="5,184,180,211"/>
-<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="25,95,161,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="19,5,166,32"/>
+<area shape="rect" id="node1" title="indicate that a module has finished computing" alt="" coords="21,261,164,288"/>
+<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,171,180,212"/>
+<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="5,95,180,121"/>
+<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="25,5,161,32"/>
 </map>

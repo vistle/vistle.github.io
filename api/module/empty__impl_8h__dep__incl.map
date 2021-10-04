@@ -1,7 +1,4 @@
 <map id="core/empty_impl.h" name="core/empty_impl.h">
-<area shape="rect" id="node1" title=" " alt="" coords="79,5,209,32"/>
-<area shape="rect" id="node2" href="$empty_8h.html" title=" " alt="" coords="96,80,192,107"/>
-<area shape="rect" id="node3" href="$empty_8cpp.html" title=" " alt="" coords="15,155,126,181"/>
-<area shape="rect" id="node5" href="$module_8cpp.html" title=" " alt="" coords="150,155,285,181"/>
-<area shape="rect" id="node4" href="$allobjects_8cpp.html" title=" " alt="" coords="5,229,136,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,135,32"/>
+<area shape="rect" id="node2" href="$empty_8cpp.html" title=" " alt="" coords="15,80,125,107"/>
 </map>
