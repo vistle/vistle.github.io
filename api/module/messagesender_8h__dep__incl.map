@@ -1,8 +1,0 @@
-<map id="core/messagesender.h" name="core/messagesender.h">
-<area shape="rect" id="node1" title=" " alt="" coords="96,5,251,32"/>
-<area shape="rect" id="node2" href="$messagesender_8cpp.html" title=" " alt="" coords="5,80,173,107"/>
-<area shape="rect" id="node3" href="$module_8h.html" title=" " alt="" coords="198,80,319,107"/>
-<area shape="rect" id="node4" href="$module_8cpp.html" title=" " alt="" coords="117,155,251,181"/>
-<area shape="rect" id="node5" href="$reader_8h.html" title=" " alt="" coords="276,155,391,181"/>
-<area shape="rect" id="node6" href="$reader_8cpp.html" title=" " alt="" coords="269,229,398,256"/>
-</map>

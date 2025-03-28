@@ -1,4 +1,0 @@
-<map id="vistle::DepthQuantize&lt; Precision, BitsPerPixel, ScaleBits &gt;" name="vistle::DepthQuantize&lt; Precision, BitsPerPixel, ScaleBits &gt;">
-<area shape="rect" id="node1" title="quantized depth data for a single 4x4 pixel tile" alt="" coords="17,95,189,151"/>
-<area shape="rect" id="node2" href="$structvistle_1_1DepthQuantizeBits.html" title=" " alt="" coords="5,5,200,47"/>
-</map>

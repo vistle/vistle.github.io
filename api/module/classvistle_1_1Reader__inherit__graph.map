@@ -1,6 +1,0 @@
-<map id="vistle::Reader" name="vistle::Reader">
-<area shape="rect" id="node1" title="base class for Vistle read modules" alt="" coords="133,155,235,181"/>
-<area shape="rect" id="node2" href="$classvistle_1_1Module.html" title=" " alt="" coords="133,80,235,107"/>
-<area shape="rect" id="node3" href="$classvistle_1_1ParameterManager.html" title=" " alt="" coords="5,5,176,32"/>
-<area shape="rect" id="node4" href="$classvistle_1_1MessageSender.html" title=" " alt="" coords="200,5,355,32"/>
-</map>

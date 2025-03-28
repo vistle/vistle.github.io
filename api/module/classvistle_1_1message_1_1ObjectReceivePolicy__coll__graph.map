@@ -1,6 +1,0 @@
-<map id="vistle::message::ObjectReceivePolicy" name="vistle::message::ObjectReceivePolicy">
-<area shape="rect" id="node1" title="control where AddObject messages are sent" alt="" coords="5,276,213,317"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="9,171,209,227"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="22,95,197,121"/>
-<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="41,5,177,32"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="vistle::message::RemovePort" name="vistle::message::RemovePort">
-<area shape="rect" id="node1" title="notification that a module has destroyed an input/output port" alt="" coords="33,261,228,288"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,171,256,212"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="43,95,218,121"/>
-<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="63,5,199,32"/>
-</map>

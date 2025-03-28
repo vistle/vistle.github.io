@@ -1,8 +1,0 @@
-<map id="vistle::ParallelRemoteRenderManager" name="vistle::ParallelRemoteRenderManager">
-<area shape="rect" id="node1" title=" " alt="" coords="684,57,876,98"/>
-<area shape="rect" id="node2" href="$classvistle_1_1RhrController.html" title=" " alt="" coords="369,5,508,32"/>
-<area shape="rect" id="node3" href="$structvistle_1_1ParallelRemoteRenderManager_1_1GlobalState.html" title="state shared among all views" alt="" coords="343,57,535,98"/>
-<area shape="rect" id="node4" title=" " alt="" coords="365,122,512,163"/>
-<area shape="rect" id="node5" title=" " alt="" coords="181,129,261,156"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,122,132,163"/>
-</map>

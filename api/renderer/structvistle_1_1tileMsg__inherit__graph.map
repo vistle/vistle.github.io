@@ -1,4 +1,0 @@
-<map id="vistle::tileMsg" name="vistle::tileMsg">
-<area shape="rect" id="node1" title="send image tile from server to client" alt="" coords="5,80,108,107"/>
-<area shape="rect" id="node2" href="$structvistle_1_1rfbMsg.html" title="basic RFB message header" alt="" coords="6,5,107,32"/>
-</map>
