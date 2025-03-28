@@ -1,7 +1,0 @@
-<map id="vistle::StructuredGridBase" name="vistle::StructuredGridBase">
-<area shape="rect" id="node1" title=" " alt="" coords="8,304,183,331"/>
-<area shape="rect" id="node2" href="$classvistle_1_1GridInterface.html" title=" " alt="" coords="27,229,163,256"/>
-<area shape="rect" id="node3" href="$classvistle_1_1ElementInterface.html" title=" " alt="" coords="15,155,175,181"/>
-<area shape="rect" id="node4" href="$classvistle_1_1GeometryInterface.html" title=" " alt="" coords="11,80,180,107"/>
-<area shape="rect" id="node5" href="$classvistle_1_1ObjectInterfaceBase.html" title=" " alt="" coords="5,5,185,32"/>
-</map>

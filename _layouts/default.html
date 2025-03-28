@@ -26,11 +26,6 @@
     <meta name="msapplication-square150x150logo" content="favicon/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="favicon/mstile-310x310.png" />
-
-    {% if page.dir == "/api/module/" or page.dir == "/api/renderer/" %}
-    {% include doxygen-css.html %}
-    {% endif %}
-
 {% seo %}
   </head>
 
@@ -70,13 +65,6 @@
           <li>
           {% endif %}
               <a href="/architecture/">Architecture</a></li>
-
-          {% if page.dir == "/api/" or page.dir == "/api/module/" or page.dir == "/api/renderer/" %}
-          <li id="navselected">
-          {% else %}
-          <li>
-          {% endif %}
-              <a href="/api/">API</a></li>
 
           {% if page.dir == "/publications/" %}
           <li id="navselected">

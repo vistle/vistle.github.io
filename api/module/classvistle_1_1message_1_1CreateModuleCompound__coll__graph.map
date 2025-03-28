@@ -1,7 +1,0 @@
-<map id="vistle::message::CreateModuleCompound" name="vistle::message::CreateModuleCompound">
-<area shape="rect" id="node1" title=" " alt="" coords="795,70,997,111"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="516,5,745,61"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="292,20,467,47"/>
-<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="5,20,141,47"/>
-<area shape="rect" id="node5" href="$structvistle_1_1message_1_1ModuleBaseMessage.html" title=" " alt="" coords="533,86,728,127"/>
-</map>

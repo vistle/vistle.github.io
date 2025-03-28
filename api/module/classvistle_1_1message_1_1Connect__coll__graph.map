@@ -1,6 +1,0 @@
-<map id="vistle::message::Connect" name="vistle::message::Connect">
-<area shape="rect" id="node1" title="connect an output port to an input port of another module" alt="" coords="20,261,191,288"/>
-<area shape="rect" id="node2" href="$classvistle_1_1message_1_1MessageBase.html" title=" " alt="" coords="5,171,205,212"/>
-<area shape="rect" id="node3" href="$classvistle_1_1message_1_1Message.html" title=" " alt="" coords="18,95,193,121"/>
-<area shape="rect" id="node4" href="$structvistle_1_1shm__name__t.html" title=" " alt="" coords="37,5,173,32"/>
-</map>
