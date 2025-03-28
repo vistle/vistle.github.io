@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="metadata description" lang="en" name="description" xml:lang="en" />
+<meta content="description des métadonnées" lang="fr" name="description" xml:lang="fr" />
+<meta content="Sphinx, MyST" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Basics &mdash; Vistle  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to Write a Reader Module" href="implementation-reader.html" />
+    <link rel="prev" title="Module Programming" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Vistle
+              <img src="../../_static/hlrs-vistle.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/index.html">Module Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding-style.html">Conventions &amp; Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Creating Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-module-class">The Module Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-main-function">The Main Function</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-input-and-output-ports">Creating Input and Output Ports</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-ports">Defining Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#receiving-data-through-input-ports">Receiving Data through Input Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-data-to-output-ports">Adding Data to Output Ports</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-module-parameters">Creating Module Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-module-parameters">Defining Module Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-module-parameters">Working with Module Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sample-module-code">Sample Module Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-add-a-module-to-vistle">How to Add a Module to Vistle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#document-the-module">Document the Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="implementation-reader.html">Reader Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Write &amp; Build Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vistle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module Programming</a></li>
+      <li class="breadcrumb-item active">The Basics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/develop/module/implementation-basics.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-basics">
+<h1>The Basics<a class="headerlink" href="#the-basics" title="Link to this heading"></a></h1>
+<p>Vistle is designed to be easily extensible through its modular structure. This tutorial will show you how to write your own Vistle module and how to incorporate it into the software, so you can use it right away.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#the-module-class">The Module Class</a></p></li>
+<li><p><a class="reference internal" href="#creating-input-and-output-ports">Creating Input and Output Ports</a></p></li>
+<li><p><a class="reference internal" href="#creating-module-parameters">Creating Module Parameters</a></p></li>
+<li><p><a class="reference internal" href="#sample-module-code">Sample Module Code</a></p></li>
+<li><p><a class="reference internal" href="#how-to-add-a-module-to-vistle">How to Add a Module to Vistle</a></p></li>
+</ul>
+</section>
+<section id="the-module-class">
+<h2>The Module Class<a class="headerlink" href="#the-module-class" title="Link to this heading"></a></h2>
+<p>The most common Vistle modules are the compute modules. They receive data from other modules through their input port(s), run computations on the data, and return the result(s) through their output port(s).</p>
+<p>The following example shows the minimum code necessary to develop a Vistle module. It will create a module named <strong>MyModule</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MYMODULE_H</span>
+<span class="cp">#define MYMODULE_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vistle/module/module.h&gt;</span>
+
+<span class="c1">// this is a test module for the developer guide</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyModule</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">vistle</span><span class="o">::</span><span class="n">Module</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">MyModule</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">mpi</span><span class="o">::</span><span class="n">communicator</span><span class="w"> </span><span class="n">comm</span><span class="p">);</span>
+<span class="w">    </span><span class="o">~</span><span class="n">MyModule</span><span class="p">();</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">compute</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">vistle</span><span class="o">::</span><span class="n">BlockTask</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">task</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#endif </span><span class="c1">// MYMODULE_H</span>
+</pre></div>
+</div>
+<p>To create a new Vistle module, create a class which inherits from the <code class="docutils literal notranslate"><span class="pre">vistle::Module</span></code> class. The name of that class should match the module’s name, so that is can be easily discovered. However, the name that is visible in the GUI later on, is determined by the <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> scripts(see below).
+The input and output ports as well as the parameters of the module are defined in the class’s constructor. The computations done by the module are defined in the <code class="docutils literal notranslate"><span class="pre">compute</span></code> method. This method is called whenever the Vistle pipeline is executed or you double-click on the module.</p>
+<section id="the-main-function">
+<h3>The Main Function<a class="headerlink" href="#the-main-function" title="Link to this heading"></a></h3>
+<p>It’s important to add the following line to the top of your module’s source file. It automatically creates the main function of the module integrating it into Vistle correctly.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">MODULE_MAIN</span><span class="p">(</span><span class="n">MyModule</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="creating-input-and-output-ports">
+<h2>Creating Input and Output Ports<a class="headerlink" href="#creating-input-and-output-ports" title="Link to this heading"></a></h2>
+<section id="defining-ports">
+<h3>Defining Ports<a class="headerlink" href="#defining-ports" title="Link to this heading"></a></h3>
+<p>The input and output ports are created by calling the <code class="docutils literal notranslate"><span class="pre">createInputPort</span></code> and <code class="docutils literal notranslate"><span class="pre">createOutputPort</span></code> functions in the module’s constructor. Two strings, the name of the port (which can be used to reference it in the code later on) and a short description, must be passed to the function, as shown in the following example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">MyModule</span><span class="o">::</span><span class="n">MyModule</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">mpi</span><span class="o">::</span><span class="n">communicator</span><span class="w"> </span><span class="n">comm</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Module</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">comm</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// define the module&#39;s ports</span>
+<span class="w">    </span><span class="n">createInputPort</span><span class="p">(</span><span class="s">&quot;data_in&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;input grid with mapped data&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">createOutputPort</span><span class="p">(</span><span class="s">&quot;data_out&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;output grid with mapped data&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code snippet adds an input and an output port to the module in the GUI:</p>
+<p><img alt="" src="../../_images/myModulePorts.png" /></p>
+<p>Hovering over either port will show the port’s name and description.</p>
+</section>
+<section id="receiving-data-through-input-ports">
+<h3>Receiving Data through Input Ports<a class="headerlink" href="#receiving-data-through-input-ports" title="Link to this heading"></a></h3>
+<p>The following code snippet is an example of how to work with the data provided by the input port in the <code class="docutils literal notranslate"><span class="pre">compute</span></code> function.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">MyModule::compute</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">vistle</span><span class="o">::</span><span class="n">BlockTask</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">task</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// check data provided by input port</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">task</span><span class="o">-&gt;</span><span class="n">expect</span><span class="o">&lt;</span><span class="n">Vec</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="s">&quot;data_in&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendError</span><span class="p">(</span><span class="s">&quot;This module only supports three-dimensional vector data fields!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">splitContainerObject</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">geometry</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">grid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendError</span><span class="p">(</span><span class="s">&quot;Found no grid at the input port!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The code checks if the data field attached to the input grid is a three-dimensional vector and if the input grid is valid. If not, an error message is printed using the <code class="docutils literal notranslate"><span class="pre">sendError</span></code> method. The error message will be shown in the Vistle console as well as in the parameter window:</p>
+<p><img alt="" src="../../_images/myModuleError.png" /></p>
+</section>
+<section id="adding-data-to-output-ports">
+<h3>Adding Data to Output Ports<a class="headerlink" href="#adding-data-to-output-ports" title="Link to this heading"></a></h3>
+<p>The following code snippet shows how to add a uniform grid and a scalar data field to the module’s output port:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">MyModule::compute</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">vistle</span><span class="o">::</span><span class="n">BlockTask</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">task</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// create an output grid</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">gridDim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">UniformGrid</span><span class="o">::</span><span class="n">ptr</span><span class="w"> </span><span class="n">outputGrid</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">UniformGrid</span><span class="p">(</span><span class="n">gridDim</span><span class="p">,</span><span class="w"> </span><span class="n">gridDim</span><span class="p">,</span><span class="w"> </span><span class="n">gridDim</span><span class="p">));</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">outputGrid</span><span class="o">-&gt;</span><span class="n">min</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">outputGrid</span><span class="o">-&gt;</span><span class="n">max</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">updateMeta</span><span class="p">(</span><span class="n">outputGrid</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// create a scalar data field which maps a value to each vertex of the grid</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">fieldSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">gridDim</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">gridDim</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">gridDim</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Vec</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;::</span><span class="n">ptr</span><span class="w"> </span><span class="n">outputData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vec</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fieldSize</span><span class="p">));</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fieldSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">outputData</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">outputData</span><span class="o">-&gt;</span><span class="n">setGrid</span><span class="p">(</span><span class="n">outputGrid</span><span class="p">);</span>
+<span class="w">    </span><span class="n">outputData</span><span class="o">-&gt;</span><span class="n">setMapping</span><span class="p">(</span><span class="n">DataBase</span><span class="o">::</span><span class="n">Vertex</span><span class="p">);</span>
+<span class="w">    </span><span class="n">outputData</span><span class="o">-&gt;</span><span class="n">addAttribute</span><span class="p">(</span><span class="s">&quot;_species&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outputData&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">updateMeta</span><span class="p">(</span><span class="n">outputData</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// add mapped data to the output port</span>
+<span class="w">    </span><span class="n">task</span><span class="o">-&gt;</span><span class="n">addObject</span><span class="p">(</span><span class="s">&quot;data_out&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">outputData</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The code creates a uniform grid of dimension 2x2x2 which spans from the point (0|0|0) to the point (1|1|1) as well as a scalar data field which provides one float value for each of the vertices in the grid.</p>
+<p><code class="docutils literal notranslate"><span class="pre">updateMeta</span></code> is called both for the grid and the data field and ensures that the metadata of the two objects is set up correctly for further use in Vistle.</p>
+<p>The grid is attached to the data field with the <code class="docutils literal notranslate"><span class="pre">setGrid</span></code> method which allows us to add both data and grid to a single output port. The <code class="docutils literal notranslate"><span class="pre">setMapping</span></code> method is used to specify whether the data field is mapped to each vertex in the grid (<code class="docutils literal notranslate"><span class="pre">DataBase::Vertex</span></code>) or to each grid cell (<code class="docutils literal notranslate"><span class="pre">DataBase::Element</span></code>). The <code class="docutils literal notranslate"><span class="pre">addAttribute</span></code> method is used to give the data field a name which can be used by other modules. It is, e.g., displayed in the color map created by the <a class="reference internal" href="../../module/map/Color/Color.html"><span class="std std-doc">Color</span></a> module.</p>
+<p>Finally, the data field, which now also includes the grid it is mapped onto, is added to the output port created and named in the constructor with <code class="docutils literal notranslate"><span class="pre">addObject</span></code>.</p>
+</section>
+</section>
+<section id="creating-module-parameters">
+<h2>Creating Module Parameters<a class="headerlink" href="#creating-module-parameters" title="Link to this heading"></a></h2>
+<section id="defining-module-parameters">
+<h3>Defining Module Parameters<a class="headerlink" href="#defining-module-parameters" title="Link to this heading"></a></h3>
+<p>Module parameters can be defined by using the <code class="docutils literal notranslate"><span class="pre">addIntParameter</span></code>, <code class="docutils literal notranslate"><span class="pre">addFloatParameter</span></code>, <code class="docutils literal notranslate"><span class="pre">addStringParameter</span></code>, <code class="docutils literal notranslate"><span class="pre">addVectorParameter</span></code>, <code class="docutils literal notranslate"><span class="pre">addIntVectorParameter</span></code> or <code class="docutils literal notranslate"><span class="pre">addStringVectorParameter</span></code> functions in the module’s constructor. All of these functions expect a string with the parameter’s name, a string with the parameter’s description and a default value. Some functions expect additional parameters or have overloaded function definitions.</p>
+<p>In the following example code, we show how to add the most commonly used module parameters to <strong>MyModule</strong>. Note that class members for each of the module’s parameters have been added to <strong>MyModule</strong>’s header file beforehand (see <a class="reference internal" href="#sample-module-code">header file here</a>).</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">DEFINE_ENUM_WITH_STRING_CONVERSIONS</span><span class="p">(</span><span class="n">Option</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Option0</span><span class="p">)(</span><span class="n">Option1</span><span class="p">)(</span><span class="n">Option2</span><span class="p">))</span>
+
+<span class="n">MyModule</span><span class="o">::</span><span class="n">MyModule</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">mpi</span><span class="o">::</span><span class="n">communicator</span><span class="w"> </span><span class="n">comm</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Module</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">comm</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// define the module&#39;s parameters</span>
+<span class="w">    </span><span class="n">m_boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addIntParameter</span><span class="p">(</span><span class="s">&quot;boolean&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a boolean parameter&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="n">Parameter</span><span class="o">::</span><span class="n">Boolean</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">m_scalar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addFloatParameter</span><span class="p">(</span><span class="s">&quot;scalar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a float parameter&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">setParameterRange</span><span class="p">(</span><span class="n">m_scalar</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">m_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addVectorParameter</span><span class="p">(</span><span class="s">&quot;vector&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a vector parameter&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ParamVector</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">m_choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addIntParameter</span><span class="p">(</span><span class="s">&quot;choice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;choose one of the options&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Option1</span><span class="p">,</span><span class="w"> </span><span class="n">Parameter</span><span class="o">::</span><span class="n">Choice</span><span class="p">);</span>
+<span class="w">    </span><span class="n">V_ENUM_SET_CHOICES</span><span class="p">(</span><span class="n">m_choice</span><span class="p">,</span><span class="w"> </span><span class="n">Option</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code snippet created the following parameters which can be modified in the GUI’s parameter window:</p>
+<p><img alt="" src="../../_images/myModuleParameters.png" /></p>
+<p>The first parameter is a boolean parameter with the default value false. Passing <code class="docutils literal notranslate"><span class="pre">Parameter::Boolean</span></code> to the <code class="docutils literal notranslate"><span class="pre">addIntParameters</span></code> function (as shown in the example), will create a checkbox that the user can toggle in the GUI.</p>
+<p>The second parameter is a float value which the user can set in the parameter window. If desired, a minimum and maximum value can be defined for any arithmetic parameter using the <code class="docutils literal notranslate"><span class="pre">setParameterRange</span></code> method. The <code class="docutils literal notranslate"><span class="pre">scalar</span></code> parameter in this example only allows float values between 0 and 10.</p>
+<p>The third parameter is a vector parameter which is created similarly to the scalar parameters. The user can define each component separately.</p>
+<p>Finally, the fourth parameter is a choice parameter which creates a drop-down menu in the GUI which allows the user to set one of the available options. To create a choice parameter:</p>
+<ol class="arabic simple">
+<li><p>Pass <code class="docutils literal notranslate"><span class="pre">Parameter::Choice</span></code> to the <code class="docutils literal notranslate"><span class="pre">addIntParameters</span></code> function</p></li>
+<li><p>Create an enum including all possible options using the <code class="docutils literal notranslate"><span class="pre">DEFINE_ENUM_WITH_STRING_CONVERSIONS</span></code> macro. Note that the names you define here will be displayed in the drop-down menu later on.</p></li>
+<li><p>Add the enum to the choice parameter with the <code class="docutils literal notranslate"><span class="pre">V_ENUM_SET_CHOICES</span></code> function.</p></li>
+</ol>
+</section>
+<section id="working-with-module-parameters">
+<h3>Working with Module Parameters<a class="headerlink" href="#working-with-module-parameters" title="Link to this heading"></a></h3>
+<p>The Module class provides a <code class="docutils literal notranslate"><span class="pre">changeParameter</span></code> method which is called everytime a module parameter is changed. The value of a module parameter can be read with the <code class="docutils literal notranslate"><span class="pre">getValue()</span></code> function.</p>
+<p>The following code snippet prints out which parameter has been changed to which value whenever one of <strong>MyModule</strong>’s four parameters is changed:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">MyModule::changeParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vistle</span><span class="o">::</span><span class="n">Parameter</span><span class="w"> </span><span class="o">*</span><span class="n">param</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_boolean</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendInfo</span><span class="p">(</span><span class="s">&quot;Changed parameter %s to %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_boolean</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">m_boolean</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_scalar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendInfo</span><span class="p">(</span><span class="s">&quot;Changed parameter %s to %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_scalar</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">m_scalar</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">());</span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_vector</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_vector</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">();</span>
+<span class="w">        </span><span class="n">sendInfo</span><span class="p">(</span><span class="s">&quot;Changed parameter %s to (%f, %f, %f)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_vector</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">vector</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">vector</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_choice</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendInfo</span><span class="p">(</span><span class="s">&quot;Changed parameter %s to Option%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_choice</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="n">Option</span><span class="p">)</span><span class="n">m_choice</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sample-module-code">
+<h2>Sample Module Code<a class="headerlink" href="#sample-module-code" title="Link to this heading"></a></h2>
+<p>For your convenience, the complete header and source file for <strong>MyModule</strong> are provided here:</p>
+<details>
+<summary> Click on the arrow on the left to view the complete MyModule header file. </summary>
+<p><code class="docutils literal notranslate"><span class="pre">module/develop/MyModule/MyModule.h</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MYMODULE_H</span>
+<span class="cp">#define MYMODULE_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vistle/module/module.h&gt;</span>
+
+<span class="c1">// this is a test module for the developer guide</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyModule</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">vistle</span><span class="o">::</span><span class="n">Module</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">MyModule</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">mpi</span><span class="o">::</span><span class="n">communicator</span><span class="w"> </span><span class="n">comm</span><span class="p">);</span>
+<span class="w">    </span><span class="o">~</span><span class="n">MyModule</span><span class="p">();</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">compute</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">vistle</span><span class="o">::</span><span class="n">BlockTask</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">task</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">changeParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vistle</span><span class="o">::</span><span class="n">Parameter</span><span class="w"> </span><span class="o">*</span><span class="n">param</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vistle</span><span class="o">::</span><span class="n">IntParameter</span><span class="w"> </span><span class="o">*</span><span class="n">m_boolean</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vistle</span><span class="o">::</span><span class="n">FloatParameter</span><span class="w"> </span><span class="o">*</span><span class="n">m_scalar</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vistle</span><span class="o">::</span><span class="n">VectorParameter</span><span class="w"> </span><span class="o">*</span><span class="n">m_vector</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vistle</span><span class="o">::</span><span class="n">IntParameter</span><span class="w"> </span><span class="o">*</span><span class="n">m_choice</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#endif </span><span class="c1">// MYMODULE_H</span>
+</pre></div>
+</div>
+</details>
+<details>
+<summary> Click on the arrow on the left to view the complete MyModule source file.</summary>
+<p><code class="docutils literal notranslate"><span class="pre">module/develop/MyModule/MyModule.cpp</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vistle/alg/objalg.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vistle/core/uniformgrid.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyModule.h&quot;</span>
+
+<span class="n">MODULE_MAIN</span><span class="p">(</span><span class="n">MyModule</span><span class="p">)</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">vistle</span><span class="p">;</span>
+
+<span class="n">DEFINE_ENUM_WITH_STRING_CONVERSIONS</span><span class="p">(</span><span class="n">Option</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Option0</span><span class="p">)(</span><span class="n">Option1</span><span class="p">)(</span><span class="n">Option2</span><span class="p">))</span>
+
+<span class="n">MyModule</span><span class="o">::</span><span class="n">MyModule</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">mpi</span><span class="o">::</span><span class="n">communicator</span><span class="w"> </span><span class="n">comm</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Module</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">comm</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// define the module&#39;s ports</span>
+<span class="w">    </span><span class="n">createInputPort</span><span class="p">(</span><span class="s">&quot;data_in&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;input grid with mapped data&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">createOutputPort</span><span class="p">(</span><span class="s">&quot;data_out&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;output grid with mapped data&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// define the module&#39;s parameters</span>
+<span class="w">    </span><span class="n">m_boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addIntParameter</span><span class="p">(</span><span class="s">&quot;boolean&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a boolean parameter&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="n">Parameter</span><span class="o">::</span><span class="n">Boolean</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">m_scalar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addFloatParameter</span><span class="p">(</span><span class="s">&quot;scalar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a float parameter&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">setParameterRange</span><span class="p">(</span><span class="n">m_scalar</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">m_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addVectorParameter</span><span class="p">(</span><span class="s">&quot;vector&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a vector parameter&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ParamVector</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">m_choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addIntParameter</span><span class="p">(</span><span class="s">&quot;choice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;choose one of the options&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Option1</span><span class="p">,</span><span class="w"> </span><span class="n">Parameter</span><span class="o">::</span><span class="n">Choice</span><span class="p">);</span>
+<span class="w">    </span><span class="n">V_ENUM_SET_CHOICES</span><span class="p">(</span><span class="n">m_choice</span><span class="p">,</span><span class="w"> </span><span class="n">Option</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">MyModule</span><span class="o">::~</span><span class="n">MyModule</span><span class="p">()</span>
+<span class="p">{}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">MyModule</span><span class="o">::</span><span class="n">compute</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">vistle</span><span class="o">::</span><span class="n">BlockTask</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">task</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// check data provided by input port</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">task</span><span class="o">-&gt;</span><span class="n">expect</span><span class="o">&lt;</span><span class="n">Vec</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="s">&quot;data_in&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendError</span><span class="p">(</span><span class="s">&quot;This module only supports three-dimensional vector data fields!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">splitContainerObject</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">geometry</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">grid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendError</span><span class="p">(</span><span class="s">&quot;Found no grid at the input port!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// create an output grid</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">gridDim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">UniformGrid</span><span class="o">::</span><span class="n">ptr</span><span class="w"> </span><span class="nf">outputGrid</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">UniformGrid</span><span class="p">(</span><span class="n">gridDim</span><span class="p">,</span><span class="w"> </span><span class="n">gridDim</span><span class="p">,</span><span class="w"> </span><span class="n">gridDim</span><span class="p">));</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">outputGrid</span><span class="o">-&gt;</span><span class="n">min</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">outputGrid</span><span class="o">-&gt;</span><span class="n">max</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">updateMeta</span><span class="p">(</span><span class="n">outputGrid</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// create a scalar data field which maps a value to each vertex of the grid</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">fieldSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">gridDim</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">gridDim</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">gridDim</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Vec</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;::</span><span class="n">ptr</span><span class="w"> </span><span class="n">outputData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vec</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fieldSize</span><span class="p">));</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fieldSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">outputData</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">outputData</span><span class="o">-&gt;</span><span class="n">setGrid</span><span class="p">(</span><span class="n">outputGrid</span><span class="p">);</span>
+<span class="w">    </span><span class="n">outputData</span><span class="o">-&gt;</span><span class="n">setMapping</span><span class="p">(</span><span class="n">DataBase</span><span class="o">::</span><span class="n">Vertex</span><span class="p">);</span>
+<span class="w">    </span><span class="n">outputData</span><span class="o">-&gt;</span><span class="n">addAttribute</span><span class="p">(</span><span class="s">&quot;_species&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outputData&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">updateMeta</span><span class="p">(</span><span class="n">outputData</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// add mapped data to the output port</span>
+<span class="w">    </span><span class="n">task</span><span class="o">-&gt;</span><span class="n">addObject</span><span class="p">(</span><span class="s">&quot;data_out&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">outputData</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">MyModule</span><span class="o">::</span><span class="n">changeParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vistle</span><span class="o">::</span><span class="n">Parameter</span><span class="w"> </span><span class="o">*</span><span class="n">param</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_boolean</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendInfo</span><span class="p">(</span><span class="s">&quot;Changed parameter %s to %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_boolean</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">m_boolean</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_scalar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendInfo</span><span class="p">(</span><span class="s">&quot;Changed parameter %s to %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_scalar</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">m_scalar</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">());</span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_vector</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_vector</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">();</span>
+<span class="w">        </span><span class="n">sendInfo</span><span class="p">(</span><span class="s">&quot;Changed parameter %s to (%f, %f, %f)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_vector</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="n">vector</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">vector</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_choice</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sendInfo</span><span class="p">(</span><span class="s">&quot;Changed parameter %s to Option%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_choice</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="n">Option</span><span class="p">)</span><span class="n">m_choice</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details>
+</section>
+<section id="how-to-add-a-module-to-vistle">
+<h2>How to Add a Module to Vistle<a class="headerlink" href="#how-to-add-a-module-to-vistle" title="Link to this heading"></a></h2>
+<p>The code for all Vistle modules can be found in the <code class="docutils literal notranslate"><span class="pre">module</span></code> folder in Vistle’s root directory. The <code class="docutils literal notranslate"><span class="pre">module</span></code> folder is divided into subdirectories which represent different stages of the visualization pipeline. Note that the names of these subfolders correspond to the categories shown in Vistle’s module browser:</p>
+<p><img alt="" src="../../_images/moduleBrowser.png" /></p>
+<p>Choose the category which fits your module best. The categories are explained in the <a class="reference internal" href="../../intro/workflow/workflow.html"><span class="std std-doc">Workflow</span></a> article.</p>
+<p>As it does not have any concrete functionality, <strong>MyModule</strong> will be placed into the <a class="reference internal" href="../../module/develop/index.html"><span class="doc std std-doc">Develop</span></a> category. By convention, all code files for a module are placed inside a folder named after the module. So, for <strong>MyModule</strong> a folder called <code class="docutils literal notranslate"><span class="pre">MyModule</span></code> must be created inside <code class="docutils literal notranslate"><span class="pre">module/develop</span></code> and the source and header files we have created earlier must be moved inside.</p>
+<p>To tell the system to compile our code, we have to create a <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file which calls the <code class="docutils literal notranslate"><span class="pre">add_module</span></code> target. Pass the module’s name, a short description as well as all necessary header and source files to the <code class="docutils literal notranslate"><span class="pre">add_module</span></code> call. Note that the short description will be shown whenever you hover over the <strong>MyModule</strong> module in the Vistle GUI. The first argument is the name of the module as it will be known to Vistle.
+By convention, the main source file is named accordingly.</p>
+<p><code class="docutils literal notranslate"><span class="pre">module/develop/MyModule/CMakeLists.txt</span></code></p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">add_module</span><span class="p">(</span><span class="s">MyModule</span><span class="w"> </span><span class="s2">&quot;Test module&quot;</span><span class="w"> </span><span class="s">MyModule.h</span><span class="w"> </span><span class="s">MyModule.cpp</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As a last step, add the subdirectory you just created to the category’s <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file which is located in the parent directory of your module’s <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">module/develop/CMakeLists.txt</span></code></p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># modules mainly suitable for testing and developing</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">VISTLE_MODULE_CATEGORY</span><span class="w"> </span><span class="s2">&quot;Develop&quot;</span><span class="p">)</span>
+
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">ClipVtkm</span><span class="p">)</span>
+<span class="c"># ...</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">MpiInfo</span><span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">MyModule</span><span class="p">)</span><span class="w"> </span><span class="c"># add this line to include our test module in vistle</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">ObjectStatistics</span><span class="p">)</span>
+<span class="c"># ...</span>
+</pre></div>
+</div>
+<p>Now, when you compile Vistle, your module will be built. It will be added to the module browser on Vistle’s next invocation, allowing you to use it.</p>
+</section>
+<section id="document-the-module">
+<h2>Document the Module<a class="headerlink" href="#document-the-module" title="Link to this heading"></a></h2>
+<p>Also do not forget about adding documentation for your new module. You can start by copying <a class="reference download internal" download="" href="../../_downloads/09745fc891c616a77752266c3c8694cd/module-doc-template.md"><span class="xref download myst">module-doc-template.md</span></a> as <code class="docutils literal notranslate"><span class="pre">MyModule.md</span></code>  to your source code directory. Please refer to <a class="reference internal" href="../documentation/documentation.html"><span class="std std-doc">How to Write Documentation</span></a> for more information.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Module Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="implementation-reader.html" class="btn btn-neutral float-right" title="How to Write a Reader Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012 - 2025, the Vistle team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

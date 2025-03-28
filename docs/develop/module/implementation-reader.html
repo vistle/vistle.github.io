@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="metadata description" lang="en" name="description" xml:lang="en" />
+<meta content="description des métadonnées" lang="fr" name="description" xml:lang="fr" />
+<meta content="Sphinx, MyST" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Write a Reader Module &mdash; Vistle  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Documentation" href="../documentation/index.html" />
+    <link rel="prev" title="The Basics" href="implementation-basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Vistle
+              <img src="../../_static/hlrs-vistle.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/index.html">Module Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding-style.html">Conventions &amp; Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Creating Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="implementation-basics.html">Basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Reader Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Write &amp; Build Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vistle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module Programming</a></li>
+      <li class="breadcrumb-item active">How to Write a Reader Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/develop/module/implementation-reader.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-write-a-reader-module">
+<h1>How to Write a Reader Module<a class="headerlink" href="#how-to-write-a-reader-module" title="Link to this heading"></a></h1>
+<!-- TODO: add a section about the other methods in vistle::Reader (examine, prepareRead, finishRead) -->
+<p>This article assumes you are familiar with the <a class="reference internal" href="implementation-basics.html"><span class="std std-doc">basics on how to write a Vistle module</span></a>.</p>
+<p>Read modules read in data from one or more data files (the filenames are given through a string parameter, not the input port), convert the given data into Vistle data structures and make it available to other Vistle modules through their output port(s).</p>
+<p>Implementing read modules is very similar to implementing compute modules: their ports and parameters are defined in the same manner. However, read modules inherit from the <code class="docutils literal notranslate"><span class="pre">vistle::Reader</span></code> instead of the <code class="docutils literal notranslate"><span class="pre">vistle::Module</span></code> class. Moreover, the main work happens in the <code class="docutils literal notranslate"><span class="pre">read</span></code> instead of the <code class="docutils literal notranslate"><span class="pre">compute</span></code> function.</p>
+<p>The following code shows the basic structure of an example read module with the name <strong>MyReader</strong>…</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MYREADER_H</span>
+<span class="cp">#define MYREADER_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vistle/module/reader.h&gt;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyReader</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">vistle</span><span class="o">::</span><span class="n">Reader</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">MyReader</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">mpi</span><span class="o">::</span><span class="n">communicator</span><span class="w"> </span><span class="n">comm</span><span class="p">);</span>
+<span class="w">    </span><span class="o">~</span><span class="n">MyReader</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="n">vistle</span><span class="o">::</span><span class="n">Reader</span><span class="o">::</span><span class="n">Token</span><span class="w"> </span><span class="o">&amp;</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">timestep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">vistle</span><span class="o">::</span><span class="n">StringParameter</span><span class="w"> </span><span class="o">*</span><span class="n">m_filename</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#endif </span><span class="c1">//MYREADER_H</span>
+</pre></div>
+</div>
+<p>… and its corresponding source file:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyReader.h&quot;</span>
+
+<span class="n">MODULE_MAIN</span><span class="p">(</span><span class="n">MyReader</span><span class="p">)</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">vistle</span><span class="o">::</span><span class="n">Reader</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">vistle</span><span class="o">::</span><span class="n">Parameter</span><span class="p">;</span>
+
+<span class="n">MyReader</span><span class="o">::</span><span class="n">MyReader</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">mpi</span><span class="o">::</span><span class="n">communicator</span><span class="w"> </span><span class="n">comm</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Reader</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">moduleID</span><span class="p">,</span><span class="w"> </span><span class="n">comm</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">createOutputPort</span><span class="p">(</span><span class="s">&quot;grid_out&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;output grid&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">m_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addStringParameter</span><span class="p">(</span><span class="s">&quot;filename&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;the file containing the data that is to be read in&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span>
+<span class="w">                                    </span><span class="n">Parameter</span><span class="o">::</span><span class="n">ExistingFilename</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">MyReader</span><span class="o">::~</span><span class="n">MyReader</span><span class="p">()</span>
+<span class="p">{}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">MyReader</span><span class="o">::</span><span class="n">read</span><span class="p">(</span><span class="n">vistle</span><span class="o">::</span><span class="n">Reader</span><span class="o">::</span><span class="n">Token</span><span class="w"> </span><span class="o">&amp;</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">timestep</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">block</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// read in the data from the file...</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="implementation-basics.html" class="btn btn-neutral float-left" title="The Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../documentation/index.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012 - 2025, the Vistle team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

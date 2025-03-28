@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filter &mdash; Vistle  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CellSelect" href="CellSelect/CellSelect.html" />
+    <link rel="prev" title="InSituModule" href="../simulation/InSituModule/InSituModule.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Vistle
+              <img src="../../_static/hlrs-vistle.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../read/index.html">Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simulation/index.html">Simulation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Filter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CellSelect/CellSelect.html">CellSelect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CellToVert/CellToVert.html">CellToVert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CellToVertVtkm/CellToVertVtkm.html">CellToVertVtkm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Displace/Displace.html">Displace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FilterCells/FilterCells.html">FilterCells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MapDrape/MapDrape.html">MapDrape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sample/Sample.html">Sample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScalarToVec/ScalarToVec.html">ScalarToVec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SplitDimensions/SplitDimensions.html">SplitDimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Threshold/Threshold.html">Threshold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ToUnstructured/ToUnstructured.html">ToUnstructured</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecToScalar/VecToScalar.html">VecToScalar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VertToCellVtkm/VertToCellVtkm.html">VertToCellVtkm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../map/index.html">Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geometry/index.html">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../render/index.html">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/index.html">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../information/index.html">Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../univiz/index.html">UniViz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/index.html">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../all.html">All Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../categories.html">Module Categories</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/coding-style.html">Conventions &amp; Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/api/index.html">API Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/module/index.html">Creating Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/documentation/index.html">Write &amp; Build Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vistle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module Reference</a></li>
+      <li class="breadcrumb-item active">Filter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/module/filter/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="filter">
+<span id="category-filter"></span><h1>Filter<a class="headerlink" href="#filter" title="Link to this heading"></a></h1>
+<p><strong>Manipulate Abstract Data</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">Filter</span></a> modules transform abstract data into abstract data, so that another filter step can be applied.
+Data processed by filters does not have a geometric representation.</p>
+<dl>
+<dt><strong>C</strong></dt><dd><p><a class="reference internal" href="CellSelect/CellSelect.html"><span class="doc">CellSelect</span></a> <em>filter elements according to mapped data</em></p>
+<p><a class="reference internal" href="CellToVert/CellToVert.html"><span class="doc">CellToVert</span></a> <em>convert cell mapped data to vertice mapped</em></p>
+<p><a class="reference internal" href="CellToVertVtkm/CellToVertVtkm.html"><span class="doc">CellToVertVtkm</span></a> <em>convert cell mapped data to vertice mapped</em></p>
+</dd>
+<dt><strong>D</strong></dt><dd><p><a class="reference internal" href="Displace/Displace.html"><span class="doc">Displace</span></a> <em>move vertices according to mapped data of first input</em></p>
+</dd>
+<dt><strong>F</strong></dt><dd><p><a class="reference internal" href="FilterCells/FilterCells.html"><span class="doc">FilterCells</span></a> <em>filter out some cells</em></p>
+</dd>
+<dt><strong>M</strong></dt><dd><p><a class="reference internal" href="MapDrape/MapDrape.html"><span class="doc">MapDrape</span></a> <em>map coordinates and drape to height field</em></p>
+</dd>
+<dt><strong>S</strong></dt><dd><p><a class="reference internal" href="Sample/Sample.html"><span class="doc">Sample</span></a> <em>sample data on points, unstructured and uniform grids to a uniform grid</em></p>
+<p><a class="reference internal" href="ScalarToVec/ScalarToVec.html"><span class="doc">ScalarToVec</span></a> <em>combine up to three scalar fields to a vector field</em></p>
+<p><a class="reference internal" href="SplitDimensions/SplitDimensions.html"><span class="doc">SplitDimensions</span></a> <em>separate grid into 1D, 2D and 3D components</em></p>
+</dd>
+<dt><strong>T</strong></dt><dd><p><a class="reference internal" href="Threshold/Threshold.html"><span class="doc">Threshold</span></a> <em>filter elements according to mapped data</em></p>
+<p><a class="reference internal" href="ToUnstructured/ToUnstructured.html"><span class="doc">ToUnstructured</span></a> <em>transform structured grids to equivalent unstructured grid</em></p>
+</dd>
+<dt><strong>V</strong></dt><dd><p><a class="reference internal" href="VecToScalar/VecToScalar.html"><span class="doc">VecToScalar</span></a> <em>transform vector fields to scalar fields</em></p>
+<p><a class="reference internal" href="VertToCellVtkm/VertToCellVtkm.html"><span class="doc">VertToCellVtkm</span></a> <em>convert vertex mapped data to cell mapped</em></p>
+</dd>
+</dl>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../simulation/InSituModule/InSituModule.html" class="btn btn-neutral float-left" title="InSituModule" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CellSelect/CellSelect.html" class="btn btn-neutral float-right" title="CellSelect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012 - 2025, the Vistle team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

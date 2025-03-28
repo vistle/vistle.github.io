@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="metadata description" lang="en" name="description" xml:lang="en" />
+<meta content="description des métadonnées" lang="fr" name="description" xml:lang="fr" />
+<meta content="Sphinx, MyST" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MpiInfo &mdash; Vistle  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ObjectStatistics" href="../ObjectStatistics/ObjectStatistics.html" />
+    <link rel="prev" title="MiniSim" href="../MiniSim/MiniSim.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Vistle
+              <img src="../../../_static/hlrs-vistle.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Module Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../read/index.html">Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../simulation/index.html">Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../filter/index.html">Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../map/index.html">Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../geometry/index.html">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../render/index.html">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../general/index.html">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../information/index.html">Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../univiz/index.html">UniViz</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Develop</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../CreateCelltree/CreateCelltree.html">CreateCelltree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CreateVertexOwnerList/CreateVertexOwnerList.html">CreateVertexOwnerList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dropbear/Dropbear.html">Dropbear</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FilterNode/FilterNode.html">FilterNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Gendat/Gendat.html">Gendat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../GenIsoDat/GenIsoDat.html">GenIsoDat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../GridElementStatistics/GridElementStatistics.html">GridElementStatistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ManipulateGhosts/ManipulateGhosts.html">ManipulateGhosts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../MiniSim/MiniSim.html">MiniSim</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MpiInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ObjectStatistics/ObjectStatistics.html">ObjectStatistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PrintAttributes/PrintAttributes.html">PrintAttributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Replicate/Replicate.html">Replicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ShowCelltree/ShowCelltree.html">ShowCelltree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ShowGridIndex/ShowGridIndex.html">ShowGridIndex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../TestCellSearch/TestCellSearch.html">TestCellSearch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../TestDynamicPorts/TestDynamicPorts.html">TestDynamicPorts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../TestInterpolation/TestInterpolation.html">TestInterpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ToPolyhedra/ToPolyhedra.html">ToPolyhedra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../TransformGrid/TransformGrid.html">TransformGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Validate/Validate.html">Validate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../all.html">All Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../categories.html">Module Categories</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/coding-style.html">Conventions &amp; Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/api/index.html">API Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/module/index.html">Creating Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/documentation/index.html">Write &amp; Build Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Vistle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module Reference</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Develop</a></li>
+      <li class="breadcrumb-item active">MpiInfo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/module/develop/MpiInfo/MpiInfo.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mpiinfo">
+<h1>MpiInfo<a class="headerlink" href="#mpiinfo" title="Link to this heading"></a></h1>
+<p>print MPI, CPU binding and shared memory info</p>
+<svg width="50.599999999999994em" height="4.6em" >
+<style>.text { font: normal 1.0em sans-serif;}tspan{ font: italic 1.0em sans-serif;}.moduleName{ font: bold 1.0em sans-serif;}</style>
+<rect x="0em" y="0.8em" width="5.06em" height="3.0em" rx="0.1em" ry="0.1em" style="fill:#64c8c8ff;" />
+<text x="0.2em" y="2.6500000000000004em" class="moduleName" >MpiInfo</text></svg>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../MiniSim/MiniSim.html" class="btn btn-neutral float-left" title="MiniSim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ObjectStatistics/ObjectStatistics.html" class="btn btn-neutral float-right" title="ObjectStatistics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012 - 2025, the Vistle team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
