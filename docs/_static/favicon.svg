@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 425 429" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;">
+    <g id="Logo" transform="matrix(1.06294,2.60345e-16,-2.60345e-16,1.06294,-193.898,-340.043)">
+        <g transform="matrix(1,0,0,1,129.729,260.405)">
+            <path d="M207,66L380,117L253,244L65,186L207,66Z" style="fill:rgb(200,162,25);fill-rule:nonzero;stroke:black;stroke-width:12.99px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,129.729,260.405)">
+            <path d="M59,229L246,290L289,456L114,389L59,229Z" style="fill:rgb(147,27,31);fill-rule:nonzero;stroke:black;stroke-width:12.63px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,129.729,260.405)">
+            <path d="M409,141L445,307L326,447L280,273L409,141Z" style="fill:rgb(0,82,165);fill-rule:nonzero;stroke:black;stroke-width:13.36px;"/>
+        </g>
+    </g>
+</svg>
