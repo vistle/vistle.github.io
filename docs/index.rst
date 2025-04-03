@@ -1,5 +1,5 @@
-Vistle
-******
+Vistle -- Distributed Data-parallel Scientific Visualization in VR
+******************************************************************
 
 `Vistle <https://github.com/vistle/vistle>`__ is an extensible software environment that integrates simulations on supercomputers, post-processing and parallel interactive visualization in immersive virtual environments.
 
