@@ -48,6 +48,10 @@ Geometry
    :doc:`SpheresOverlap <SpheresOverlap/SpheresOverlap>` *create lines between overlapping spheres*
 
 
+**V**
+   :doc:`VertexClusteringVtkm <VertexClusteringVtkm/VertexClusteringVtkm>` *simplify polygonal (i.e. triangle) mesh*
+
+
 
 .. toctree::
    :maxdepth: 1
@@ -64,4 +68,5 @@ Geometry
    ToPoints <ToPoints/ToPoints.md>
    ToTriangles <ToTriangles/ToTriangles.md>
    SpheresOverlap <SpheresOverlap/SpheresOverlap.md>
+   VertexClusteringVtkm <VertexClusteringVtkm/VertexClusteringVtkm.md>
 

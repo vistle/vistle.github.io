@@ -39,8 +39,6 @@ All Modules
 
    :doc:`Calc <general/Calc/Calc>` (:doc:`General <general/index>`) *compute with coordinates and data*
 
-   :doc:`CellSelect <filter/CellSelect/CellSelect>` (:doc:`Filter <filter/index>`) *filter elements according to mapped data*
-
    :doc:`CellToVert <filter/CellToVert/CellToVert>` (:doc:`Filter <filter/index>`) *convert cell mapped data to vertice mapped*
 
    :doc:`CellToVertVtkm <filter/CellToVertVtkm/CellToVertVtkm>` (:doc:`Filter <filter/index>`) *convert cell mapped data to vertice mapped*
@@ -203,6 +201,10 @@ All Modules
 
    :doc:`ScalarToVec <filter/ScalarToVec/ScalarToVec>` (:doc:`Filter <filter/index>`) *combine up to three scalar fields to a vector field*
 
+   :doc:`SelectCells <filter/SelectCells/SelectCells>` (:doc:`Filter <filter/index>`) *filter elements according to their index*
+
+   :doc:`SelectVertices <filter/SelectVertices/SelectVertices>` (:doc:`Filter <filter/index>`) *filter vertices according to their index*
+
    :doc:`ShowCelltree <develop/ShowCelltree/ShowCelltree>` (:doc:`Develop <develop/index>`) *show cell tree*
 
    :doc:`ShowGrid <map/ShowGrid/ShowGrid>` (:doc:`Map <map/index>`) *show outlines of grid cells*
@@ -231,6 +233,8 @@ All Modules
 
    :doc:`Threshold <filter/Threshold/Threshold>` (:doc:`Filter <filter/index>`) *filter elements according to mapped data*
 
+   :doc:`ThresholdVtkm <filter/ThresholdVtkm/ThresholdVtkm>` (:doc:`Filter <filter/index>`) *remove cells according to a threshold*
+
    :doc:`ToPoints <geometry/ToPoints/ToPoints>` (:doc:`Geometry <geometry/index>`) *reduce geometry to underlying points*
 
    :doc:`ToPolyhedra <develop/ToPolyhedra/ToPolyhedra>` (:doc:`Develop <develop/index>`) *transform unstructured cells into polyhedral cells*
@@ -257,6 +261,8 @@ All Modules
 
    :doc:`VertToCellVtkm <filter/VertToCellVtkm/VertToCellVtkm>` (:doc:`Filter <filter/index>`) *convert vertex mapped data to cell mapped*
 
+   :doc:`VertexClusteringVtkm <geometry/VertexClusteringVtkm/VertexClusteringVtkm>` (:doc:`Geometry <geometry/index>`) *simplify polygonal (i.e. triangle) mesh*
+
    :doc:`VortexCores <univiz/VortexCores/VortexCores>` (:doc:`UniViz <univiz/index>`) *vortex corelines*
 
    :doc:`VortexCriteria <univiz/VortexCriteria/VortexCriteria>` (:doc:`UniViz <univiz/index>`) *vortex criteria*
@@ -264,6 +270,8 @@ All Modules
 
 **W**
    :doc:`WeldVertices <general/WeldVertices/WeldVertices>` (:doc:`General <general/index>`) *weld vertices and build indexed geometry*
+
+   :doc:`WritePointsCsv <write/WritePointsCsv/WritePointsCsv>` (:doc:`Write <write/index>`) *write coordinates and associated values to CSV files*
 
 
 

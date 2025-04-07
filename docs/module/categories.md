@@ -56,6 +56,12 @@ Generally, they provide output for the same pipeline stage.
 
 
 
+## Write
+
+[](project:#cat-Write) modules store data to disk. They are sinks in the workflow graph.
+
+
+
 ## Information
 
 [](project:#cat-Information) modules are sink modules that provide textual information about visualization objects.

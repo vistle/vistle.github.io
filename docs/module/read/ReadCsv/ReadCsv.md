@@ -78,7 +78,4 @@ Supported delimiters are comma, semicolon and tab. Decimal separators can be poi
 
 ### Often Used With
 
-- [](project:#mod-Color)
-- [](project:#mod-MapDrape)
-- [](project:#mod-IndexManifolds)
-- [](project:#mod-Variant)
+[](project:#mod-Color), [](project:#mod-MapDrape), [](project:#mod-IndexManifolds), [](project:#mod-Variant)

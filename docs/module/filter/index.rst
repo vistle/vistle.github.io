@@ -13,8 +13,6 @@ Filter
 
 
 **C**
-   :doc:`CellSelect <CellSelect/CellSelect>` *filter elements according to mapped data*
-
    :doc:`CellToVert <CellToVert/CellToVert>` *convert cell mapped data to vertice mapped*
 
    :doc:`CellToVertVtkm <CellToVertVtkm/CellToVertVtkm>` *convert cell mapped data to vertice mapped*
@@ -37,11 +35,17 @@ Filter
 
    :doc:`ScalarToVec <ScalarToVec/ScalarToVec>` *combine up to three scalar fields to a vector field*
 
+   :doc:`SelectCells <SelectCells/SelectCells>` *filter elements according to their index*
+
+   :doc:`SelectVertices <SelectVertices/SelectVertices>` *filter vertices according to their index*
+
    :doc:`SplitDimensions <SplitDimensions/SplitDimensions>` *separate grid into 1D, 2D and 3D components*
 
 
 **T**
    :doc:`Threshold <Threshold/Threshold>` *filter elements according to mapped data*
+
+   :doc:`ThresholdVtkm <ThresholdVtkm/ThresholdVtkm>` *remove cells according to a threshold*
 
    :doc:`ToUnstructured <ToUnstructured/ToUnstructured>` *transform structured grids to equivalent unstructured grid*
 
@@ -57,7 +61,6 @@ Filter
    :maxdepth: 1
    :hidden:
 
-   CellSelect <CellSelect/CellSelect.md>
    CellToVert <CellToVert/CellToVert.md>
    CellToVertVtkm <CellToVertVtkm/CellToVertVtkm.md>
    Displace <Displace/Displace.md>
@@ -65,8 +68,11 @@ Filter
    MapDrape <MapDrape/MapDrape.md>
    Sample <Sample/Sample.md>
    ScalarToVec <ScalarToVec/ScalarToVec.md>
+   SelectCells <SelectCells/SelectCells.md>
+   SelectVertices <SelectVertices/SelectVertices.md>
    SplitDimensions <SplitDimensions/SplitDimensions.md>
    Threshold <Threshold/Threshold.md>
+   ThresholdVtkm <ThresholdVtkm/ThresholdVtkm.md>
    ToUnstructured <ToUnstructured/ToUnstructured.md>
    VecToScalar <VecToScalar/VecToScalar.md>
    VertToCellVtkm <VertToCellVtkm/VertToCellVtkm.md>

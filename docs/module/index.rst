@@ -10,6 +10,7 @@ Module Reference
 * :doc:`Geometry - manipulate geometric data <geometry/index>`
 * :doc:`Render - generate pixel images from geometry data <render/index>`
 * :doc:`General - manipulate data at any pipeline stage <general/index>`
+* :doc:`Write - write data to disk <write/index>`
 * :doc:`Information - provide textual metadata <information/index>`
 * :doc:`UniViz - vector field visualization tools <univiz/index>`
 * :doc:`Develop - tools for developers <develop/index>`
@@ -35,6 +36,7 @@ Module Reference
    Geometry <geometry/index.rst>
    Render <render/index.rst>
    General <general/index.rst>
+   Write <write/index.rst>
    Information <information/index.rst>
    UniViz <univiz/index.rst>
    Develop <develop/index.rst>
