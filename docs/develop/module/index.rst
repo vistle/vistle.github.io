@@ -7,5 +7,6 @@ Module Programming
    :maxdepth: 1
    :caption: Creating Modules
 
-   Basics <implementation-basics.md>
+   The Basics <implementation-basics.md>
    Reader Modules <implementation-reader.md>
+   GPU Modules <implementation-gpu.md>
