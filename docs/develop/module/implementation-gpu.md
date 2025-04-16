@@ -376,7 +376,7 @@ make
 
 **Note:** If VTK-m is already installed on your system, which is usually the case if [VTK](https://vtk.org) is installed, Vistle will not compile its own VTK-m, but use the system VTK-m instead. In that case, make sure that the system VTK-m was compiled to use CUDA (or Kokkos), otherwise, the modules will be run on the CPU.
 
-[^vtkm] Bolstad, M., Moreland, K., Pugmire, D., Rogers, D., Lo, L.T., Geveci, B., Childs, H., Rizzi, S.: VTK-m: Visualization for the Exascale Era and Beyond. In: ACM SIGGRAPH 2023 Talks, pp. 1–2 (2023)
+[^vtkm]: Bolstad, M., Moreland, K., Pugmire, D., Rogers, D., Lo, L.T., Geveci, B., Childs, H., Rizzi, S.: VTK-m: Visualization for the Exascale Era and Beyond. In: ACM SIGGRAPH 2023 Talks, pp. 1–2 (2023)
 
-[^vtkmguide] Moreland, K.: The VTK-m User’s Guide. Techreport ORNL/TM-2024/3443, Oak Ridge National Laboratory (2024). [https://gitlab.kitware.com/vtk/vtk-m-user-guide/-/wikis/home](https://gitlab.kitware.com/vtk/vtk-m-user-guide/-/wikis/home)
+[^vtkmguide]: Moreland, K.: The VTK-m User’s Guide. Techreport ORNL/TM-2024/3443, Oak Ridge National Laboratory (2024). [https://gitlab.kitware.com/vtk/vtk-m-user-guide/-/wikis/home](https://gitlab.kitware.com/vtk/vtk-m-user-guide/-/wikis/home)
 
