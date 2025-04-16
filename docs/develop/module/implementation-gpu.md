@@ -2,7 +2,7 @@
 
 This guide explains how to write Vistle modules that can be run on the GPU. It assumes you are familiar with the [basics on how to write a Vistle module](implementation-basics.md).   
 
-Vistle makes use of the portable toolkit [VTK-m](https://m.vtk.org/) which allows running scientific visualization algorithms on various devices, including GPUs, and is designed to keep data transfers between devices at a minimum.
+Vistle makes use of the portable toolkit [VTK-m](https://m.vtk.org/) (Bolstad et al., 2023[^vtkm]) which allows running scientific visualization algorithms on various devices, including GPUs, and is designed to keep data transfers between devices at a minimum.
 
 ## Overview
 - [The VtkmModule Class](#the-vtkmmodule-class)
@@ -28,7 +28,7 @@ The `VtkmModule` constructor, which the derived class should call in its own con
 VtkmModule(const std::string &name, int moduleID, mpi::communicator comm, int numPorts = 1, bool requireMappedData = true);
 ```
 
-By default, a VTK-m module provides of one input port and one output port, but additional ports can be added by specifying the desired number in the base constructor (`numPorts`). Note that all data on the input ports must be defined on the same grid, as the module will throw an error, otherwise.
+By default, a VTK-m module provides one input port and one output port, but additional ports can be added by specifying the desired number in the base constructor (`numPorts`). Note that all data on the input ports must be defined on the same grid, as the module will throw an error, otherwise.
 
 Many VTK-m filters work on data fields, so, by default, a VTK-m module expects the data at the input ports to contain mapped data in addition to a grid and will throw an error if there is none. If desired, the derived class can remove this requirement by setting `requireMappedData` to `false`.
 
@@ -359,7 +359,7 @@ The code above creates the **MyCellToVertVtkm** module which consists of one inp
 
 ## Custom VTK-m Filters
 
-For simplicity, predefined VTK-m filters have been used for the two examples above. Please note, that `VtkmModule` can, of course, also be used to add custom VTK-m filters to Vistle. To learn more about implementing custom VTK-m filters, check out [VTK-m's user guide](https://vtk-m.readthedocs.io/en/v2.2.0/basic-filter-impl.html).
+For simplicity, predefined VTK-m filters have been used for the two examples above. Please note, that `VtkmModule` can, of course, also be used to add custom VTK-m filters to Vistle. To learn more about implementing custom VTK-m filters, check out [VTK-m's user guide](https://vtk-m.readthedocs.io/en/v2.2.0/basic-filter-impl.html) (Moreland, 2024[^vtkmguide]).
 
 ## How to Configure Vistle to Run VTK-m Modules on the GPU
 
@@ -375,4 +375,8 @@ make
 ```
 
 **Note:** If VTK-m is already installed on your system, which is usually the case if [VTK](https://vtk.org) is installed, Vistle will not compile its own VTK-m, but use the system VTK-m instead. In that case, make sure that the system VTK-m was compiled to use CUDA (or Kokkos), otherwise, the modules will be run on the CPU.
+
+[^vtkm] Bolstad, M., Moreland, K., Pugmire, D., Rogers, D., Lo, L.T., Geveci, B., Childs, H., Rizzi, S.: VTK-m: Visualization for the Exascale Era and Beyond. In: ACM SIGGRAPH 2023 Talks, pp. 1–2 (2023)
+
+[^vtkmguide] Moreland, K.: The VTK-m User’s Guide. Techreport ORNL/TM-2024/3443, Oak Ridge National Laboratory (2024). [https://gitlab.kitware.com/vtk/vtk-m-user-guide/-/wikis/home](https://gitlab.kitware.com/vtk/vtk-m-user-guide/-/wikis/home)
 
