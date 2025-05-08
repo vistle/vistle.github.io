@@ -11,5 +11,6 @@ source $VENV/bin/activate
 if [ -n "$*" ]; then
     python -m sphinx "$@"
 else
+    rm -r "$DIR/../html/"
     python -m sphinx $DIR/../docs $DIR/../html
 fi
