@@ -19,7 +19,9 @@ Installation
 Refer to the top level `README.md <https://github.com/vistle/vistle?tab=readme-ov-file#installation>`__ for basic installation instructions.
 
 
-|video| |ihs| |sc14| |itlr|
+|video| |ihs| |sc14|
+
+|itlr| |husavik| |cadiz|
 
 ..
    * :ref:`install-docs`
@@ -85,3 +87,9 @@ Our :doc:`publications <publications/index>` describe the :doc:`architecture <ar
 
 .. |itlr| image:: gallery/vistle-itlr-small.jpg
    :target: gallery/itlr.html
+
+.. |husavik| image:: gallery/vistle-husavik-small.png
+   :target: gallery/husavik.html
+
+.. |cadiz| image:: gallery/vistle-cadiz-small.png
+   :target: gallery/cadiz.html

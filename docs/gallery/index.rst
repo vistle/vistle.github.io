@@ -8,6 +8,8 @@ Gallery
    ihs.rst
    sc14.rst
    itlr.rst
+   husavik.rst
+   cadiz.rst
 
 
 
@@ -23,6 +25,12 @@ Gallery
 .. |itlr| image:: vistle-itlr-small.jpg
    :target: itlr.html
 
+.. |husavik| image:: vistle-husavik-small.png
+   :target: husavik.html
+
+.. |cadiz| image:: vistle-cadiz-small.png
+   :target: cadiz.html
+
 
 |video| "Vistle in a Minute" - a short demonstration of Vistle (`English <http://reserv.at/vistle/vistle_en.m4v>`__, `Deutsch <http://reserv.at/vistle/vistle_de.m4v>`__)
 
@@ -30,4 +38,8 @@ Gallery
 
 |sc14|  Hybrid remote rendering at `SC '14 <http://sc14.supercomputing.org/>`__ in New Orleans on HLRS `visualization cluster <http://hlrs.de/cave/>`__ in Stuttgart
 
-|itlr| Jet break up in non-Newtonian fluid, simulation by `ITLR <https://www.itlr.uni-stuttgart.de/>`_
+|itlr| Jet break up in non-Newtonian fluid, simulation by `ITLR <https://www.itlr.uni-stuttgart.de/>`__
+
+|husavik| The Húsavík-Flatey Fault Zone in North Iceland, courtesy of `ChEESE <https://cheese-coe.eu/publications/dynamic-earthquake-rupture-scenarios-and-physics-based-seismic-hazard-assessment>`__
+
+|cadiz| Simulated tsunami in Cadiz, courtesy of `ChEESE <https://cheese-coe.eu>`__
