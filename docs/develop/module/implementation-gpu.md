@@ -2,55 +2,55 @@
 
 This guide explains how to write Vistle modules that can be run on the GPU. It assumes you are familiar with the [basics on how to write a Vistle module](implementation-basics.md).   
 
-Vistle makes use of the portable toolkit [VTK-m](https://m.vtk.org/) (Bolstad et al., 2023[^vtkm]) which allows running scientific visualization algorithms on various devices, including GPUs, and is designed to keep data transfers between devices at a minimum.
+Vistle makes use of the portable toolkit [Viskores](https://m.vtk.org/). It was originally developped as VTK-m (Bolstad et al., 2023[^vtkm]), and this still shows in many places within Vistle. It allows running scientific visualization algorithms on various devices, including GPUs, and is designed to keep data transfers between devices at a minimum.
 
 ## Overview
 - [The VtkmModule Class](#the-vtkmmodule-class)
 - [Example 1: Basic Usage](#example-1-basic-usage)
 - [Example 2: Extending the Core Functionality](#example-2-extending-the-core-functionality)
-- [Custom VTK-m Filters](#custom-vtk-m-filters)
-- [How to Configure Vistle to Run VTK-m Modules on the GPU](#how-to-configure-vistle-to-run-vtk-m-modules-on-the-gpu)
+- [Custom Viskores Filters](#custom-vtk-m-filters)
+- [How to Configure Vistle to Run Viskores Modules on the GPU](#how-to-configure-vistle-to-run-vtk-m-modules-on-the-gpu)
 
 
 ## The VtkmModule Class
 
-The class `VtkmModule` is the base class for VTK-m modules in Vistle. It is designed to make adding new VTK-m algorithms, so-called [filters](https://vtk-m.readthedocs.io/en/v2.2.0/provided-filters.html), as simple as possible by providing core functionality for handling the input data, passing it to the filter implemented by the derived class, and writing the filter result to the output ports. At the same time, it is meant to be flexible, allowing the derived class to customize and extend these processes, if desired.
+The class `VtkmModule` is the base class for Viskores modules in Vistle. It is designed to make adding new Viskores algorithms, so-called [filters](https://viskores.readthedocs.io/en/stable/provided-filters.html), as simple as possible by providing core functionality for handling the input data, passing it to the filter implemented by the derived class, and writing the filter result to the output ports. At the same time, it is meant to be flexible, allowing the derived class to customize and extend these processes, if desired.
 
-In order to implement a module wrapping a filter provided by or relying on VTK-m, one implements a class deriving from `VtkmModule`.
+In order to implement a module wrapping a filter provided by or relying on Viskores, one implements a class deriving from `VtkmModule`.
 
-**Note:** The class `VtkmModule` derives from `Module`, i.e.,  many of its features, like the functionality for adding module parameters, can be used by VTK-m modules, too.
+**Note:** The class `VtkmModule` derives from `Module`, i.e.,  many of its features, like the functionality for adding module parameters, can be used by Viskores modules, too.
 
 ### The Constructor
 
-The `VtkmModule` constructor, which the derived class should call in its own constructor, creates the input and output ports of the VTK-m module.
+The `VtkmModule` constructor, which the derived class should call in its own constructor, creates the input and output ports of the Viskores module.
 
 ```cpp
 VtkmModule(const std::string &name, int moduleID, mpi::communicator comm, int numPorts = 1, bool requireMappedData = true);
 ```
 
-By default, a VTK-m module provides one input port and one output port, but additional ports can be added by specifying the desired number in the base constructor (`numPorts`). Note that all data on the input ports must be defined on the same grid, as the module will throw an error, otherwise.
+By default, a Viskores module provides one input port and one output port, but additional ports can be added by specifying the desired number in the base constructor (`numPorts`). Note that all data on the input ports must be defined on the same grid, as the module will throw an error, otherwise.
 
-Many VTK-m filters work on data fields, so, by default, a VTK-m module expects the data at the input ports to contain mapped data in addition to a grid and will throw an error if there is none. If desired, the derived class can remove this requirement by setting `requireMappedData` to `false`.
+Many Viskores filters work on data fields, so, by default, a Viskores module expects the data at the input ports to contain mapped data in addition to a grid and will throw an error if there is none. If desired, the derived class can remove this requirement by setting `requireMappedData` to `false`.
 
-### Defining the VTK-m Filter
+### Defining the Viskores Filter
 
-The `setUpFilter` method, which must be implemented by the derived class, creates, sets up and returns the desired VTK-m filter that will be called on the input data.  
+The `setUpFilter` method, which must be implemented by the derived class, creates, sets up and returns the desired Viskores filter that will be called on the input data.  
 
 ```cpp
 virtual std::unique_ptr<vtkm::filter::Filter> setUpFilter() const = 0;
 ```
   
-If the VTK-m module has multiple input ports, the filter will only be applied to the data on the first input port, i.e., the filter's active field is set to the field on the first port. The fields on the remaining ports will be mapped to the resulting output grid.
+If the Viskores module has multiple input ports, the filter will only be applied to the data on the first input port, i.e., the filter's active field is set to the field on the first port. The fields on the remaining ports will be mapped to the resulting output grid.
 
 ### Preparing the Input Data
 
-The `prepareInputGrid` transforms the input grid into a VTK-m cellset and adds it to the VTK-m dataset `dataset`. Similarly, `prepareOutputGrid`, which is called once per field, transforms the input fields into VTK-m array handles and adds them to `dataset` as well. The filter will, subsequently, be applied to `dataset`.
+The `prepareInputGrid` transforms the input grid into a Viskores cellset and adds it to the Viskores dataset `dataset`. Similarly, `prepareOutputGrid`, which is called once per field, transforms the input fields into Viskores array handles and adds them to `dataset` as well. The filter will, subsequently, be applied to `dataset`.
 ```cpp
 virtual ModuleStatusPtr prepareInputGrid(const vistle::Object::const_ptr &grid, vtkm::cont::DataSet &dataset) const;
 virtual ModuleStatusPtr prepareInputField(const vistle::Port *port, const vistle::Object::const_ptr &grid, const vistle::DataBase::const_ptr &field, std::string &fieldName, vtkm::cont::DataSet &dataset) const;
 ```
 
-A VTK-m module only performs very basic checks on the input ports while reading in the data, i.e., in the `readInPorts` method: It ensures each input port contains data as long as its corresponding output port is connected. Additionally, it makes sure that at least one input grid provides an input grid and that all data fields are defined on the same grid.
+A Viskores module only performs very basic checks on the input ports while reading in the data, i.e., in the `readInPorts` method: It ensures each input port contains data as long as its corresponding output port is connected. Additionally, it makes sure that at least one input grid provides an input grid and that all data fields are defined on the same grid.
 Some filters might, however, require additional checks on the input data. These can be added by overriding `prepareInputGrid` and/or `prepareInputField` as needed.
 
 ### Preparing the Output Data
@@ -62,11 +62,11 @@ virtual vistle::Object::ptr prepareOutputGrid(const vtkm::cont::DataSet &dataset
 virtual vistle::DataBase::ptr prepareOutputField(const vtkm::cont::DataSet &dataset, const vistle::Object::const_ptr &inputGrid, const vistle::DataBase::const_ptr &inputField, const std::string &fieldName, const vistle::Object::ptr &outputGrid) const;
 ```
 
-By default, the VTK-m module simply copies the attributes from the input grid and fields to the output grid and fields, respectively. It also sets the output field's grid to the output grid. To account for possible attribute changes after applying the filter, e.g., when the filter changes the field's mapping from element- to cell-based, the derived class can override these two methods as needed.
+By default, the Viskores module simply copies the attributes from the input grid and fields to the output grid and fields, respectively. It also sets the output field's grid to the output grid. To account for possible attribute changes after applying the filter, e.g., when the filter changes the field's mapping from element- to cell-based, the derived class can override these two methods as needed.
 
 ## Example 1: Basic usage
 
-This first example illustrates how to use the base functionalities of the `VtkmModule` class. It will create a VTK-m module **MyIsosurfaceVtkm** which calls [VTK-m's Contour filter](https://vtk-m.readthedocs.io/en/v2.2.0/provided-filters.html#contour) to generate an isosurface.
+This first example illustrates how to use the base functionalities of the `VtkmModule` class. It will create a Viskores module **MyIsosurfaceVtkm** which calls [Viskores's Contour filter](https://viskores.readthedocs.io/en/stable/provided-filters.html#contour) to generate an isosurface.
 
 
 ### The Header
@@ -92,7 +92,7 @@ private:
 #endif
 ```
 
-As the goal is to use VTK-m to run the algorithm on the GPU, the module inherits from the `VtkmModule` class which is defined in `vistle/vtkm/vtkm_module.h`:
+As the goal is to use Viskores to run the algorithm on the GPU, the module inherits from the `VtkmModule` class which is defined in `vistle/vtkm/vtkm_module.h`:
 
 ```cpp
 class MyIsosurfaceVtkm: public VtkmModule {
@@ -138,7 +138,7 @@ std::unique_ptr<vtkm::filter::Filter> MyIsosurfaceVtkm::setUpFilter() const
 
 ```
 
-Like any Vistle module, VTK-m modules must also call the `MODULE_MAIN` function to make sure it is integrated correctly into the software:
+Like any Vistle module, Viskores modules must also call the `MODULE_MAIN` function to make sure it is integrated correctly into the software:
 ```cpp
 MODULE_MAIN(MyIsosurfaceVtkm)
 ```
@@ -168,9 +168,9 @@ std::unique_ptr<vtkm::filter::Filter> MyIsosurfaceVtkm::setUpFilter() const
 
 ### Adding the Module to Vistle
 
-Adding a VTK-m module to Vistle is very similar to adding a regular module to Vistle. In the module's `CMakeLists.txt`, we call the `add_vtkm_module` target which makes sure the correct VTK-m libraries are linked in addition to all necessary Vistle libraries:
+Adding a Viskores module to Vistle is very similar to adding a regular module to Vistle. In the module's `CMakeLists.txt`, we call the `add_vtkm_module` target which makes sure the correct Viskores libraries are linked in addition to all necessary Vistle libraries:
 ```cmake
-add_vtkm_module(MyIsosurfaceVtkm "Basic GPU module using VTK-m's Contour filter" MyIsosurfaceVtkm.h MyIsosurfaceVtkm.cpp)
+add_vtkm_module(MyIsosurfaceVtkm "Basic GPU module using Viskores's Contour filter" MyIsosurfaceVtkm.h MyIsosurfaceVtkm.cpp)
 ```
 
 Then, we must choose the module category which fits best, and add the new subdirectory to the corresponding `CMakeLists.txt` file:
@@ -180,7 +180,7 @@ add_subdirectory(MyIsosurfaceVtkm)
 
 ### The Result
 
-The code above produces a Vistle module **MyIsosurfaceVtkm** which consists of two input and output ports as well as a float parameter to set the isovalue and which calculates the isosurface using VTK-m's Contour filter.
+The code above produces a Vistle module **MyIsosurfaceVtkm** which consists of two input and output ports as well as a float parameter to set the isovalue and which calculates the isosurface using Viskores's Contour filter.
 
 The data field on the first input port is used to calculate the isosurface. In the following example workflow, **MyIsosurfaceVtkm** reads in the data field named *scalar* and uses it to create an isosurface of isovalue 1.1:
 
@@ -195,7 +195,7 @@ The resulting geometry remains the same because the data on the first input port
 
 ## Example 2: Extending the Core Functionality
 
-In this second example, the derived class will change the methods for handling its input and output data. The new class **MyCertToVellVtkm** will call the [Point Average filter](https://vtk-m.readthedocs.io/en/v2.2.0/provided-filters.html#point-average) to transform a cell-based data field into an equivalent vertex-based field. It, however, only applies the filter if the input data is cell-based. If not, it simply adds the input field to the output port.
+In this second example, the derived class will change the methods for handling its input and output data. The new class **MyCertToVellVtkm** will call the [Point Average filter](https://viskores.readthedocs.io/en/stable/provided-filters.html#point-average) to transform a cell-based data field into an equivalent vertex-based field. It, however, only applies the filter if the input data is cell-based. If not, it simply adds the input field to the output port.
 
 ### The Header File
 
@@ -291,7 +291,7 @@ DataBase::ptr MyCellToVertVtkm::prepareOutputField(const vtkm::cont::DataSet &da
 }
 ```
 
-Like any VTK-m module, **MyCellToVertVtkm** must define and set up its desired filter in the `setUpFilter()` method:
+Like any Viskores module, **MyCellToVertVtkm** must define and set up its desired filter in the `setUpFilter()` method:
 
 ```cpp
 std::unique_ptr<vtkm::filter::Filter> MyCellToVertVtkm::setUpFilter() const
@@ -300,7 +300,7 @@ std::unique_ptr<vtkm::filter::Filter> MyCellToVertVtkm::setUpFilter() const
 }
 ```
 
-Before transforming the input field into a VTK-m field, **MyCellToVertVtkm** first determines the field's mapping using the `guessMapping` method. If the field is element-based (=cell-based), the `prepareInputField` method of the base class is called to add the field to the VTK-m dataset that will be passed to the VTK-m filter. Otherwise, nothing happens, only an informational message will be printed to the GUI.
+Before transforming the input field into a Viskores field, **MyCellToVertVtkm** first determines the field's mapping using the `guessMapping` method. If the field is element-based (=cell-based), the `prepareInputField` method of the base class is called to add the field to the Viskores dataset that will be passed to the Viskores filter. Otherwise, nothing happens, only an informational message will be printed to the GUI.
 
 ```cpp
 ModuleStatusPtr MyCellToVertVtkm::prepareInputField(const Port *port, const Object::const_ptr &grid,
@@ -357,24 +357,24 @@ By default, the output field's grid is the output grid. Since we skipped calcula
 The code above creates the **MyCellToVertVtkm** module which consists of one input and one output port. It checks if it makes sense to apply the Point Average filter to the input field, i.e., it checks if the input field is cell-based. If so, the filter is applied. If not, an informational message is printed to the Vistle Console:
 ![](myCellToVertVtkm_gui.png)
 
-## Custom VTK-m Filters
+## Custom Viskores Filters
 
-For simplicity, predefined VTK-m filters have been used for the two examples above. Please note, that `VtkmModule` can, of course, also be used to add custom VTK-m filters to Vistle. To learn more about implementing custom VTK-m filters, check out [VTK-m's user guide](https://vtk-m.readthedocs.io/en/v2.2.0/basic-filter-impl.html) (Moreland, 2024[^vtkmguide]).
+For simplicity, predefined Viskores filters have been used for the two examples above. Please note, that `VtkmModule` can, of course, also be used to add custom Viskores filters to Vistle. To learn more about implementing custom Viskores filters, check out [Viskores's user guide](https://viskores.readthedocs.io/en/stable/basic-filter-impl.html) (Moreland, 2024[^vtkmguide]).
 
-## How to Configure Vistle to Run VTK-m Modules on the GPU
+## How to Configure Vistle to Run Viskores Modules on the GPU
 
-VTK-m is an open-source software that can be obtained through [Kitware's Gitlab](https://gitlab.kitware.com/vtk/vtk-m). It was added as submodule to the Vistle repository, so that Vistle can handle configuring VTK-m appropriately for the user.
+Viskores is an open-source software that can be obtained through [GitHub](https://github.com/Viskores/viskores). It was added as submodule to the Vistle repository, so that Vistle can handle configuring Viskores appropriately for the user.
 
-Only the CUDA version of VTK-m is supported by Vistle, although, we are currently working on adding support for the Kokkos version as well. 
+Only the CUDA version of Viskores is supported by Vistle, although, we are currently working on adding support for the Kokkos version as well. 
 
-To compile Vistle with the CUDA version of VTK-m, run the following commands from your build directory:
+To compile Vistle with the CUDA version of Viskores, run the following commands from your build directory:
 
 ```bash
 cmake -DVISTLE_USE_CUDA=ON ..
 make
 ```
 
-**Note:** If VTK-m is already installed on your system, which is usually the case if [VTK](https://vtk.org) is installed, Vistle will not compile its own VTK-m, but use the system VTK-m instead. In that case, make sure that the system VTK-m was compiled to use CUDA (or Kokkos), otherwise, the modules will be run on the CPU.
+**Note:** If Viskores is already installed on your system, which is usually the case if [VTK](https://vtk.org) is installed, Vistle will not compile its own Viskores, but use the system Viskores instead. In that case, make sure that the system Viskores was compiled to use CUDA (or Kokkos), otherwise, the modules will be run on the CPU.
 
 [^vtkm]: Bolstad, M., Moreland, K., Pugmire, D., Rogers, D., Lo, L.T., Geveci, B., Childs, H., Rizzi, S.: VTK-m: Visualization for the Exascale Era and Beyond. In: ACM SIGGRAPH 2023 Talks, pp. 1–2 (2023). [https://doi.org/10.1145/3587421.3595466](https://doi.org/10.1145/3587421.3595466)
 
