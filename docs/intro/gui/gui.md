@@ -16,7 +16,7 @@ Modules in the workflow can be configured using the Module Parameter area. This 
 Module Parameters contain general settings depending on the type of module (e.g. reader specific) as well as module dependent settings.
 
 ## Vistle Console
-The Vistle console prints messages from modules and other information. Besides, it can be used to enter Python commands such as to spawn or link modules.
+The Vistle console prints messages from modules and other information. Besides, it can be used to enter [Python](../scripting/scripting.md) commands such as to spawn or link modules.
 
 
 ## Menu Bar
