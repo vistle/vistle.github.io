@@ -1,47 +1,69 @@
-# A Simple CFD Example #
+# A Simple CFD Example
 
-In this section, we will learn basic visualization techniques for scalar and vector fields by working with a small CFD data set.
+In this section, we will study basic visualization techniques for scalar and vector fields by working with a small CFD data set.
 
-## The Data ##
+## The Data
 
-The data that we will work with is the same as used in the COVISE tutorial. It is distributed in the [COVISE source repository](https://github.com/hlrs-vis/covise/) and comes with every COVISE installation in the subdirectory `.../share/covise/example-data/tutorial`. You can also get it by downloading the raw contents of the files in [this directory](https://github.com/hlrs-vis/covise/tree/master/share/covise/example-data/tutorial) from GitHub. It is stored in COVISE format. It shows the results of a flow simulation in a channel with two inlets and contains scalar data fields for pressure (`tiny_p.covise`), temperature (`tiny_te.covise`) and viscosity (`tiny_vis.covise`) as well as the velocity vector field (`tiny_ve.covise`) on an unstructured grid (`tiny_geo.covise`).
+The data that we will work with is the same as used in the COVISE tutorial. It is distributed in the [COVISE source repository](https://github.com/hlrs-vis/covise/) and comes with every COVISE installation in the subdirectory `.../share/covise/example-data/tutorial`. You can also get it by downloading the raw contents of the files in [this directory](https://github.com/hlrs-vis/covise/tree/master/share/covise/example-data/tutorial) from GitHub. It is provided in native COVISE format. It shows the results of a flow simulation in a channel with two inlets and contains scalar data fields for pressure (`tiny_p.covise`), temperature (`tiny_te.covise`) and viscosity (`tiny_vis.covise`) as well as the velocity vector field (`tiny_ve.covise`) on an unstructured grid (`tiny_geo.covise`).
 
-## and ##
+### Reading the Data
 
-Reading of data in COVISE format is accomplished with the *ReadCovise* or *ReadCoviseDirectory* modules. Both can read up to three fields mapped onto the same grid. The first can handle grid and field data at arbitrary locations in the file system, whereas the latter requires that grid and field data reside in the same directory -- with the advantage of a more comfortable user interface for selecting the fields to be read.
+Reading of data in COVISE format is accomplished with the [](project:#mod-ReadCovise) or [](project:#mod-ReadCoviseDirectory) modules. Both can read up to three fields mapped onto the same grid. The first can handle grid and field data at arbitrary locations in the file system, whereas the latter requires that grid and field data reside in the same directory -- with the advantage of a more comfortable user interface for selecting the fields to be read.
 
-To start, drag *ReadCoviseDirectory* from the module library to the empty canvas in the center  of the graphical user interface. This will start the module and show a representation of it as a turquoise box.
+To start, drag *ReadCoviseDirectory* from the module library to the empty canvas in the center of the graphical user interface. This will start the module and show a representation of it as a turquoise box.
+Then continue with selecting the directory where to find the data. This is a [parameter](../gui/gui.md#Parameters) of the module.
+Select the module by clicking on the turquoise box. A pink outline indicates that this module is selected.
+The user interface will show the parameters of this module in the [parameter area](../gui/gui.md#module-browser-and-parameters).
+Make sure that only this module is selected -- otherwise the GUI will not enable the module parameters view.
 
-## Showing the Geometry ##
+In the area labeled *Parameters: ReadCoviseDirectory* find the line for the *directory* parameter and click on the folder icon.
+This will bring up a file browser window.
+Use it to navigate to the directory where you have the COVISE source code. From there, continue to `share/covise/example-data/tutorial` and click on *Choose*.
+The module will search the directory for files with the extension `.covise` and will present them in the parameter combo boxes (drop down lists) for *grid*, *normals*, and the data fields *field0*, *field1*, ...
 
-### Find the Extents of the Data Domain -- BoundingBox  ###
+At this stage, we are only interested in the geometric structure of the computational domain.
+So it is sufficient to select `tiny_geo` on the *grid* parameter.
 
-The *BoundingBox* module takes its geometry input and finds global minimum and maximum values for its coordinates. The result of this process can be seen in its parameter window as the values of the `min` and `max` parameters. And of course, it can compute a tight axis-aligned cuboid around the domain of the data. This is helpful as a rough guide to the interesting areas of the space, the box can provide visual clues that help with orientation in 3D space, and the numerical values can be used to provide input for modules requiring coordinates as parameter input.
+[Workflow 1](vistle:///open#tutorial/read-geometry) shows the module with the selected directory and the grid file.
 
-### Show the Boundary of the Data Domain -- DomainSurface ###
+## Examining the Geometry
 
-*DomainSurface*
+### Find the Extents of the Geometry Domain
 
-### Show the Tesselation of the Data Domain -- ShowGrid ###
+The [](project:#mod-BoundingBox) module takes its geometry input and finds global minimum and maximum values for its coordinates. The result of this process can be seen in its parameter window as the values of the `min` and `max` parameters. And of course, it can compute a tight axis-aligned cuboid around the domain of the data. This surrounding box can guide you to the interesting areas of space, it can provide visual clues that help with orientation in 3D space.
+The numerical values can be used to provide input for modules requiring coordinates as parameter input.
 
-*ShowGrid*
+[Workflow 2](vistle:///open#tutorial/geometry-bounds) shows how to compute a geometry bounding box.
 
-### Clip Geometry at a Plane -- CutGeometry ###
+### Show the Boundary of the Geometry Domain
 
-*CutGeometry*
+The shape of the computational domain can be visualized with the [](project:#mod-DomainSurface) module. It will show the outer surface of the geometry in a light gray color.
+It also provides a second output port providing lines showing the edges of the domain.
+Currently, this is only a rough approximation, as only those edges that do not neighbor with other cells are shown.
 
-## Visualizing Scalar Fields ##
+[Workflow 3](vistle:///open#tutorial/geometry-domain) shows how to compute the geometric domain.
 
-CuttingSurface
+### Show the Tesselation of the Geometry Domain
 
-IsoSurface
+[](project:#mod-ShowGrid)
 
-Color
+### Clip Geometry at a Plane
 
-## Visualizing Vector Fields ##
-
-Tracer
-
-VectorField
+[](project:#mod-CutGeometry)
+[](project:#mod-ClipVtkm)
 
 
+## Visualizing Scalar Fields
+
+[](project:#mod-CuttingSurface)
+
+[](project:#mod-IsoSurface)
+
+[](project:#mod-Color)
+
+
+## Visualizing Vector Fields
+
+[](project:#mod-Tracer)
+
+[](project:#mod-VectorField)
