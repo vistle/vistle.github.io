@@ -9,9 +9,9 @@ To set this up create the pipeline as described in the following picture and cha
 
 
 <figure float="left">
-    <img src="Isosurface_workflow.png" width="200"/>
+    <a href="vistle:///open#module/develop/Gendat/Isosurface"><img src="Isosurface_workflow.png" width="200" /></a>
     <img src="Isosurface_result.png" width="300"/>
-    <figcaption>Fig.1 Isosurface workflow (left) and expected result (right).</figcaption>
+    <figcaption>Fig.1 <a href="vistle:///open#module/develop/Gendat/Isosurface">Isosurface</a> workflow (left) and expected result (right).</figcaption>
 </figure>
 Alternatively load vistle/examples/gendat-isosurface.vsl.
 

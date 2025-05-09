@@ -38,7 +38,7 @@ Outputs data on the grid where only the selected element is higlighted.
 ## Usage Examples
 
 <figure float="left">
-    <img src="GridElementStatistics_workflow.png" width="200"/>
+    <a href="vistle:///open#module/develop/GridElementStatistics/GridElementStatistics"><img src="GridElementStatistics_workflow.png" width="200" /></a>
     <img src="GridElementStatistics_result.png" width="300"/>
-    <figcaption>Fig.1 GridElementStatistics workflow (left) and expected result (right).</figcaption>
+    <figcaption>Fig.1 <a href="vistle:///open#module/develop/GridElementStatistics/GridElementStatistics">GridElementStatistics</a> workflow (left) and expected result (right).</figcaption>
 </figure>
