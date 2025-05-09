@@ -46,6 +46,13 @@ myst_enable_extensions = [
     'colon_fence',
 ]
 myst_all_links_external=False
+myst_url_schemes = {
+    "http": None,
+    "https": None,
+    "vistle": None,
+    #"vistle": "https://raw.githubusercontent.com/vistle/vistle/refs/heads/master/example/{{query}}.vsl",
+    "doi": "https://doi.org/{{path}}",
+}
 myst_heading_anchors = 3
 
 # some meta data
