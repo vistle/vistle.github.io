@@ -11,7 +11,7 @@ Introduction
    Working with the GUI <gui/use.md>
    COVER Renderer <render/cover.md>
    A CFD Example <example/cfd.md>
-   Example: Visualizing OpenFoam Simulation Results <example/openfoam.md>
+   Example: Visualizing OpenFOAM Simulation Results <example/openfoam.md>
    Parallel Visualization <parallel/parallel.md>
    Distributed Workflows <distributed/distributed.md>
    Remote Visualization <distributed/remoterendering.md>
