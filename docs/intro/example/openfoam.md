@@ -85,7 +85,6 @@ The [](project:#mod-BoundingBox) module (see 3 in figure above) can be used to v
 ## Visualizing Scalar Data Fields
 In this section we will discuss a typical visualization workflow for scalar data fields, such as the pressure fields in the sample dataset:
 
-<!--  p-Cuttingsurface: show how to change parameters of Cuttingsurface (in Module Browser and in Cover wiht pick interactor, this is easier with a BoundingBox) <-- also show how to add/adjust colormap! -->
 ![](openfoam/openfoam_scalar_color.png)
 
 Each data field, be it scalar or vector, can be mapped to color with the [](project:#mod-Color) module. When connecting its second port to `COVER`, the desired color map (in this example 'Plasma') will automatically be applied to each rendered object which contains (part of) the scalar field.  
@@ -105,6 +104,22 @@ The pick interactor (see 2 in figure above) can be enabled by clicking the `Vist
 
 ## Visualizing Vector Data Fields
 
+One way to visualize vector data field, such as the velocity field U, is by using streamlines which can be generated with the [](project:#mod-Tracer) module. To make the resulting streamlines more easily visible, the output of the `Tracer` module is typically passed to the [](project:#mod-Thicken) and [](project:#mod-ToTriangles) modules before rendering:
+
+![](openfoam/openfoam_streamlines_default.png)
+
+As we can see in the figure above, the default tube width of the `Thicken` module is too large for the dataset at hand. We can adjust the width by changing the module parameters:
+
+![](openfoam/openfoam_streamlines_thicken.png)
+
+In the `Tracer`'s module parameter menu, we can increase the number of generated stream lines with the `no startp`-parameter and their length through the `trace len`-parameter. The initial position of the stream lines can be defined though different geometries, such as lines, planes or cylinders. These geometries can either be defined by the `startpoint1`-, `startpoint2`- and `direction`-parameters or by a pick interactor:
+
+![](openfoam/openfoam_streamlines_tracer_pickinteractor.png)
+
+How to enable pick interactors is described in the [Visualizing Scalar Data Fields](#visualizing-scalar-data-fields) section above.
+
 ## Adding 3D Models to the Visualization
-<!-- Tracer + Thicken + ToTriangles and all the parameters to make it look nice ':D   -->
+
+Adding context to simulation data results helps make the visualization easier to understand. 3D models, e.g., created in [Blender](https://www.blender.org/) or [3ds Max](https://www.autodesk.com/products/3ds-max/free-trial) can be loaded into COVER using either the [](project:#mod-LoadCover) or [](project:#mod-ReadModel) module. Simply specify the path to the model in the module parameters:
+![](openfoam/openfoam_loadCover.png)
 
