@@ -3,12 +3,14 @@
 In this step-by-step tutorial you will learn how to visualize a sample CFD dataset created with [OpenFOAM](https://www.openfoam.com/).
 
 ## Overview
-- [Generating the Sample Dataset with OpenFOAM](#generating-the-sample-dataset-with-openfoam)
-- [Reading in the Simulation Results with `ReadFoam`](#reading-in-the-simulation-results-with-readfoam)
-- [Visualizing the Grid](#visualizing-the-grid)
-- [Visualizing a Scalar Data Field](#visualizing-a-scalar-data-field)
-- [Visualizing a Vector Data Field](#visualizing-a-vector-data-field)
-- [Adding Context to the Visualization](#adding-context-to-the-visualization)
+- [Example: Visualizing OpenFOAM Simulation Results](#example-visualizing-openfoam-simulation-results)
+  - [Overview](#overview)
+  - [Generating the Sample Dataset with OpenFOAM](#generating-the-sample-dataset-with-openfoam)
+  - [Reading in the Simulation Results with `ReadFoam`](#reading-in-the-simulation-results-with-readfoam)
+  - [Visualizing the Grid](#visualizing-the-grid)
+  - [Visualizing a Scalar Data Field](#visualizing-a-scalar-data-field)
+  - [Visualizing a Vector Data Field](#visualizing-a-vector-data-field)
+  - [Adding Context to the Visualization](#adding-context-to-the-visualization)
 
 ## Generating the Sample Dataset with OpenFOAM
 
@@ -51,7 +53,7 @@ vistle
 
 **Tip:** You can save the workflow anytime with the `File` &rarr; `Save`  buttons or  by using `CTRL` + `S`.
 
-Locate the `ReadFoam` module in the module browser and drag and drop it into the workflow area on the left:
+Locate the [ReadFoam](project:#mod-ReadFoam) module in the module browser and drag and drop it into the workflow area on the left:
 ![](openfoam/openfoam_select_readfoam.png)
 
 **Tip:** You can search for modules by name with the `Filter` search bar at the top of the module browser.
@@ -125,4 +127,3 @@ How to enable pick interactors is described in the [Visualizing a Scalar Data Fi
 
 Adding 3D models,  e.g., of the involved objects or the environment, to simulation data results helps make the visualization easier to understand. 3D models, e.g., created in modelling software like [Blender](https://www.blender.org/) or [3ds Max](https://www.autodesk.com/products/3ds-max/free-trial) can be loaded into COVER using either the [](project:#mod-LoadCover) or [](project:#mod-ReadModel) module. Simply specify the path to the model in the module parameters:
 ![](openfoam/openfoam_loadCover.png)
-

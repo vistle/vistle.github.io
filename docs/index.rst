@@ -52,6 +52,7 @@ Our :doc:`publications <publications/index>` describe the :doc:`architecture <ar
 
    Quickstart <quickstart/quickstart.md>
    Introduction <intro/index.rst>
+   Advanced Topics  <advanced/index.rst>
    Architecture <architecture/index.md>
    Module Reference <module/index.rst>
 
