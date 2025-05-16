@@ -6,13 +6,13 @@ This will bring up a file browser dialog for locating an existing Vistle workflo
 
 You can execute the workflow by choosing the *Execute* from the *Modules* menu. This is also triggered by the *Reload* shortcut. This starts execution of the workflow by executing all source modules, i.e. modules that have no input connection. Execution of downstream modules with connected inputs is triggered as soon as input arrives at a port. Modules that are still executing are shown with a highlighted border.
 
-Now we start by loading an existing workflow: type `vistle example/airbag.vsl` into your command interpreter, while the root directory of the Vistle source code repository is the current directory. A new Vistle session will be started and the graphical user interface will appear, showing a simple workflow, as seen in figure 1.
+Now we start by loading an [existing workflow](vistle:///open#example/airbag.vsl): type `vistle example/airbag.vsl` into your command interpreter, while the root directory of the Vistle source code repository is the current directory. A new Vistle session will be started and the graphical user interface will appear, showing a simple workflow, as seen in the following figure.
 
 ![Figure 1: Graphical Vistle user interface with airbag workflow loaded.](vistle-gui-annotated.png)
 
-At the top of the window, there is a menubar and a toolbar for shortcuts to often used menu items, at the bottom a statusbar, which will occasionally display progress information. The left area of the window is the workflow area, where the visualization pipeline is displayed graphically. At the right of the window, there is the module library, which contains all the available visualization modules. The bottom pane is the Vistle console, where you can enter Python commands and where modules can display messages.
+At the top of the window, there is a menu bar and a toolbar for shortcuts to often used menu items, at the bottom a status bar, which will occasionally display progress information. The left area of the window is the workflow area, where the visualization pipeline is displayed graphically. At the right of the window, there is the module library, which contains all the available visualization modules. The bottom pane is the Vistle console, where you can enter Python commands and where modules can display messages.
 
-Modules encapsulate processing steps of the workflow. They are shown as turquoise boxes. The output that they produce is sent to output ports, which can be connected to input ports of other modules. Output ports are shown as yellow squares at the bottom of the module box, input ports as red squares at the top. Connections between ports are depicted as lines. The workflow in this example includes two modules, *ReadCovise* for reading in the data, and the renderer *COVER* for displaying the data. The first output port of the reader is connected to the renderer input. As the renderer is a separate application, it will open an additional window. The next section will describe how to use it.
+Modules encapsulate processing steps of the workflow. They are shown as turquoise boxes. The output that they produce is sent to output ports, which can be connected to input ports of other modules. Output ports are shown as yellow squares at the bottom of the module box, input ports as red squares at the top. Connections between ports are depicted as lines. The workflow in this example includes two modules, [ReadCovise](project:#mod-ReadCovise) for reading in the data, and the renderer [COVER](project:#mod-COVER) for displaying the data. The first output port of the reader is connected to the renderer input. As the renderer is a separate application, it will open an additional window. The [next section](../render/cover.md) will describe how to use it.
 
 ## Creating and Modifying Workflows ##
 
@@ -24,7 +24,7 @@ Modules can be added to the workflow by dragging a template from the module libr
 
 ### Connecting Modules ###
 
-Modules need to be connected in order to be useful. You can establish links from output ports to input ports of other modules by "dragging" the mouse from the source port to the destination port, i.e. by pressing the mouse button on the source port and while still pressing on it moving to the destination, where you release the mouse button.
+Modules need to be connected in order to be provided data to work on. You can establish links from output ports to input ports of other modules by "dragging" the mouse from the source port to the destination port. Do so by pressing the mouse button on the source port and while still pressing on it moving to the destination, where you release the mouse button.
 
 A connection is represented as a line. A double click on this line will remove that connection.
 
