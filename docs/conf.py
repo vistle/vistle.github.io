@@ -54,6 +54,7 @@ myst_url_schemes = {
     "doi": "https://doi.org/{{path}}",
 }
 myst_heading_anchors = 3
+suppress_warnings = ["myst.header"]
 
 # some meta data
 language = "en"
