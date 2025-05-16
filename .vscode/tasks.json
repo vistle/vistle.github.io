@@ -4,8 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "isDefault": true,
-            "label": "Run shinx-build",
+            "label": "Run sphinx-build",
             "type": "shell",
             "command": "./sphinx/build.sh",
             "group": {
