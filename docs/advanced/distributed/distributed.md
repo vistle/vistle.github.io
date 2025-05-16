@@ -11,6 +11,6 @@ In such a scenario, modules running on different cluster can be connected just a
 
 ### Setting Up a Distributed Session ###
 
-The first instance of Vistle that is started includes the primary hub. All other instances/hubs have to connect to this instance. If establishing TCP connections is hindered by e.g. packet filters/firewalls or network address translation (NAT), then you should start the primary instance on a host that every other participating system can connect to. The primary system will show on which port it can be reached. The default is `31093`. Secondary instances can be spawned with
+The first instance of Vistle that is started includes the primary hub. All other instances/hubs have to connect to this instance. If establishing TCP connections is hindered by e.g. packet filters/firewalls or network address translation (NAT), then you should start the primary instance on a host that every other participating system can connect to. The primary system will show on which port it can be reached. The default is `31093`. Secondary instances can be spawned with this command:
 
-    `vistle primary.host.name 31093.`
+    vistle -c primary.host.name:31093
