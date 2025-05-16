@@ -2,15 +2,15 @@
 
 This guide explains how to write Vistle modules that can be run on the GPU. It assumes you are familiar with the [basics on how to write a Vistle module](implementation-basics.md).   
 
-Vistle makes use of the portable toolkit [Viskores](https://m.vtk.org/). It was originally developped as VTK-m (Bolstad et al., 2023[^vtkm]), and this still shows in many places within Vistle. It allows running scientific visualization algorithms on various devices, including GPUs, and is designed to keep data transfers between devices at a minimum.
+Vistle makes use of the portable toolkit [Viskores](https://m.vtk.org/). It was originally developed as VTK-m (Bolstad et al., 2023[^vtkm]), and this still shows in many places within Vistle. It allows running scientific visualization algorithms on various devices, including GPUs, and is designed to keep data transfers between devices at a minimum.
 
 ## Overview
+- [How to Write a GPU Module](#how-to-write-a-gpu-module)
 - [The VtkmModule Class](#the-vtkmmodule-class)
-- [Example 1: Basic Usage](#example-1-basic-usage)
+- [Example 1: Basic usage](#example-1-basic-usage)
 - [Example 2: Extending the Core Functionality](#example-2-extending-the-core-functionality)
-- [How to Configure Vistle to Run Viskores Modules on the GPU](#how-to-configure-vistle-to-run-vtk-m-modules-on-the-gpu)
-  - [Custom Viskores Filters](#custom-viskores-filters)
-
+- [Custom Viskores Filters](#custom-viskores-filters)
+- [How to Configure Vistle to Run Viskores Modules on the GPU](#how-to-configure-vistle-to-run-viskores-modules-on-the-gpu)
 
 ## The VtkmModule Class
 
@@ -379,4 +379,3 @@ make
 [^vtkm]: Bolstad, M., Moreland, K., Pugmire, D., Rogers, D., Lo, L.T., Geveci, B., Childs, H., Rizzi, S.: VTK-m: Visualization for the Exascale Era and Beyond. In: ACM SIGGRAPH 2023 Talks, pp. 1–2 (2023). [https://doi.org/10.1145/3587421.3595466](https://doi.org/10.1145/3587421.3595466)
 
 [^vtkmguide]: Moreland, K.: The VTK-m User’s Guide. Techreport ORNL/TM-2024/3443, Oak Ridge National Laboratory (2024). [https://gitlab.kitware.com/vtk/vtk-m-user-guide/-/wikis/home](https://gitlab.kitware.com/vtk/vtk-m-user-guide/-/wikis/home)
-
