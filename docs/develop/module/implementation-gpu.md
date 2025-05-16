@@ -8,8 +8,8 @@ Vistle makes use of the portable toolkit [Viskores](https://m.vtk.org/). It was 
 - [The VtkmModule Class](#the-vtkmmodule-class)
 - [Example 1: Basic Usage](#example-1-basic-usage)
 - [Example 2: Extending the Core Functionality](#example-2-extending-the-core-functionality)
-- [Custom Viskores Filters](#custom-vtk-m-filters)
 - [How to Configure Vistle to Run Viskores Modules on the GPU](#how-to-configure-vistle-to-run-vtk-m-modules-on-the-gpu)
+  - [Custom Viskores Filters](#custom-viskores-filters)
 
 
 ## The VtkmModule Class
