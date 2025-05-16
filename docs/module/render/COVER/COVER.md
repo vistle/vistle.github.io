@@ -2,6 +2,11 @@
 
 # COVER
 VR renderer for immersive environments
+## More Information
+
+This module will create a new desktop window, but can also be configured to output to multi-wall immersive projections driven by a cluster.
+Almost any visualization workflow will require an instance of COVER.
+Please consult the [introductory documentation](/intro/render/cover.md) for a usage guide.
 
 <svg width="39.0em" height="5.6em" >
 <style>.text { font: normal 1.0em sans-serif;}tspan{ font: italic 1.0em sans-serif;}.moduleName{ font: bold 1.0em sans-serif;}</style>
