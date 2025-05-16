@@ -47,7 +47,7 @@ Develop
 
 
 **P**
-   :doc:`PrintAttributes <PrintAttributes/PrintAttributes>` *print object attributes*
+   :doc:`PrintObjects <PrintObjects/PrintObjects>` *print object attributes*
 
 
 **R**
@@ -92,7 +92,7 @@ Develop
    MiniSim <MiniSim/MiniSim.md>
    MpiInfo <MpiInfo/MpiInfo.md>
    ObjectStatistics <ObjectStatistics/ObjectStatistics.md>
-   PrintAttributes <PrintAttributes/PrintAttributes.md>
+   PrintObjects <PrintObjects/PrintObjects.md>
    Replicate <Replicate/Replicate.md>
    ShowCelltree <ShowCelltree/ShowCelltree.md>
    ShowGridIndex <ShowGridIndex/ShowGridIndex.md>

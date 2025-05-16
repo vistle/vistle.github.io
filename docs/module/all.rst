@@ -149,9 +149,9 @@ All Modules
 
 
 **P**
-   :doc:`PrintAttributes <develop/PrintAttributes/PrintAttributes>` (:doc:`Develop <develop/index>`) *print object attributes*
-
    :doc:`PrintMetaData <information/PrintMetaData/PrintMetaData>` (:doc:`Information <information/index>`) *print meta data*
+
+   :doc:`PrintObjects <develop/PrintObjects/PrintObjects>` (:doc:`Develop <develop/index>`) *print object attributes*
 
 
 **R**
