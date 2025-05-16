@@ -4,6 +4,7 @@ Advanced Topics
 .. toctree::
    :maxdepth: 1
 
+   Acceleration Hardware & GPGPU <accel/viskores.md>
    Parallel Visualization <parallel/parallel.md>
    Distributed Workflows <distributed/distributed.md>
    Remote Visualization <distributed/remoterendering.md>
