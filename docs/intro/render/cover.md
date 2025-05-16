@@ -31,3 +31,5 @@ running COVER and can be started using the command:
 You can also start COVER without Vistle, by typing:
 
     opencover
+
+Much of the information in the [COVER section](https://fs.hlrs.de/projects/covise/doc/html/usersguide/cover/cover.html) of the [COVISE User's Guide](https://fs.hlrs.de/projects/covise/doc/pdf/usersguide.pdf) is still valid.

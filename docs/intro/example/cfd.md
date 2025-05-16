@@ -11,7 +11,7 @@ The data that we will work with is the same as used in the [COVISE tutorial](htt
 Reading of data in COVISE format is accomplished with the [](project:#mod-ReadCovise) or [](project:#mod-ReadCoviseDirectory) modules. Both can read up to three fields mapped onto the same grid. The first can handle grid and field data at arbitrary locations in the filesystem. The latter requires that grid and field data reside in the same directory – with the advantage of a more comfortable user interface for selecting the fields to be read.
 
 To start, drag *ReadCoviseDirectory* from the module library to the empty canvas in the center of the graphical user interface. This will start the module and show a representation of it as a turquoise box.
-Then continue with selecting the directory where to find the data. This is a [parameter](../gui/gui.md#Parameters) of the module.
+Then continue with selecting the directory where to find the data. This is a [parameter](../gui/gui.md#module-browser-and-parameters) of the module.
 Select the module by clicking on the turquoise box. A pink outline indicates that this module is selected.
 The user interface will show the parameters of this module in the [parameter area](../gui/gui.md#module-browser-and-parameters).
 Make sure that only this module is selected -- otherwise the GUI will not enable the module parameters view.
@@ -23,17 +23,21 @@ The module will search the directory for files with the extension `.covise` and 
 
 At this stage, we are only interested in the geometric structure of the computational domain.
 So it is sufficient to select `tiny_geo` on the *grid* parameter.
+Execute the workflow by double-clicking on the module or by clicking on the *gears* icon in the toolbar.
 
 [Workflow geo-read](vistle:///open#workflow/tutorial/geo-read) shows the module with the selected directory and the grid file.
 
 ## Examining the Geometry
+
+Here we will study techniques to visualize the geometry of the computational domain.
+This will also help you to provide context for the visualization of the scalar and vector fields.
 
 ### Find the Extents of the Geometry Domain
 
 The [](project:#mod-BoundingBox) module takes its geometry input and finds global minimum and maximum values for its coordinates. The result of this process can be seen in its parameter window as the values of the `min` and `max` parameters. And of course, it can compute a tight axis-aligned cuboid around the domain of the data. This surrounding box can guide you to the interesting areas of space, it can provide visual clues that help with orientation in 3D space.
 The numerical values can be used to provide input for modules requiring coordinates as parameter input.
 
-This bounding box can also be inspected visually by loading it into the [COVER](project:#mod-COVER) renderer. This will open up another window. Connect the output of *BoundingBox* to the input of *COVER* and rerun the workflow.
+This bounding box can also be inspected visually by loading it into the [](project:#mod-COVER) renderer. This will open up another window. Connect the output of *BoundingBox* to the input of *COVER* and rerun the workflow.
 You can bring the bounding box into view by clicking on the *View All* icon in the toolbar right of the animation controls in the *COVER* window. This will show the bounding box in a light gray color.
 In order to get an idea of the location and size of the bounding box, you can enable a unit sized coordinate system in the renderer by enabling it with the *View Options* -> *Show axis* in the menu of the *COVER* window.
 The coordinate system will be shown in red, green, and blue colors for the *x*, *y*, and *z* axes, respectively.
@@ -71,11 +75,35 @@ Restrict the cells to show by selecting only specific types of cells or by suppl
 [Workflow geo-grid](vistle:///open#workflow/tutorial/geo-grid) illustrates how to show a subset of the grid's cells.
 
 
-### Clip Geometry at a Plane
+### Clip Geometry at a Plane or Basic Shapes
 
-[](project:#mod-CutGeometry)
-[](project:#mod-ClipVtkm)
+You might want to see the inside of the computational domain, but still retain parts of the outer surface.
+In order to do so, you need to cut the geometry open.
+Vistle provides two modules for this purpose: the [](project:#mod-CutGeometry) and the [](project:#mod-ClipVtkm) module.
+They perform similar tasks, but are subject to different limitations.
 
+* The *CutGeometry* module is able to process triangular and polygonal meshes and will ignore any mapped data (e.g. scalar or vector fields) on the geometry.
+
+* The *ClipVtkm* module is able to process unstructured grids and will also clip mapped data. It is not able to work on polygonal (or general polyhedral) meshes.
+As it is based on the [Viskores](../../advanced/accel/viskores.md) library, it is able to process large datasets in parallel.
+
+We build on the workflow from the previous section. We want to show a bit of the outer shell of the domain, but also get a view inside.
+So we add the add the *CutGeometry* module and connect its input to the first output of *DomainSurface* and its output to *COVER*.
+You can adjust the location of the clip by switching to the *COVER* window and enabling the *Pick interactor* in the *Vistle* -> *CutGeometry_?* menu.
+This will bring up a 3D manipulator in the *COVER* window.
+Drag with the mouse on the sphere to move the plane and change its orientation by moving the tip of the arrow.
+When satisfied, disable it again by deselecting the *Pick interactor* in the menu.
+
+We also want to show cell structure within a spherical subset of the domain.
+To do so, we add the *ClipVtkm* module and connect its input to the output of *ReadCoviseDirectory* and its output to the input of the existing *ShowGrid* module.
+This will cut the direct connection between *ReadCoviseDirectory* and *ShowGrid*.
+Make sure to enable visualization of all grid cells supplied to *ShowGrid* by changing its `cells` parameter to `all`.
+Now continue to adjust the location of the clip by switching to the *COVER* window and enabling the *Pick interactor* in the *Vistle* -> *ClipVtkm_?* menu.
+Also use this menu in order to change the *Surface style* from *Plane* to *Sphere*.
+Also check the *Invert* menu entry to show the inside of the sphere.
+You can adjust the sphere location by moving the sphere manipulator with the cross hairs in the *COVER* window and its radius by dragging the other sphere manipulator.
+
+[Workflow geo-cut](vistle:///open#workflow/tutorial/geo-cut) illustrates the results of the geometry clipping operations.
 
 ## Visualizing Scalar Fields
 
