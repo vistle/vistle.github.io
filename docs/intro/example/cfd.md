@@ -24,7 +24,7 @@ The module will search the directory for files with the extension `.covise` and 
 At this stage, we are only interested in the geometric structure of the computational domain.
 So it is sufficient to select `tiny_geo` on the *grid* parameter.
 
-[Workflow read-geo](vistle:///open#workflow/tutorial/read-geo) shows the module with the selected directory and the grid file.
+[Workflow geo-read](vistle:///open#workflow/tutorial/geo-read) shows the module with the selected directory and the grid file.
 
 ## Examining the Geometry
 
@@ -48,12 +48,28 @@ If you are interested what triangles make up this surface, you can show visualiz
 
 It also provides a second output port providing lines showing the edges of the domain.
 Currently, this is only a rough approximation, as only those edges that do not neighbor with other cells are shown.
+Connect also this second output to the input of *COVER* and execute the workflow again.
 
 [Workflow geo-surface](vistle:///open#workflow/tutorial/geo-surface) shows how to compute the geometric domain.
 
 ### Show the Tessellation of the Geometry Domain
 
-[](project:#mod-ShowGrid)
+Often, the computational domain is discretized by subdividing it into cells.
+The module [ShowGrid](project:#mod-ShowGrid) can be used to visualize this subdivision.
+Different to using *DomainSurface* together with the *Wireframe* draw style, this will show you what goes on inside the domain.
+
+In order to peek into the domain, it is necessary to disconnect the first output of *DomainSurface* from the input of *COVER*.
+Do so by double-clicking on the line representing this connection.
+Then connect the output of *ShowGrid* to the input of *COVER* and execute the workflow again.
+
+:::note
+Showing the outline of a large number of cells can be very taxing on the graphics hardware,
+especially for NVIDIA gaming cards.
+Restrict the cells to show by selecting only specific types of cells or by supplying a list of cell IDs.
+:::
+
+[Workflow geo-grid](vistle:///open#workflow/tutorial/geo-grid) illustrates how to show a subset of the grid's cells.
+
 
 ### Clip Geometry at a Plane
 
