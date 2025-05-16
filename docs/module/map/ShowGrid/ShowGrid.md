@@ -21,6 +21,7 @@ show outlines of grid cells
 ## Parameters
 |name|description|type|
 |-|-|-|
+|cells|show cells with these indices|String|
 |cell_scale|factor for scaling cells around their center|Float|
 |normalcells|Show normal (non ghost) cells|Int|
 |ghostcells|Show ghost cells|Int|
