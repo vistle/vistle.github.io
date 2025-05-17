@@ -105,20 +105,84 @@ You can adjust the sphere location by moving the sphere manipulator with the cro
 
 [Workflow geo-cut](vistle:///open#workflow/tutorial/geo-cut) illustrates the results of the geometry clipping operations.
 
+
 ## Visualizing Scalar Fields
 
-[](project:#mod-CuttingSurface)
+Up to now, we have only looked at the geometry input for the simulation.
+Let's continue with the scalar fields.
 
-[](project:#mod-IsoSurface)
+### Read in an Additional Scalar Field
 
-[](project:#mod-Color)
+In order to visualize the scalar fields, we need to read them in first.
+We continue where we left off in the previous section.
+We remove the the *ClipVtkm* branch from the workflow by selecting both the *ClipVtkm* and *ShowGrid* modules.
+From the context menu on either of the selected modules, invoke *Delete Selected*.
+Then we configure the *ReadCoviseDirectory* module to also read in the pressure field:
+select the *ReadCoviseDirectory* module and select `tiny_p` from the list of available fields in the *field0* parameter.
+
+[Workflow press-read](vistle:///open#workflow/tutorial/press-read) adds reading the pressure field.
+
+### Explore Scalar Fields via Level Sets with the *IsoSurface* Module
+
+The [](project:#mod-IsoSurface) module can be used to extract level sets from the scalar fields.
+It will create a surface mesh that represents the points in the scalar field where a given value is found.
+This technique is often used to visualize the shape of a scalar field.
+We are going to apply it to the pressure field.
+Add an *IsoSurface* module to the workflow and connect its first input to the second output (providing the pressure field) of *ReadCoviseDirectory*.
+Then connect its output to the input of *COVER*.
+Executing the workflow will show the surface of the pressure field in the *COVER* window.
+You can adjust the isovalue by selecting the *IsoSurface* module and changing the `isovalue` parameter in its parameter window.
+You can also use the slider in the *Vistle* -> *IsoSurface_?* menu to adjust the isovalue interactively.
+Another way to adjust the isovalue is to enable the *Pick interactor* from this menu: now you can drag the sphere to choose a point that provides the isovalue.
+For now, this isosurface will always be shown in a light gray color.
+
+[Workflow press-iso](vistle:///open#workflow/tutorial/press-iso) explores the pressure field via level sets.
+
+### Provide a Color Mapping/Transfer Function for the Scalar Field
+
+Then add a [](project:#mod-Color) module to the workflow and connect its input to the second output of *ReadCoviseDirectory*.
+This forwards the pressure field to the *Color* module, so that it can detect its minimum and maximum values.
+This will be used to provide a color mapping (i.e. transfer function) for the pressure field on its second output.
+Connect this to the *COVER* renderer.
+Now, the *Vistle* -> *Color* menu in the *COVER* window will have an entry for this color map.
+You can interact with the color map either via this *Color_?* sub-menu or via the *Color* module's parameter dialog in the user interface.
+You can make display a color legend by checking the *Show* entry in the *Color_?* sub-menu.
+You will notice that this *Color* module carries the label `tiny_p`.
+This means that this color map is used for all subsequent modules that are connected to the second output of *ReadCoviseDirectory*.
+
+Let's revisit our isosurface. What about coloring it according to the pressure field so that its color changes whenever we change the value?
+For that purpose, the *IsoSurface* module provides a second input t˙hat provides a scalar field to map onto the isosurface.
+So we connect the second output of *ReadCoviseDirectory* another time to *IsoSurface*, but now to its second input.
+You could use the *Pick interactor* to adjust the isovalue interactively...
+
+[Workflow press-color](vistle:///open#workflow/tutorial/press-color) explores the pressure field via level sets.
+
+### Slice a Scalar Field with *CuttingSurface*
+
+We finish exploring the pressure field by slicing it with the [](project:#mod-CuttingSurface) module.
+Add a *CuttingSurface* module to the workflow and connect its input to the second output of *ReadCoviseDirectory*.
+Then connect its output to the input of *COVER*.
+Execute the workflow and you will see a plane slicing through the pressure field.
+You can adjust the position of the plane by selecting the *CuttingSurface* module and changing the `point` (a point on the plane) and `vertex` parameters in its parameter window.
+Or you can use the *Vistle* -> *CuttingSurface_?* menu in the *COVER* window to adjust the position of the plane interactively by enabling the corresponding *Pick interactor*.
+Now let's make use of the color mapping.
+
+[Workflow press-cut](vistle:///open#workflow/tutorial/press-cut) shows the pressure field sliced with a plane.
 
 
 ## Visualizing Vector Fields
 
-[](project:#mod-Tracer)
+### Read in an Additional Vector Field
 
+### Slice a Vector Field with *CuttingSurface*
+
+### Attach Arrow Glyphs to Sliced Vector Field with *VectorField*
 [](project:#mod-VectorField)
+[](project:#mod-Thicken)
+[](project:#mod-ToTriangles)
+
+### Streamlines and Particle Traces with *Tracer*
+[](project:#mod-Tracer)
 
 
 ## Bringing it all together
