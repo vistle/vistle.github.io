@@ -29,6 +29,7 @@ project_copyright = f'2012 - %Y, {author}'
 # ones.
 extensions = [
     'myst_parser',
+    'sphinx_subfigure',
     #'sphinxcontrib.mermaid',
     #'sphinx.ext.autosectionlabel',
     'sphinx.ext.githubpages',
@@ -44,6 +45,8 @@ extensions = [
 
 myst_enable_extensions = [
     'colon_fence',
+    'attrs_inline',
+    'html_image',
 ]
 myst_all_links_external=False
 myst_url_schemes = {

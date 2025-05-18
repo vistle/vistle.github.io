@@ -42,6 +42,9 @@ You can bring the bounding box into view by clicking on the *View All* icon in t
 In order to get an idea of the location and size of the bounding box, you can enable a unit sized coordinate system in the renderer by enabling it with the *View Options* -> *Show axis* in the menu of the *COVER* window.
 The coordinate system will be shown in red, green, and blue colors for the *x*, *y*, and *z* axes, respectively.
 
+:::{subfigure} A
+![](cfd/geo-bounds-workflow.png)
+:::
 [Workflow geo-bounds](vistle:///open#workflow/tutorial/geo-bounds) shows how to compute and display geometry bounding box.
 
 
@@ -54,7 +57,12 @@ It also provides a second output port providing lines showing the edges of the d
 Currently, this is only a rough approximation, as only those edges that do not neighbor with other cells are shown.
 Connect also this second output to the input of *COVER* and execute the workflow again.
 
+:::{subfigure} ABBB
+![](cfd/geo-surface-workflow.png)
+![](cfd/geo-surface-vis.png)
+:::
 [Workflow geo-surface](vistle:///open#workflow/tutorial/geo-surface) shows how to compute the geometric domain.
+
 
 ### Show the Tessellation of the Geometry Domain
 
@@ -72,6 +80,10 @@ especially for NVIDIA gaming cards.
 Restrict the cells to show by selecting only specific types of cells or by supplying a list of cell IDs.
 :::
 
+:::{subfigure} ABBB
+![](cfd/geo-grid-workflow.png)
+![](cfd/geo-grid-vis.png)
+:::
 [Workflow geo-grid](vistle:///open#workflow/tutorial/geo-grid) illustrates how to show a subset of the grid's cells.
 
 
@@ -103,6 +115,10 @@ Also use this menu in order to change the *Surface style* from *Plane* to *Spher
 Also check the *Invert* menu entry to show the inside of the sphere.
 You can adjust the sphere location by moving the sphere manipulator with the cross hairs in the *COVER* window and its radius by dragging the other sphere manipulator.
 
+:::{subfigure} ABBB
+![](cfd/geo-cut-workflow.png)
+![](cfd/geo-cut-vis.png)
+:::
 [Workflow geo-cut](vistle:///open#workflow/tutorial/geo-cut) illustrates the results of the geometry clipping operations.
 
 
@@ -120,6 +136,10 @@ From the context menu on either of the selected modules, invoke *Delete Selected
 Then we configure the *ReadCoviseDirectory* module to also read in the pressure field:
 select the *ReadCoviseDirectory* module and select `tiny_p` from the list of available fields in the *field0* parameter.
 
+:::{subfigure} ABBB
+![](cfd/press-read-workflow.png)
+![](cfd/press-read-vis.png)
+:::
 [Workflow press-read](vistle:///open#workflow/tutorial/press-read) adds reading the pressure field.
 
 ### Explore Scalar Fields via Level Sets with the *IsoSurface* Module
@@ -136,6 +156,10 @@ You can also use the slider in the *Vistle* -> *IsoSurface_?* menu to adjust the
 Another way to adjust the isovalue is to enable the *Pick interactor* from this menu: now you can drag the sphere to choose a point that provides the isovalue.
 For now, this isosurface will always be shown in a light gray color.
 
+:::{subfigure} ABBB
+![](cfd/press-iso-workflow.png)
+![](cfd/press-iso-vis.png)
+:::
 [Workflow press-iso](vistle:///open#workflow/tutorial/press-iso) explores the pressure field via level sets.
 
 ### Provide a Color Mapping/Transfer Function for the Scalar Field
@@ -155,6 +179,10 @@ For that purpose, the *IsoSurface* module provides a second input t˙hat provide
 So we connect the second output of *ReadCoviseDirectory* another time to *IsoSurface*, but now to its second input.
 You could use the *Pick interactor* to adjust the isovalue interactively...
 
+:::{subfigure} ABBB
+![](cfd/press-color-workflow.png)
+![](cfd/press-color-vis.png)
+:::
 [Workflow press-color](vistle:///open#workflow/tutorial/press-color) explores the pressure field via level sets.
 
 ### Slice a Scalar Field with *CuttingSurface*
@@ -167,6 +195,10 @@ You can adjust the position of the plane by selecting the *CuttingSurface* modul
 Or you can use the *Vistle* -> *CuttingSurface_?* menu in the *COVER* window to adjust the position of the plane interactively by enabling the corresponding *Pick interactor*.
 Now let's make use of the color mapping.
 
+:::{subfigure} ABBB
+![](cfd/press-cut-workflow.png)
+![](cfd/press-cut-vis.png)
+:::
 [Workflow press-cut](vistle:///open#workflow/tutorial/press-cut) shows the pressure field sliced with a plane.
 
 
