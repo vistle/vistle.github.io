@@ -1,5 +1,9 @@
 # Notable Differences to COVISE
 
+:::{note}
+If you do not know COVISE, you can skip this section.
+:::
+
 This lists the most important differences between [COVISE](https://hlrs.de/covise) and Vistle – in order to get users of COVISE started with Vistle quickly.
 While Vistle provides more powerful parallel and distributed processing capabilities, it tries to hide this complexity from the user.
 Because of this, the workflow editor and the modules can be used in a similar way as in COVISE.
