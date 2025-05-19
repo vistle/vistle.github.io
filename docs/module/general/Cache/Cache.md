@@ -66,10 +66,12 @@ cache input objects
 |step|step width when reading from disk|Int|
 |start|start step|Int|
 |stop|stop step|Int|
-|field_compression|compression mode for data fields (Uncompressed, Predict, Zfp, SZ)|Int|
+|field_compression|compression mode for data fields (Uncompressed, Predict, Zfp, SZ, BigWhoop)|Int|
 |zfp_rate|ZFP fixed compression rate|Float|
 |zfp_precision|ZFP fixed precision|Int|
 |zfp_accuracy|ZFP compression error tolerance|Float|
+|bigWhoop_nPar|BigWhoop number of independent parameters|Int|
+|bigWhoop_rate|BigWhoop compression rate|Float|
 |archive_compression|compression mode for archives (CompressionNone, CompressionLz4, CompressionZstd)|Int|
 |archive_compression_speed|speed parameter of compression algorithm|Int|
 |reorder|reorder timesteps|Int|
