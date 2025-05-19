@@ -51,6 +51,7 @@ Our :doc:`publications <publications/index>` describe the :doc:`architecture <ar
    :caption: User Documentation
 
    Quickstart <quickstart/quickstart.md>
+   Illustrated Examples <example/index.rst>
    Introduction <intro/index.rst>
    Advanced Topics  <advanced/index.rst>
    Architecture <architecture/index.md>

@@ -18,10 +18,10 @@ The data that we will work with is the same as used in the [COVISE tutorial](htt
 Reading of data in COVISE format is accomplished with the [](project:#mod-ReadCovise) or [](project:#mod-ReadCoviseDirectory) modules. Both can read up to three fields mapped onto the same grid. The first can handle grid and field data at arbitrary locations in the filesystem. The latter requires that grid and field data reside in the same directory – with the advantage of a more comfortable user interface for selecting the fields to be read.
 
 To start, drag *ReadCoviseDirectory* from the module library to the empty canvas in the center of the graphical user interface. This will start the module and show a representation of it as a turquoise box.
-Then continue with selecting the directory where to find the data. This is a [parameter](../gui/gui.md#module-browser-and-parameters) of the module.
+Then continue with selecting the directory where to find the data. This is a [parameter](../intro/gui/gui.md#module-browser-and-parameters) of the module.
 Select the module by clicking on the turquoise box. A pink outline indicates that this module is selected.
-The user interface will show the parameters of this module in the [parameter area](../gui/gui.md#module-browser-and-parameters).
-Make sure that only this module is selected -- otherwise the GUI will not enable the module parameters view.
+The user interface will show the parameters of this module in the [parameter area](../intro/gui/gui.md#module-browser-and-parameters).
+Make sure that only this module is selected – otherwise the GUI will not enable the module parameters view.
 
 In the area labeled *Parameters: ReadCoviseDirectory* find the line for the *directory* parameter and click on the folder icon.
 This will bring up a file browser window.
@@ -104,7 +104,7 @@ They perform similar tasks, but are subject to different limitations.
 * The *CutGeometry* module is able to process triangular and polygonal meshes and will ignore any mapped data (e.g. scalar or vector fields) on the geometry.
 
 * The *ClipVtkm* module is able to process unstructured grids and will also clip mapped data. It is not able to work on polygonal (or general polyhedral) meshes.
-As it is based on the [Viskores](../../advanced/accel/viskores.md) library, it is able to process large datasets in parallel.
+As it is based on the [Viskores](../advanced/accel/viskores.md) library, it is able to process large datasets in parallel.
 
 We build on the workflow from the previous section. We want to show a bit of the outer shell of the domain, but also get a view inside.
 So we add the add the *CutGeometry* module and connect its input to the first output of *DomainSurface* and its output to *COVER*.
@@ -386,5 +386,5 @@ So enabling one of the *Velocity* variants will disable the other one.
 
 ## How to Proceed
 
-Explore the [other available modules](../../module/index) in the module library and try them out.
-And if you cannot find what you are looking for, you might want to consider [implementing your own modules](../../develop/module/implementation-basics.md).
+Explore the [other available modules](../module/index) in the module library and try them out.
+And if you cannot find what you are looking for, you might want to consider [implementing your own modules](../develop/module/implementation-basics.md), especially for [importing your own file format](../develop/module/implementation-reader.md).
