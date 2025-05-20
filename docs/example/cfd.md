@@ -1,4 +1,4 @@
-# A Simple CFD Example
+# A Tiny CFD Case
 
 In this section, we will study basic visualization techniques for scalar and vector fields by working with a small CFD data set.
 
