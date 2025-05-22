@@ -10,7 +10,7 @@ extract surface at constant height
 <title>data_in</title></rect>
 <rect x="0.7em" y="0.7999999999999998em" width="0.03333333333333333em" height="2.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="0.7em" y="0.7999999999999998em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
-<text x="1.9em" y="0.8999999999999998em" class="text" >input gird or geometry with scalar data<tspan> (data_in)</tspan></text>
+<text x="1.9em" y="0.8999999999999998em" class="text" >input grid or geometry with scalar data<tspan> (data_in)</tspan></text>
 <rect x="1.4em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
 <title>mapdata_in</title></rect>
 <rect x="1.9em" y="1.7999999999999998em" width="0.03333333333333333em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
