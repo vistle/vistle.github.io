@@ -36,7 +36,7 @@ There are interactors for manipulating positions, and locations of planes, spher
 For instance, you can modify the plane position of a [CuttingSurface](project:#mod-CuttingSurface) module slicing through the data by dragging the spherical position manipulator.
 Dragging the arrow tip, allows to modify the plane normal.
 
-# Tablet User Interface
+### Tablet User Interface
 
 Further, COVER comes along with a tablet user interface (*TabletUI*), which allows the user to adjust
 many other parameters and in many cases offers more detailed settings. The *TabletUI* attaches to a
@@ -44,7 +44,7 @@ running COVER and can be started using the command:
 
     tabletUI
 
-# Plug-Ins
+### Plug-Ins
 
 COVER can be extended with plug-ins. Many of these add additional entries to the menu bar.
 Some plug-ins can only be controlled from the 3D menus, others even require the use of the *TabletUI*.
