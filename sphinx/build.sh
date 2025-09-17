@@ -2,6 +2,7 @@
 
 DIR=$(dirname "$0")
 VENV=$DIR/venv
+export UV_VENV_CLEAR=1
 uv venv $VENV
 #VIRTUAL_ENV=$VENV uv --preview pip install .[docs,pandas,flask,fastapi,rdflib,sphinx]
 export VIRTUAL_ENV=$VENV
