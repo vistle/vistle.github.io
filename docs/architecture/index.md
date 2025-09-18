@@ -30,7 +30,7 @@ as far as possible for minimizing data transfer and I/O.
 
 A Vistle work flow consists of several processing modules,
 each of which is a parallel MPI program that uses OpenMP within nodes.
-Shared memory is used for transfering data between modules within a single node,
+Shared memory is used for transferring data between modules within a single node,
 MPI within a cluster, TCP across clusters.
 
 ## Related Work
@@ -51,7 +51,7 @@ Vistle is designed as a successor to [COVISE](https://www.hlrs.de/covise) (Wiers
 Already COVISE implements a fully distributed visualization pipeline:
 modules running on arbitrary systems can be chained together in any order.
 Each module is mapped to a separate operating system process.
-Data objects to be transfered to other modules are created in shared memory.
+Data objects to be transferred to other modules are created in shared memory.
 They are transferred as needed to other systems transparently to the module programmer.
 Because of its multi-process architecture, task parallelism is inherent to the system.
 The most significant short-coming is the lack of data-parallelism in distributed memory systems.
@@ -88,7 +88,7 @@ stages of the pipeline without requiring a multi-thread aware MPI implementation
 
 This mode of operation is selected at compile-time by enabling the
 CMake option `VISTLE_MULTI_PROCESS`.
-On systems where the VR renderer OpenCOVER is required, this mode has to be used,
+On systems where the VR renderer [OpenCOVER](project:#mod-COVER) is required, this mode has to be used,
 as it is not possible to run more than one instance of OpenCOVER within one address space.
 
 
@@ -97,7 +97,7 @@ Alternatively, Vistle can be configured to use a single MPI process by disabling
 the CMake option `VISTLE_MULTI_PROCESS`.
 As modules execute simultaneously on dedicated threads,
 this requires an MPI implementation that supports `MPI_THREAD_MULTIPLE`.
-This is the only mode of operation possible on
+This is the only mode of operation that was possible on
 [Hazel Hen](https://www.hlrs.de/systems/cray-xc40-hazel-hen/), the Cray XC40 system at HLRS.
 
 ### Additional Parallelism
@@ -206,7 +206,7 @@ In order to avoid synchronization overhead,
 MPI communication is only possible if a module explicitly opts in to
 parallel invocation of `compute()` on all ranks.
 If only a final reduction operation has to be performed after all
-blocks of a data set have been processed, a `reduce()` method can be
+blocks of a dataset have been processed, a `reduce()` method can be
 implemented by modules.
 Compared to parallel invocation of `compute()`, this has lower
 synchronization overhead.
@@ -227,7 +227,7 @@ simple collaboration.
 Graphical and command line/scripting user interfaces can be mixed at will.
 Their state always remains synchronized.
 
-Graphical UIs provide an explicit representation of data flow: this makes the
+[Graphical UIs](../intro/gui/gui.md) provide an explicit representation of data flow: this makes the
 configured visualization pipeline easy to understand.
 
 ![Graphical user interface for Vistle](vistle-gui.png)<br>
@@ -238,17 +238,17 @@ the right part shows the parameters of the selected module.*
 Vistle is geared towards immersive virtual environments, where low latency is
 very important.
 In order to allow for using the COVISE VR render system
-[OpenCOVER](https://www.hlrs.de/opencover) also with Vistle,
+[OpenCOVER](project:#mod-COVER) also with Vistle,
 it was refactored so that visualization systems can be coupled via plug-ins.
 Visualization parameters such as positioning of cutting planes, iso values and seed points for streamlines
 can be manipulated from within the virtual environment.
 Changes in classification of scalar values are visible instantaneously.
-Large data sets can be displayed with sort-last parallel rendering and depth
+Large datasets can be displayed with sort-last parallel rendering and depth
 compositing implemented using IceT (Moreland et al., 2011[^icet]).
 To facilitate access to remote HPC resources, a combination of local and
 parallel remote rendering called remote hybrid rendering (Wagner et al., 2012[^hybrid-remote])
 is available to decouple interaction from remote rendering.
-There is also the ray caster DisCOVERay based on [Embree](http://embree.org)
+There is also the ray caster [DisCOVERay](project:#mod-DisCOVERay) based on [Embree](http://embree.org)
 (Wald et al., 2014[^embree]) running entirely on the CPU,
 which enables access to remote resources without GPUs.
 
@@ -258,7 +258,7 @@ the simulation of a pump turbine.
 The simulation was conducted by the
 [Institute of Fluid Mechanics and Hydraulic Machinery](https://www.ihs.uni-stuttgart.de)
 at the University of Stuttgart with [OpenFOAM](https://openfoam.org) on 128 processors.
-Accordingly, the data set was decomposed into 128 blocks.
+Accordingly, the dataset was decomposed into 128 blocks.
 This also limits the amount of parallelism that can be reached.
 These figures show runtime and parallel efficiency.
 Isosurface extraction is interactive at rates of more than 20/s
@@ -283,14 +283,14 @@ actively used, as Vistle's modular design requires only a small component for
 interfacing with the visualization tool to remain in memory all the time.
 
 ## Current Status and Future Work
-The next mile stones that we aim to achieve are to
+The next milestones that we aim to achieve are to
 couple the system to OpenFOAM.
 Additionally, the scalability of the system will be improved by making better
 use of OpenMP and acceleration hardware.
 
 
 ## Acknowledgments
-This work has been supported in part by the CRESTA project that has received
+This work has been supported in part by the [CRESTA](http://www.cresta-project.eu/index.html) project that has received
 funding from the European Community’s Seventh Framework Programme
 (ICT-2011.9.13).
 
@@ -310,4 +310,3 @@ funding from the European Community’s Seventh Framework Programme
 [^coupling]: Whitlock, B., Favre, J.M., Meredith, J.S.: Parallel in situ coupling of simulation with a fully featured visualization system. In: EGPGV, pp. 101–109, April 2011
 [^covise]: Wierse, A., Lang, U., Rühle, R.: A system architecture for data-oriented visualization. In: Lee, J.P., Grinstein, Georges G. (eds.) Visualization-WS 1993. LNCS, vol. 871, pp. 148–159. Springer, Heidelberg (1994).
 [^embree]: Wald, I., Woop, S., Benthin, C., Johnson, G. S., Ernst, M.: Embree: a kernel framework for efficient CPU ray tracing, ACM Transactions on Graphics (2014)
-
