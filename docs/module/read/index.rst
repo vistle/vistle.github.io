@@ -35,6 +35,8 @@ Read
 
    :doc:`ReadIagTecplot <ReadIagTecplot/ReadIagTecplot>` *read IAG Tecplot data (hexahedra only)*
 
+   :doc:`ReadSubzoneTecplot <ReadSubzoneTecplot/ReadSubzoneTecplot>` *read Sz Tecplot data *
+
    :doc:`ReadIewMatlabCsvExports <ReadIewMatlabCsvExports/ReadIewMatlabCsvExports>` *read a line or row from a csv file*
 
    :doc:`ReadItlrFs3d <ReadItlrFs3d/ReadItlrFs3d>` *read ITLR FS3D (Free Surface 3D) binary data*
@@ -71,6 +73,7 @@ Read
    ReadFoam <ReadFoam/ReadFoam.md>
    ReadIagNetcdf <ReadIagNetcdf/ReadIagNetcdf.md>
    ReadIagTecplot <ReadIagTecplot/ReadIagTecplot.md>
+   ReadSubzoneTecplot <ReadSubzoneTecplot/ReadSubzoneTecplot.md>
    ReadIewMatlabCsvExports <ReadIewMatlabCsvExports/ReadIewMatlabCsvExports.md>
    ReadItlrFs3d <ReadItlrFs3d/ReadItlrFs3d.md>
    ReadModel <ReadModel/ReadModel.md>

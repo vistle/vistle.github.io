@@ -50,7 +50,7 @@ This module is designed to read all CSV files in a directory and convert them to
 |name|description|type|
 |-|-|-|
 |first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last)|Int|
+|last_step|last timestep to read (-1: last available)|Int|
 |step_increment|number of steps to increment|Int|
 |first_rank|rank for first partition of first timestep|Int|
 |directory|directory with CSV files|String|
@@ -78,4 +78,4 @@ Supported delimiters are comma, semicolon and tab. Decimal separators can be poi
 
 ### Often Used With
 
-[](project:#mod-Color), [](project:#mod-MapDrape), [](project:#mod-IndexManifolds), [](project:#mod-Variant)
+[](project:#mod-Color), [](project:#mod-MapDrape), [](project:#mod-IndexManifolds), [Variant]()

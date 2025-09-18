@@ -27,7 +27,7 @@ read ITLR FS3D (Free Surface 3D) binary data
 |name|description|type|
 |-|-|-|
 |first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last)|Int|
+|last_step|last timestep to read (-1: last available)|Int|
 |step_increment|number of steps to increment|Int|
 |first_rank|rank for first partition of first timestep|Int|
 |increment_filename|replace digits in filename with timestep|Int|

@@ -52,16 +52,16 @@ read EnSight Gold data
 |name|description|type|
 |-|-|-|
 |first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last)|Int|
+|last_step|last timestep to read (-1: last available)|Int|
 |step_increment|number of steps to increment|Int|
 |first_rank|rank for first partition of first timestep|Int|
 |casefile|EnSight case file|String|
 |parts|select parts|String|
-|vol_vert_field0|field 0 ((none))|String|
-|vol_vert_field1|field 1 ((none))|String|
-|vol_elem_field0|field 0 ((none))|String|
-|vol_elem_field1|field 1 ((none))|String|
-|surf_vert_field0|field 0 ((none))|String|
-|surf_elem_field0|field 0 ((none))|String|
+|vol_vert_field0|field 0 ((NONE))|String|
+|vol_vert_field1|field 1 ((NONE))|String|
+|vol_elem_field0|field 0 ((NONE))|String|
+|vol_elem_field1|field 1 ((NONE))|String|
+|surf_vert_field0|field 0 ((NONE))|String|
+|surf_elem_field0|field 0 ((NONE))|String|
 |early_partlist|create part list before reading geometry|Int|
 |file_big_endian|file is in big endian format|Int|

@@ -57,7 +57,7 @@ Read IAG data in NetCDF format
 |name|description|type|
 |-|-|-|
 |first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last)|Int|
+|last_step|last timestep to read (-1: last available)|Int|
 |step_increment|number of steps to increment|Int|
 |first_rank|rank for first partition of first timestep|Int|
 |grid_file|File containing grid info|String|
@@ -65,7 +65,7 @@ Read IAG data in NetCDF format
 |Variable0|Scalar Variables ((NONE))|String|
 |Variable1|Scalar Variables ((NONE))|String|
 |Variable2|Scalar Variables ((NONE))|String|
-|boundary_variable0|Variable on boundary)|String|
-|boundary_variable1|Variable on boundary)|String|
-|boundary_variable2|Variable on boundary)|String|
+|boundary_variable0|Variable on boundary ((NONE))|String|
+|boundary_variable1|Variable on boundary ((NONE))|String|
+|boundary_variable2|Variable on boundary ((NONE))|String|
 |distribute_time|distribute timesteps across MPI ranks|Int|

@@ -18,3 +18,4 @@ instruct COVER to load a file
 |-|-|-|
 |filename|name of file (%1%: rank)|String|
 |rank|rank of node where to load (-1: all nodes)|Int|
+|retain_seconds|keep the generated scene graph object for this many seconds after being unloaded|Float|

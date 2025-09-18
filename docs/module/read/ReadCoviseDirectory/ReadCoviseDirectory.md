@@ -32,13 +32,13 @@ read COVISE data in a directory
 |name|description|type|
 |-|-|-|
 |first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last)|Int|
+|last_step|last timestep to read (-1: last available)|Int|
 |step_increment|number of steps to increment|Int|
 |first_rank|rank for first partition of first timestep|Int|
 |directory|directory to scan for .covise files|String|
-|grid|filename for grid ((none))|String|
-|normals|name of COVISE file for normals ((none))|String|
-|field0|name of COVISE file for field 2 ((none))|String|
-|field1|name of COVISE file for field 3 ((none))|String|
-|field2|name of COVISE file for field 4 ((none))|String|
+|grid|filename for grid ((NONE))|String|
+|normals|name of COVISE file for normals ((NONE))|String|
+|field0|name of COVISE file for field 2 ((NONE))|String|
+|field1|name of COVISE file for field 3 ((NONE))|String|
+|field2|name of COVISE file for field 4 ((NONE))|String|
 |distribute_time|distribute timesteps across MPI ranks|Int|

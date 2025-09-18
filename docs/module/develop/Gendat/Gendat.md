@@ -39,7 +39,7 @@ Alternatively load vistle/examples/gendat-isosurface.vsl.
 |name|description|type|
 |-|-|-|
 |first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last)|Int|
+|last_step|last timestep to read (-1: last available)|Int|
 |step_increment|number of steps to increment|Int|
 |first_rank|rank for first partition of first timestep|Int|
 |geo_mode|geometry generation mode (Triangle_Geometry, Quad_Geometry, Polygon_Geometry, Uniform_Grid, Rectilinear_Grid, Layer_Grid, Structured_Grid, Unstructured_Grid, Point_Geometry, Sphere_Geometry)|Int|

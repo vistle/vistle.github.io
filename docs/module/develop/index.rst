@@ -31,6 +31,8 @@ Develop
 
    :doc:`GenIsoDat <GenIsoDat/GenIsoDat>` *generate test data for IsoSurface module*
 
+   :doc:`GenNormalsVtkm <GenNormalsVtkm/GenNormalsVtkm>` *compute surface normals*
+
    :doc:`GridElementStatistics <GridElementStatistics/GridElementStatistics>` *show characteristics of selected unstructured grid element*
 
 
@@ -87,6 +89,7 @@ Develop
    FilterNode <FilterNode/FilterNode.md>
    Gendat <Gendat/Gendat.md>
    GenIsoDat <GenIsoDat/GenIsoDat.md>
+   GenNormalsVtkm <GenNormalsVtkm/GenNormalsVtkm.md>
    GridElementStatistics <GridElementStatistics/GridElementStatistics.md>
    ManipulateGhosts <ManipulateGhosts/ManipulateGhosts.md>
    MiniSim <MiniSim/MiniSim.md>

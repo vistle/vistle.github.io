@@ -21,9 +21,9 @@ apply transformation matrix to grid
 ## Parameters
 |name|description|type|
 |-|-|-|
-|rotation_axis_angle|axis and angle of rotation|Vector|
-|scale|scaling factors|Vector|
 |translate|translation vector|Vector|
+|scale|scaling factors|Vector|
+|rotation_axis_angle|axis and angle of rotation|Vector|
 |keep_original|whether to keep input|Int|
 |repetitions|how often the transformation should be repeated|Int|
 |animation|animate repetitions (Keep, Deanimate, Animate, TimestepAsRepetitionCount, TimestepAsPower)|Int|

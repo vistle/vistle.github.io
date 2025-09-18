@@ -105,6 +105,8 @@ All Modules
 **G**
    :doc:`GenIsoDat <develop/GenIsoDat/GenIsoDat>` (:doc:`Develop <develop/index>`) *generate test data for IsoSurface module*
 
+   :doc:`GenNormalsVtkm <develop/GenNormalsVtkm/GenNormalsVtkm>` (:doc:`Develop <develop/index>`) *compute surface normals*
+
    :doc:`Gendat <develop/Gendat/Gendat>` (:doc:`Develop <develop/index>`) *generate scalar and vector test data on structured and unstructured grids*
 
    :doc:`GhostCellGenerator <general/GhostCellGenerator/GhostCellGenerator>` (:doc:`General <general/index>`) *Generate Ghost Cells for UnstructuredGrids*
@@ -186,6 +188,8 @@ All Modules
    :doc:`ReadNek5000 <read/ReadNek5000/ReadNek5000>` (:doc:`Read <read/index>`) *read .nek5000 files*
 
    :doc:`ReadSoundPlan <read/ReadSoundPlan/ReadSoundPlan>` (:doc:`Read <read/index>`) *Read SoundPLAN files.*
+
+   :doc:`ReadSubzoneTecplot <read/ReadSubzoneTecplot/ReadSubzoneTecplot>` (:doc:`Read <read/index>`) *read Sz Tecplot data *
 
    :doc:`ReadTsunami <read/ReadTsunami/ReadTsunami>` (:doc:`Read <read/index>`) *read ChEESE Tsunami files*
 
