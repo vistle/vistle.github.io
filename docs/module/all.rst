@@ -13,6 +13,8 @@ All Modules
 
 
 **A**
+   :doc:`ANARemote <render/ANARemote/ANARemote>` (:doc:`Render <render/index>`) *ANARI remote renderer*
+
    :doc:`AddAttribute <general/AddAttribute/AddAttribute>` (:doc:`General <general/index>`) *add attributes*
 
    :doc:`ApplyTransform <geometry/ApplyTransform/ApplyTransform>` (:doc:`Geometry <geometry/index>`) *compute transformed coordinates*
@@ -78,6 +80,8 @@ All Modules
    :doc:`Distribute <general/Distribute/Distribute>` (:doc:`General <general/index>`) *broadcast input objects to all ranks*
 
    :doc:`DomainSurface <map/DomainSurface/DomainSurface>` (:doc:`Map <map/index>`) *show surface of grid*
+
+   :doc:`DomainSurfaceVtkm <map/DomainSurfaceVtkm/DomainSurfaceVtkm>` (:doc:`Map <map/index>`) *show surface of grid*
 
    :doc:`Dropbear <develop/Dropbear/Dropbear>` (:doc:`Develop <develop/index>`) *start Dropbear SSH server on compute nodes*
 
@@ -151,6 +155,8 @@ All Modules
 
 
 **P**
+   :doc:`PassThroughVtkm <develop/PassThroughVtkm/PassThroughVtkm>` (:doc:`Develop <develop/index>`) *convert data to Viskores/VTK-m and back, unmodified*
+
    :doc:`PrintMetaData <information/PrintMetaData/PrintMetaData>` (:doc:`Information <information/index>`) *print meta data*
 
    :doc:`PrintObjects <develop/PrintObjects/PrintObjects>` (:doc:`Develop <develop/index>`) *print object attributes*
@@ -260,6 +266,8 @@ All Modules
    :doc:`Variant <general/Variant/Variant>` (:doc:`General <general/index>`) *add variant attribute*
 
    :doc:`VecToScalar <filter/VecToScalar/VecToScalar>` (:doc:`Filter <filter/index>`) *transform vector fields to scalar fields*
+
+   :doc:`VecToScalarVtkm <filter/VecToScalarVtkm/VecToScalarVtkm>` (:doc:`Filter <filter/index>`) *transform vector fields to scalar fields*
 
    :doc:`VectorField <map/VectorField/VectorField>` (:doc:`Map <map/index>`) *create lines from mapped vector data*
 

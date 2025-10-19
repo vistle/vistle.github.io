@@ -24,6 +24,10 @@ Render
    :doc:`DisCOVERay <DisCOVERay/DisCOVERay>` *Embree CPU ray casting remote renderer*
 
 
+**A**
+   :doc:`ANARemote <ANARemote/ANARemote>` *ANARI remote renderer*
+
+
 **C**
    :doc:`COVER <COVER/COVER>` *VR renderer for immersive environments*
 
@@ -36,5 +40,6 @@ Render
    OsgRenderer <OsgRenderer/OsgRenderer.md>
    BlenderRenderer <BlenderRenderer/BlenderRenderer.md>
    DisCOVERay <DisCOVERay/DisCOVERay.md>
+   ANARemote <ANARemote/ANARemote.md>
    COVER <COVER/COVER.md>
 

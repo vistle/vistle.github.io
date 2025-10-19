@@ -49,6 +49,8 @@ Develop
 
 
 **P**
+   :doc:`PassThroughVtkm <PassThroughVtkm/PassThroughVtkm>` *convert data to Viskores/VTK-m and back, unmodified*
+
    :doc:`PrintObjects <PrintObjects/PrintObjects>` *print object attributes*
 
 
@@ -95,6 +97,7 @@ Develop
    MiniSim <MiniSim/MiniSim.md>
    MpiInfo <MpiInfo/MpiInfo.md>
    ObjectStatistics <ObjectStatistics/ObjectStatistics.md>
+   PassThroughVtkm <PassThroughVtkm/PassThroughVtkm.md>
    PrintObjects <PrintObjects/PrintObjects.md>
    Replicate <Replicate/Replicate.md>
    ShowCelltree <ShowCelltree/ShowCelltree.md>

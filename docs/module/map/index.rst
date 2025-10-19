@@ -31,6 +31,8 @@ Map
 **D**
    :doc:`DomainSurface <DomainSurface/DomainSurface>` *show surface of grid*
 
+   :doc:`DomainSurfaceVtkm <DomainSurfaceVtkm/DomainSurfaceVtkm>` *show surface of grid*
+
 
 **I**
    :doc:`IndexManifolds <IndexManifolds/IndexManifolds>` *extract lower dimensional surfaces, lines or points from structured grids*
@@ -66,6 +68,7 @@ Map
    CuttingSurface <CuttingSurface/CuttingSurface.md>
    CuttingSurfaceVtkm <CuttingSurfaceVtkm/CuttingSurfaceVtkm.md>
    DomainSurface <DomainSurface/DomainSurface.md>
+   DomainSurfaceVtkm <DomainSurfaceVtkm/DomainSurfaceVtkm.md>
    IndexManifolds <IndexManifolds/IndexManifolds.md>
    IsoHeightSurface <IsoHeightSurface/IsoHeightSurface.md>
    IsoSurface <IsoSurface/IsoSurface.md>

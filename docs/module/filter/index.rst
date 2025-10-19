@@ -53,6 +53,8 @@ Filter
 **V**
    :doc:`VecToScalar <VecToScalar/VecToScalar>` *transform vector fields to scalar fields*
 
+   :doc:`VecToScalarVtkm <VecToScalarVtkm/VecToScalarVtkm>` *transform vector fields to scalar fields*
+
    :doc:`VertToCellVtkm <VertToCellVtkm/VertToCellVtkm>` *convert vertex mapped data to cell mapped*
 
 
@@ -75,5 +77,6 @@ Filter
    ThresholdVtkm <ThresholdVtkm/ThresholdVtkm.md>
    ToUnstructured <ToUnstructured/ToUnstructured.md>
    VecToScalar <VecToScalar/VecToScalar.md>
+   VecToScalarVtkm <VecToScalarVtkm/VecToScalarVtkm.md>
    VertToCellVtkm <VertToCellVtkm/VertToCellVtkm.md>
 

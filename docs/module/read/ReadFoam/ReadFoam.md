@@ -53,11 +53,9 @@ read OpenFOAM data
 |casedir|OpenFOAM case directory|String|
 |starttime|start reading at the first step after this time|Float|
 |stoptime|stop reading at the last step before this time|Float|
-|read_grid|load the grid?|Int|
 |Data0|name of field ((NONE))|String|
 |Data1|name of field ((NONE))|String|
 |Data2|name of field ((NONE))|String|
-|read_boundary|load the boundary?|Int|
 |patches_as_variants|create sub-objects with variant attribute for boundary patches|Int|
 |patches|select patches|String|
 |Data2d0|name of field ((NONE))|String|
