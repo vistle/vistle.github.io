@@ -25,7 +25,6 @@ The following example shows the minimum code necessary to develop a Vistle modul
 class MyModule: public vistle::Module {
 public:
     MyModule(const std::string &name, int moduleID, mpi::communicator comm);
-    ~MyModule();
 
 private:
     bool compute(const std::shared_ptr<vistle::BlockTask> &task) const override;
@@ -197,7 +196,7 @@ bool MyModule::changeParameter(const vistle::Parameter *param)
 
 ## Sample Module Code
 
-For your convenience, the complete header and source file for **MyModule** are provided here:
+For your convenience, the complete [header](path:mymodule.h) and [source](path:mymodule.cpp) file for **MyModule** are provided here:
 <details>
 <summary> Click on the arrow on the left to view the complete MyModule header file. </summary>
 
