@@ -11,22 +11,22 @@ read EnSight Gold data
 <rect x="0.7em" y="3.8em" width="0.03333333333333333em" height="8.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="0.7em" y="11.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="1.9em" y="11.9em" class="text" >geometry<tspan> (grid_out)</tspan></text>
-<rect x="1.4em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<rect x="1.4em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#969696ff;" >
 <title>vol_vert_field0_out</title></rect>
 <rect x="1.9em" y="3.8em" width="0.03333333333333333em" height="7.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="1.9em" y="10.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="3.0999999999999996em" y="10.9em" class="text" >per-vertex volume field 0<tspan> (vol_vert_field0_out)</tspan></text>
-<rect x="2.5999999999999996em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<rect x="2.5999999999999996em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#969696ff;" >
 <title>vol_vert_field1_out</title></rect>
 <rect x="3.0999999999999996em" y="3.8em" width="0.03333333333333333em" height="6.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="3.0999999999999996em" y="9.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="4.3em" y="9.9em" class="text" >per-vertex volume field 1<tspan> (vol_vert_field1_out)</tspan></text>
-<rect x="3.8em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<rect x="3.8em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#969696ff;" >
 <title>vol_elem_field0_out</title></rect>
 <rect x="4.3em" y="3.8em" width="0.03333333333333333em" height="5.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="4.3em" y="8.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="5.5em" y="8.9em" class="text" >per-element volume field 0<tspan> (vol_elem_field0_out)</tspan></text>
-<rect x="5.0em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<rect x="5.0em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#969696ff;" >
 <title>vol_elem_field1_out</title></rect>
 <rect x="5.5em" y="3.8em" width="0.03333333333333333em" height="4.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="5.5em" y="7.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
@@ -36,12 +36,12 @@ read EnSight Gold data
 <rect x="6.7em" y="3.8em" width="0.03333333333333333em" height="3.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="6.7em" y="6.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="7.9em" y="6.8999999999999995em" class="text" >surface<tspan> (surface_out)</tspan></text>
-<rect x="7.4em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<rect x="7.4em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#969696ff;" >
 <title>surface_vert_field0_out</title></rect>
 <rect x="7.9em" y="3.8em" width="0.03333333333333333em" height="2.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="7.9em" y="5.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="9.1em" y="5.8999999999999995em" class="text" >per-vertex surface field 0<tspan> (surface_vert_field0_out)</tspan></text>
-<rect x="8.6em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<rect x="8.6em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#969696ff;" >
 <title>surf_elem_field0_out</title></rect>
 <rect x="9.1em" y="3.8em" width="0.03333333333333333em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="9.1em" y="4.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />

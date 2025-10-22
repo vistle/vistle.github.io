@@ -1,3 +1,6 @@
+..
+   auto-generated from vistle/doc/module/index.rst.in
+
 Module Reference
 ================
 
@@ -20,10 +23,13 @@ Module Reference
 
 * :doc:`Alphabetic list <all>`
 
-**Module categories**
+**Module Categories**
 
 * :doc:`Category Descriptions <categories>`
 
+**Module Parameters**
+
+* :doc:`Common Parameters <common-parameters>`
 
 .. toctree::
    :maxdepth: 1
@@ -43,5 +49,4 @@ Module Reference
 
    All Modules <all>
    Module Categories <categories>
-
-   Common Parameters <common-parameters.rst>
+   Common Parameters <common-parameters>

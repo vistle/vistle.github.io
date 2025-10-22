@@ -1,3 +1,6 @@
+..
+   auto-generated from vistle/doc/module/category_index.rst.in
+
 .. _category-read:
 
 .. _cat-read:
@@ -82,5 +85,6 @@ Read
    ReadNek5000 <ReadNek5000/ReadNek5000.md>
    ReadSoundPlan <ReadSoundPlan/ReadSoundPlan.md>
    ReadTsunami <ReadTsunami/ReadTsunami.md>
+   ReadVtk <ReadVtk/ReadVtk.md>
    ReadWrfChem <ReadWrfChem/ReadWrfChem.md>
 

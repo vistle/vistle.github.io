@@ -1,3 +1,6 @@
+..
+   auto-generated from vistle/doc/module/category_index.rst.in
+
 .. _category-map:
 
 .. _cat-map:
