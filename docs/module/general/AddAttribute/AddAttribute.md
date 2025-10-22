@@ -21,12 +21,12 @@ add attributes
 ## Parameters
 |name|description|type|
 |-|-|-|
-|choice0|attribute name (User Defined, plugin, species, variant, model_file, model_retain_seconds, part, id, part_of, color, colormap, transparent, blend_with_material, shader, shader_params, bin_num_primitives, approximate_depth, rhr_config, sender, transformation_name)|String|
+|choice0|attribute name (User Defined, plugin, species, data_source, variant, model_file, model_retain_seconds, part, id, part_of, color, colormap, transparent, blend_with_material, shader, shader_params, bin_num_primitives, approximate_depth, rhr_config, sender, transformation_name)|String|
 |name0|attribute name|String|
 |value0|attribute value|String|
-|choice1|attribute name (User Defined, plugin, species, variant, model_file, model_retain_seconds, part, id, part_of, color, colormap, transparent, blend_with_material, shader, shader_params, bin_num_primitives, approximate_depth, rhr_config, sender, transformation_name)|String|
+|choice1|attribute name (User Defined, plugin, species, data_source, variant, model_file, model_retain_seconds, part, id, part_of, color, colormap, transparent, blend_with_material, shader, shader_params, bin_num_primitives, approximate_depth, rhr_config, sender, transformation_name)|String|
 |name1|attribute name|String|
 |value1|attribute value|String|
-|choice2|attribute name (User Defined, plugin, species, variant, model_file, model_retain_seconds, part, id, part_of, color, colormap, transparent, blend_with_material, shader, shader_params, bin_num_primitives, approximate_depth, rhr_config, sender, transformation_name)|String|
+|choice2|attribute name (User Defined, plugin, species, data_source, variant, model_file, model_retain_seconds, part, id, part_of, color, colormap, transparent, blend_with_material, shader, shader_params, bin_num_primitives, approximate_depth, rhr_config, sender, transformation_name)|String|
 |name2|attribute name|String|
 |value2|attribute value|String|

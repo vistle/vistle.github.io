@@ -35,7 +35,7 @@ Read
 
    :doc:`ReadIagTecplot <ReadIagTecplot/ReadIagTecplot>` *read IAG Tecplot data (hexahedra only)*
 
-   :doc:`ReadSubzoneTecplot <ReadSubzoneTecplot/ReadSubzoneTecplot>` *read Sz Tecplot data *
+   :doc:`ReadSubzoneTecplot <ReadSubzoneTecplot/ReadSubzoneTecplot>` *read SZL Tecplot data*
 
    :doc:`ReadIewMatlabCsvExports <ReadIewMatlabCsvExports/ReadIewMatlabCsvExports>` *read a line or row from a csv file*
 
@@ -82,6 +82,5 @@ Read
    ReadNek5000 <ReadNek5000/ReadNek5000.md>
    ReadSoundPlan <ReadSoundPlan/ReadSoundPlan.md>
    ReadTsunami <ReadTsunami/ReadTsunami.md>
-   ReadVtk <ReadVtk/ReadVtk.md>
    ReadWrfChem <ReadWrfChem/ReadWrfChem.md>
 
