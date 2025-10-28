@@ -33,6 +33,8 @@ extensions = [
     #'sphinxcontrib.mermaid',
     #'sphinx.ext.autosectionlabel',
     'sphinx.ext.githubpages',
+    'sphinx_toolbox.collapse',
+    'sphinx_togglebutton',
     'html_image_processor',
 ]
 

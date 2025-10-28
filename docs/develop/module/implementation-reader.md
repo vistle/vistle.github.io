@@ -12,6 +12,9 @@ Implementing `Reader` modules is very similar to implementing compute modules: t
 `Reader` modules do not directly inherit from the `vistle::Module` class, but rather inherit from the `vistle::Reader`, which in turn inherits from `vistle::Module`.
 Moreover, the main work happens in the `read` instead of the `compute` method.
 
+Using the `vistle::Reader` base class as foundation for a read module ensures that all readers follow the same pattern and simplifies their implementation, as it provides common functionality for handling multiple timesteps and partitions, as well as parallel execution.
+The parameters described in the [](../../module/reader-parameters.md) documentation control this functionality and are automatically supported by the `vistle::Reader` base class.
+
 ## Overview
 - [The `Reader` Class](#the-reader-class)
 - [Sample Reader Module Code](#sample-reader-module-code)
