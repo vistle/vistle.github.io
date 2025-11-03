@@ -9,6 +9,22 @@ test port removal
 <text x="0.2em" y="2.6500000000000004em" class="moduleName" >TestDynamicPorts</text></svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |num_ports|number of output ports|Int|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

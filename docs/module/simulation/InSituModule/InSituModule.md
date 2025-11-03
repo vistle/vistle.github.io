@@ -17,11 +17,27 @@ Output ports are created dynamically, based on information from the coupling def
 
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |path|path to the connection file written by the simulation|String|
 |frequency|the pipeline is processed for every nth simulation cycle|Int|
 |keep_timesteps|if true timesteps are cached and processed as time series|Int|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+
 
 Set the `path` parameter to a connection file written by the simulation. The default value should be sufficient.
 

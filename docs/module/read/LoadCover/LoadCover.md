@@ -14,8 +14,26 @@ instruct COVER to load a file
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |filename|name of file (%1%: rank)|String|
 |rank|rank of node where to load (-1: all nodes)|Int|
 |retain_seconds|keep the generated scene graph object for this many seconds after being unloaded|Float|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

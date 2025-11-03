@@ -24,16 +24,44 @@ read ITLR FS3D (Free Surface 3D) binary data
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
-|first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last available)|Int|
-|step_increment|number of steps to increment|Int|
-|first_rank|rank for first partition of first timestep|Int|
 |increment_filename|replace digits in filename with timestep|Int|
 |grid_filename|.bin file for grid|String|
 |filename0|.lst or .bin file for data|String|
 |filename1|.lst or .bin file for data|String|
 |filename2|.lst or .bin file for data|String|
 |num_partitions|number of partitions (-1: MPI ranks)|Int|
-|distribute_time|distribute timesteps across MPI ranks|Int|
+
+
+:::{admonition} Supported Reader Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[first_step](../../reader-parameters.md#first_step)|first timestep to read|Int|
+|[last_step](../../reader-parameters.md#last_step)|last timestep to read (-1: last available)|Int|
+|[step_increment](../../reader-parameters.md#step_increment)|number of steps to increment|Int|
+|[first_rank](../../reader-parameters.md#first_rank)|rank for first partition of first timestep|Int|
+|[distribute_time](../../reader-parameters.md#distribute_time)|distribute timesteps across MPI ranks|Int|
+
+The meaning of these parameters is described in more detail in the [Reader Parameters](../../reader-parameters.md) documentation.
+:::
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

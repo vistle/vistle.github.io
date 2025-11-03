@@ -39,6 +39,8 @@ The first input port `grid_in` is required and expects lines or points which the
 
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |radius|radius or radius scale factor of tube/sphere|Float|
@@ -49,6 +51,23 @@ The first input port `grid_in` is required and expects lines or points which the
 |connection_style|cap style for tube segment connections (Open, Flat, Round, Arrow)|Int|
 |end_style|cap style for final tube segments (Open, Flat, Round, Arrow)|Int|
 |correct_depth|correct per-fragment depth for impostor spheres (slow)|Int|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_cache_mode](../../system-parameters.md#_cache_mode)|input object caching (CacheNone, CacheDeleteEarly, CacheDeleteLate, CacheByName)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+
 
 There are different modes for setting the radius of the resulting geometric bodies which can be selected with `map_mode` in the parameter window. Additionally, the `radius` and `sphere scale` parameters can be altered, to fine-tune the resulting radius and a `range` can be given for clipping the values of the radii.
 
@@ -62,12 +81,13 @@ There are different modes for setting the radius of the resulting geometric bodi
 ## Usage Examples
 
 <figure float="left">
-    <img src="thickenWorkflow.png" width=300/>
-    <img src="thickenExampleResult.png" width=350/>
-    <figcaption>Fig.1. Example workflow using Thicken (left) and step-by-step results (right). On the top-right, a scalar data set is shown as points which can only be seen by zooming in considerably. In the center, the same data set is shown as spheres. At the bottom, the vector field has been added, after expanding its lines into tubes.</figcaption>
-</figure>
+    <a href="vistle:///open#module/geometry/Thicken/thicken"><img src="thicken_workflow.png" width="200" /></a>
+    <img src="thicken_result.png" width="300"/>
+    <figcaption>Fig.1 <a href="vistle:///open#module/geometry/Thicken/thicken">thicken</a> workflow (left) and expected result (right).</figcaption>
+</figure>On the top-right, a scalar data set is shown as points which can only be seen by zooming in considerably. In the center, the same data set is shown as spheres. At the bottom, the vector field has been added, after expanding its lines into tubes.
 
 In this example, the scalar data field of a data set is first transformed into points via [](project:#mod-ToPoints) (see top-right image) and then thickened into spheres (see image in the center of the right image). The radii of the spheres depend on the scalar data field.
+
 **Note:** To avoid rendering errors, it is important to pass the output to the [](project:#mod-ToTriangles) module whose `transform spheres` parameter has been **enabled**.
 
 Moreover, three-dimensional input data is transformed into a vector field through the [](project:#mod-VectorField) module and the resulting lines are expanded into tubes (see bottom of the right image).

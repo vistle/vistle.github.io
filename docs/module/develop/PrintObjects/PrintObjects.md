@@ -14,9 +14,26 @@ print object attributes
 <text x="0.2em" y="3.6500000000000004em" class="moduleName" >PrintObjects</text></svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |mode|print mode (Attributes, MetaData, Data)|Int|
 |blocks|block ranges|String|
 |timesteps|timestep ranges|String|
 |iterations|iterations ranges|String|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_cache_mode](../../system-parameters.md#_cache_mode)|input object caching (CacheNone, CacheDeleteEarly, CacheDeleteLate, CacheByName)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

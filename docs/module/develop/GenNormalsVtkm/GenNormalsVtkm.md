@@ -19,9 +19,29 @@ compute surface normals
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |per_vertex|interpolate per-vertex normals|Int|
 |normalize|normalize per-element normals|Int|
 |auto_orient|orient normals outward (requires closed surface)|Int|
 |inward|flip auto-oriented normals to point inward|Int|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_cache_mode](../../system-parameters.md#_cache_mode)|input object caching (CacheNone, CacheDeleteEarly, CacheDeleteLate, CacheByName)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+|[_print_object_info](../../system-parameters.md#_print_object_info)|print information on generated data objects for debug purposes|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

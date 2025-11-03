@@ -14,22 +14,30 @@ map scalar and vector data to colors
 <text x="0.2em" y="3.6500000000000004em" class="moduleName" >Color</text></svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |species|species attribute of input data|String|
 |min|minimum value of range to map|Float|
 |max|maximum value of range to map|Float|
+|auto_range|compute range automatically|Int|
 |constrain_range|constrain range for min/max to data|Int|
+|steps|number of color map steps|Int|
+|map|transfer function name (COVISE, Plasma, Inferno, Magma, CoolWarmBrewer, CoolWarm, Frosty, Dolomiti, Parula, Viridis, Cividis, Turbo, Blue_Light, Grays, Gray20, ANSYS, Star, ITSM, Rainbow, Earth, Topography, RainbowPale, FromFile)|Int|
+|rgb_file| file containing pin rgb values|String|
 |center|center of colormap range|Float|
 |center_absolute|absolute value for center|Int|
 |range_compression|compression of range towards center|Float|
 |opacity_factor|multiplier for opacity|Float|
-|map|transfer function name (COVISE, Plasma, Inferno, Magma, CoolWarmBrewer, CoolWarm, Frosty, Dolomiti, Parula, Viridis, Cividis, Turbo, Blue_Light, Grays, Gray20, ANSYS, Star, ITSM, Rainbow, Earth, Topography, RainbowPale, FromFile)|Int|
-|rgb_file| file containing pin rgb values|String|
-|steps|number of color map steps|Int|
 |blend_with_material|use alpha for blending with diffuse material|Int|
-|auto_range|compute range automatically|Int|
 |preview|use preliminary colormap for showing preview when determining bounds|Int|
+
+
+### Nested Color Map Parameters
+
+|name|description|type|
+|-|-|-|
 |nest|inset another color map|Int|
 |auto_center|compute center of nested color map|Int|
 |inset_relative|width and center of inset are relative to range|Int|
@@ -39,3 +47,18 @@ map scalar and vector data to colors
 |inset_steps|number of color map steps for inset (0: as outer map)|Int|
 |resolution|number of steps to compute|Int|
 |inset_opacity_factor|multiplier for opacity of inset color|Float|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_cache_mode](../../system-parameters.md#_cache_mode)|input object caching (CacheNone, CacheDeleteEarly, CacheDeleteLate, CacheByName)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

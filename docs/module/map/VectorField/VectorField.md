@@ -3,7 +3,7 @@
 # VectorField
 create lines from mapped vector data
 
-<svg width="73.8em" height="7.6em" >
+<svg width="73.8em" height="8.6em" >
 <style>.text { font: normal 1.0em sans-serif;}tspan{ font: italic 1.0em sans-serif;}.moduleName{ font: bold 1.0em sans-serif;}</style>
 <rect x="0em" y="2.8em" width="7.38em" height="3.0em" rx="0.1em" ry="0.1em" style="fill:#64c8c8ff;" />
 <rect x="0.2em" y="2.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
@@ -18,15 +18,39 @@ create lines from mapped vector data
 <text x="3.0999999999999996em" y="1.9em" class="text" >mapped data field<tspan> (data_in)</tspan></text>
 <text x="0.2em" y="4.65em" class="moduleName" >VectorField</text><rect x="0.2em" y="4.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
 <title>grid_out</title></rect>
-<rect x="0.7em" y="5.8em" width="0.03333333333333333em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
-<rect x="0.7em" y="6.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
-<text x="1.9em" y="6.8999999999999995em" class="text" >line strokes with mapped data<tspan> (grid_out)</tspan></text>
+<rect x="0.7em" y="5.8em" width="0.03333333333333333em" height="2.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
+<rect x="0.7em" y="7.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
+<text x="1.9em" y="7.8999999999999995em" class="text" >line strokes<tspan> (grid_out)</tspan></text>
+<rect x="1.4em" y="4.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<title>data_out</title></rect>
+<rect x="1.9em" y="5.8em" width="0.03333333333333333em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
+<rect x="1.9em" y="6.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
+<text x="3.0999999999999996em" y="6.8999999999999995em" class="text" >line strokes with mapped data<tspan> (data_out)</tspan></text>
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |scale|scale factor for vector length|Float|
 |attachment_point|where to attach line to carrying point (Bottom, Middle, Top)|Int|
 |range|allowed length range (before scaling)|Vector|
 |all_coordinates|include all or only referenced coordinates|Int|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_cache_mode](../../system-parameters.md#_cache_mode)|input object caching (CacheNone, CacheDeleteEarly, CacheDeleteLate, CacheByName)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

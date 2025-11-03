@@ -15,6 +15,8 @@ Geometry
 **A**
    :doc:`ApplyTransform <ApplyTransform/ApplyTransform>` *compute transformed coordinates*
 
+   :doc:`ApplyTransformVtkm <ApplyTransformVtkm/ApplyTransformVtkm>` *compute transformed coordinates*
+
 
 **C**
    :doc:`Chainmail <Chainmail/Chainmail>` *transform 2D data(triangle and quads) to rings*
@@ -58,6 +60,7 @@ Geometry
    :hidden:
 
    ApplyTransform <ApplyTransform/ApplyTransform.md>
+   ApplyTransformVtkm <ApplyTransformVtkm/ApplyTransformVtkm.md>
    Chainmail <Chainmail/Chainmail.md>
    CreateCuboids <CreateCuboids/CreateCuboids.md>
    CutGeometry <CutGeometry/CutGeometry.md>

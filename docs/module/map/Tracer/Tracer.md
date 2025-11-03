@@ -49,6 +49,8 @@ compute particle traces and streamlines
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |taskType|task type (Streamlines, MovingPoints, Pathlines, Streaklines)|Int|
@@ -57,16 +59,35 @@ compute particle traces and streamlines
 |add_data_kind0|field to compute (None, ParticleId, Step, Time, StepWidth, Distance, TerminationReason, CellIndex, BlockIndex)|Int|
 |add_data_kind1|field to compute (None, ParticleId, Step, Time, StepWidth, Distance, TerminationReason, CellIndex, BlockIndex)|Int|
 |verbose|verbose output|Int|
+|simplification_error|tolerable relative error for result simplification|Float|
+
+
+### Seed Points Parameters
+
+|name|description|type|
+|-|-|-|
 |no_startp|number of startpoints|Int|
 |startStyle|initial particle position configuration (Line, Plane)|Int|
 |startpoint1|1st initial point|Vector|
 |startpoint2|2nd initial point|Vector|
 |direction|direction for plane|Vector|
 |max_no_startp|maximum number of startpoints (for parameter/slider limits)|Int|
+
+
+### Stop Conditions Parameters
+
+|name|description|type|
+|-|-|-|
 |trace_time|maximum trace time|Float|
 |trace_len|maximum trace distance|Float|
 |steps_max|maximum number of integrations per particle|Int|
 |min_speed|minimum particle speed|Float|
+
+
+### Step Length Control Parameters
+
+|name|description|type|
+|-|-|-|
 |integration|integration method (Euler, RK32, ConstantVelocity)|Int|
 |h_init|fixed step size for euler integration|Float|
 |h_min|minimum step size for rk32 integration|Float|
@@ -75,8 +96,30 @@ compute particle traces and streamlines
 |err_tol_rel|relative error tolerance for rk32 integration|Float|
 |cell_relative|whether step length control should take into account cell size|Int|
 |velocity_relative|whether step length control should take into account velocity|Int|
+
+
+### Performance Tuning Parameters
+
+|name|description|type|
+|-|-|-|
 |use_celltree|use celltree for accelerated cell location|Int|
 |num_active|number of particles to trace simultaneously on each node (0: no. of cores)|Int|
 |particle_placement|where a particle's data shall be collected (InitialRank, RankById, RankByTimestep, Rank0)|Int|
 |cell_index_modulus|modulus for cell number output|Int|
-|simplification_error|tolerable relative error for result simplification|Float|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_cache_mode](../../system-parameters.md#_cache_mode)|input object caching (CacheNone, CacheDeleteEarly, CacheDeleteLate, CacheByName)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

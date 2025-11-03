@@ -19,6 +19,8 @@ All Modules
 
    :doc:`ApplyTransform <geometry/ApplyTransform/ApplyTransform>` (:doc:`Geometry <geometry/index>`) *compute transformed coordinates*
 
+   :doc:`ApplyTransformVtkm <geometry/ApplyTransformVtkm/ApplyTransformVtkm>` (:doc:`Geometry <geometry/index>`) *compute transformed coordinates*
+
    :doc:`Assemble <general/Assemble/Assemble>` (:doc:`General <general/index>`) *assemble blocks of indexed geometry to larger blocks*
 
    :doc:`AttachGrid <general/AttachGrid/AttachGrid>` (:doc:`General <general/index>`) *attach underlying grid to mappable data*
@@ -31,7 +33,7 @@ All Modules
 **B**
    :doc:`BlenderRenderer <render/BlenderRenderer/BlenderRenderer>` (:doc:`Render <render/index>`) *Blender remote renderer*
 
-   :doc:`BoundingBox <map/BoundingBox/BoundingBox>` (:doc:`Map <map/index>`) *compute bounding boxes*
+   :doc:`BoundingBox <map/BoundingBox/BoundingBox>` (:doc:`Map <map/index>`) *compute axis-aligned bounding boxes*
 
 
 **C**

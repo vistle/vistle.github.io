@@ -19,9 +19,28 @@ filter out some cells
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |filter_expression|elements for which this expression is true are filtered out, for supported symbols see selection lists|String|
 |filterType|filter type (Ghost, Elements, Vertices)|Int|
 |SupportedVariables|Supported Variables (cellDiameter, datavalue, dimensionality, edgeLength, elem, numFaces, numVertices, surface, type, volume, x_center, x_max, x_min, y_center, y_max, y_min, z_center, z_max, z_min)|Int|
-|SupportedConstants|Supported Constants (BAR, HEXA, HEXAHEDRON, LINE, PLG, PLH, POINT, POLYGON, POLYHEDRON, POLYLINE, PRISM, PT, PYR, PYRAMID, QUAD, TETRA, TETRAHEDRON, TRI, TRIANGLE)|Int|
+|SupportedConstants|Supported Constants (BAR, HEXA, HEXAHEDRON, LINE, NONE, PLG, PLH, POINT, POLYGON, POLYHEDRON, POLYLINE, PRISM, PT, PYR, PYRAMID, QUAD, TETRA, TETRAHEDRON, TRI, TRIANGLE)|Int|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_cache_mode](../../system-parameters.md#_cache_mode)|input object caching (CacheNone, CacheDeleteEarly, CacheDeleteLate, CacheByName)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

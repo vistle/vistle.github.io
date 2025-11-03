@@ -29,15 +29,43 @@ read COVISE data
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
-|first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last available)|Int|
-|step_increment|number of steps to increment|Int|
-|first_rank|rank for first partition of first timestep|Int|
 |filename|name of COVISE file|String|
 |normals|name of COVISE file for normals|String|
 |field0|name of COVISE file for field 2|String|
 |field1|name of COVISE file for field 3|String|
 |field2|name of COVISE file for field 4|String|
-|distribute_time|distribute timesteps across MPI ranks|Int|
+
+
+:::{admonition} Supported Reader Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[first_step](../../reader-parameters.md#first_step)|first timestep to read|Int|
+|[last_step](../../reader-parameters.md#last_step)|last timestep to read (-1: last available)|Int|
+|[step_increment](../../reader-parameters.md#step_increment)|number of steps to increment|Int|
+|[first_rank](../../reader-parameters.md#first_rank)|rank for first partition of first timestep|Int|
+|[distribute_time](../../reader-parameters.md#distribute_time)|distribute timesteps across MPI ranks|Int|
+
+The meaning of these parameters is described in more detail in the [Reader Parameters](../../reader-parameters.md) documentation.
+:::
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

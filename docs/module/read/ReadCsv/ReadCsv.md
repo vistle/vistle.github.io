@@ -47,12 +47,10 @@ This module is designed to read all CSV files in a directory and convert them to
 
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
-|first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last available)|Int|
-|step_increment|number of steps to increment|Int|
-|first_rank|rank for first partition of first timestep|Int|
 |directory|directory with CSV files|String|
 |filename|select all files or a specif one)|Int|
 |layer_mode|offset the configured axis by layer offset (NONE, X, Y, Z)|Int|
@@ -66,10 +64,40 @@ This module is designed to read all CSV files in a directory and convert them to
 |data_name_2|Name of data column outputted at data_out_2)|Int|
 |data_name_3|Name of data column outputted at data_out_3)|Int|
 
-x and y name are mandatory to create at least 2D points, z name and data names are optional.
+
+:::{admonition} Supported Reader Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[first_step](../../reader-parameters.md#first_step)|first timestep to read|Int|
+|[last_step](../../reader-parameters.md#last_step)|last timestep to read (-1: last available)|Int|
+|[step_increment](../../reader-parameters.md#step_increment)|number of steps to increment|Int|
+|[first_rank](../../reader-parameters.md#first_rank)|rank for first partition of first timestep|Int|
+
+The meaning of these parameters is described in more detail in the [Reader Parameters](../../reader-parameters.md) documentation.
+:::
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+
+
+`x_name` and `y_name` are mandatory to create at least 2D points, `z_name` and `data_name_?` are optional.
 
 ### Important to note
-Supported delimiters are comma, semicolon and tab. Decimal separators can be points or comma if comma is not used as delimiter.
+Supported delimiters are comma, semicolon and tab. Decimal separators can be points or comma, if comma is not used as delimiter.
 
 
 ## Example Usage
@@ -78,4 +106,4 @@ Supported delimiters are comma, semicolon and tab. Decimal separators can be poi
 
 ### Often Used With
 
-[](project:#mod-Color), [](project:#mod-MapDrape), [](project:#mod-IndexManifolds), [Variant]()
+[](project:#mod-Color), [](project:#mod-MapDrape), [](project:#mod-IndexManifolds), [](project:#mod-Variant)

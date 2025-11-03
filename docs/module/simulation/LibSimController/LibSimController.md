@@ -18,6 +18,8 @@ Output ports are created dynamically, based on information from the coupling def
 
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
 |path|path to a .sim2 file or directory containing these files|String|
@@ -27,6 +29,20 @@ Output ports are created dynamically, based on information from the coupling def
 |frequency|frequency in which data is retrieved from the simulation|Int|
 |combine_grids|combine all structure grids on a rank to a single unstructured grid|Int|
 |keep_timesteps|keep data of processed timestep of this execution|Int|
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+
 
 In multi-process mode, the path to the `.sim2` file provided by the simulation to connect to is required.
 Set the `path` parameter to a directory containing `.sim2` files and the newest such file will be used.

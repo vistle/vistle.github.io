@@ -36,12 +36,10 @@ Alternatively load vistle/examples/gendat-isosurface.vsl.
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
-|first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last available)|Int|
-|step_increment|number of steps to increment|Int|
-|first_rank|rank for first partition of first timestep|Int|
 |geo_mode|geometry generation mode (Triangle_Geometry, Quad_Geometry, Polygon_Geometry, Uniform_Grid, Rectilinear_Grid, Layer_Grid, Structured_Grid, Unstructured_Grid, Point_Geometry, Sphere_Geometry)|Int|
 |data_mode_scalar|data generation mode (One, Dist_Origin, Identity_X, Identity_Y, Identity_Z, Sine_X, Sine_Y, Sine_Z, Cosine_X, Cosine_Y, Cosine_Z, Random)|Int|
 |data_scale_scalar|data scale factor (scalar)|Float|
@@ -64,3 +62,33 @@ Alternatively load vistle/examples/gendat-isosurface.vsl.
 |element_data|generate data per element/cell|Int|
 |anim_data|data animation (Constant, Add_Scale, Divide_Scale, Add_X, Add_Y, Add_Z)|Int|
 |delay|wait after creating an object (s)|Float|
+
+
+:::{admonition} Supported Reader Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[first_step](../../reader-parameters.md#first_step)|first timestep to read|Int|
+|[last_step](../../reader-parameters.md#last_step)|last timestep to read (-1: last available)|Int|
+|[step_increment](../../reader-parameters.md#step_increment)|number of steps to increment|Int|
+|[first_rank](../../reader-parameters.md#first_rank)|rank for first partition of first timestep|Int|
+
+The meaning of these parameters is described in more detail in the [Reader Parameters](../../reader-parameters.md) documentation.
+:::
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+

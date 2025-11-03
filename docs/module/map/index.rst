@@ -13,7 +13,7 @@ Map
 
 
 **B**
-   :doc:`BoundingBox <BoundingBox/BoundingBox>` *compute bounding boxes*
+   :doc:`BoundingBox <BoundingBox/BoundingBox>` *compute axis-aligned bounding boxes*
 
 
 **C**

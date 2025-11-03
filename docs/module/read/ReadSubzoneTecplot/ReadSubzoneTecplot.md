@@ -1,7 +1,7 @@
 (mod-ReadSubzoneTecplot)=
 
 # ReadSubzoneTecplot
-read Sz Tecplot data 
+read SZL Tecplot data
 
 <svg width="114.39999999999999em" height="10.6em" >
 <style>.text { font: normal 1.0em sans-serif;}tspan{ font: italic 1.0em sans-serif;}.moduleName{ font: bold 1.0em sans-serif;}</style>
@@ -39,12 +39,10 @@ read Sz Tecplot data
 </svg>
 
 ## Parameters
+
+
 |name|description|type|
 |-|-|-|
-|first_step|first timestep to read|Int|
-|last_step|last timestep to read (-1: last available)|Int|
-|step_increment|number of steps to increment|Int|
-|first_rank|rank for first partition of first timestep|Int|
 |file_dir|name of szTecplot files directory|String|
 |static_geometry|Freeze blade geometry (0 = dynamic, 1 = static from reference timestep)|Int|
 |static_ref_timestep|Timestep index to take the static geometry from (0-based)|Int|
@@ -53,3 +51,33 @@ read Sz Tecplot data
 |tecplotfield_2|This data field from the tecplot file will be added to output port field_out_2.)|String|
 |tecplotfield_3|This data field from the tecplot file will be added to output port field_out_3.)|String|
 |tecplotfield_4|This data field from the tecplot file will be added to output port field_out_4.)|String|
+
+
+:::{admonition} Supported Reader Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[first_step](../../reader-parameters.md#first_step)|first timestep to read|Int|
+|[last_step](../../reader-parameters.md#last_step)|last timestep to read (-1: last available)|Int|
+|[step_increment](../../reader-parameters.md#step_increment)|number of steps to increment|Int|
+|[first_rank](../../reader-parameters.md#first_rank)|rank for first partition of first timestep|Int|
+
+The meaning of these parameters is described in more detail in the [Reader Parameters](../../reader-parameters.md) documentation.
+:::
+
+
+:::{admonition} Supported System Parameters
+    :class: dropdown
+
+|name|description|type|
+|-|-|-|
+|[_openmp_threads](../../system-parameters.md#_openmp_threads)|number of OpenMP threads (0: system default)|Int|
+|[_benchmark](../../system-parameters.md#_benchmark)|show timing information|Int|
+|[_concurrency](../../system-parameters.md#_concurrency)|number of tasks to keep in flight per MPI rank (-1: #cores/2)|Int|
+|[_prioritize_visible](../../system-parameters.md#_prioritize_visible)|prioritize currently visible timestep|Int|
+|[_validate_objects](../../system-parameters.md#_validate_objects)|validate data objects before sending to port (Disable, Quick, Thorough)|Int|
+
+The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
+:::
+
