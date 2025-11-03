@@ -197,7 +197,7 @@ All Modules
 
    :doc:`ReadSoundPlan <read/ReadSoundPlan/ReadSoundPlan>` (:doc:`Read <read/index>`) *Read SoundPLAN files.*
 
-   :doc:`ReadSubzoneTecplot <read/ReadSubzoneTecplot/ReadSubzoneTecplot>` (:doc:`Read <read/index>`) *read SZL Tecplot data*
+   :doc:`ReadSubzoneTecplot <read/ReadSubzoneTecplot/ReadSubzoneTecplot>` (:doc:`Read <read/index>`) *read SZL (Sub-Zone Load-on-demand) Tecplot data*
 
    :doc:`ReadTsunami <read/ReadTsunami/ReadTsunami>` (:doc:`Read <read/index>`) *read ChEESE Tsunami files*
 

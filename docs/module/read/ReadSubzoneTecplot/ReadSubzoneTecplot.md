@@ -3,6 +3,12 @@
 # ReadSubzoneTecplot
 read SZL Tecplot data
 
+## Purpose
+
+The **ReadSubzoneTecplot** module reads Tecplot 360 Sub-Zone Load-on-demand (`*.szplt`) data from a directory. Only structured (ordered) zones are supported. All .szplt files found in the input directory are considered according to the selected time-step range and step increment. 
+
+## Ports
+
 <svg width="114.39999999999999em" height="10.6em" >
 <style>.text { font: normal 1.0em sans-serif;}tspan{ font: italic 1.0em sans-serif;}.moduleName{ font: bold 1.0em sans-serif;}</style>
 <rect x="0em" y="0.8em" width="11.44em" height="3.0em" rx="0.1em" ry="0.1em" style="fill:#64c8c8ff;" />
@@ -37,6 +43,13 @@ read SZL Tecplot data
 <rect x="6.7em" y="4.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="7.9em" y="4.8999999999999995em" class="text" >data field<tspan> (field_out_4)</tspan></text>
 </svg>
+
+
+- `grid_out` — structured grid (all subzones)
+- `field_out_0` .. `field_out_4` — data fields chosen by the user (up to five). 
+
+The first output port (`grid_out`) provides the structured geometry. The remaining ports provide solution fields selected via the module parameters.
+
 
 ## Parameters
 
@@ -81,3 +94,15 @@ The meaning of these parameters is described in more detail in the [Reader Param
 The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
 :::
 
+
+## Behavior
+
+- If `static_geometry` is enabled, the grid is loaded once from the specified reference time step (`static_ref_timestep`) and reused for all output timesteps.
+- If `static_geometry` is disabled, the geometry is reloaded for each requested timestep.
+- Data fields are attached to the corresponding `field_out_*` ports only if the selected field exists in the file/zone; missing fields are skipped.
+
+## Related Modules
+
+### Similar Modules
+
+[](project:#mod-ReadIagTecplot)
