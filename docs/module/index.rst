@@ -43,3 +43,5 @@ Module Reference
 
    All Modules <all>
    Module Categories <categories>
+
+   Common Parameters <common-parameters.rst>
