@@ -1,7 +1,7 @@
 (mod-ReadSubzoneTecplot)=
 
 # ReadSubzoneTecplot
-read SZL Tecplot data
+read SZL (Sub-Zone Load-on-demand) Tecplot data
 
 ## Purpose
 
