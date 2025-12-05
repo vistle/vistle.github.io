@@ -82,6 +82,8 @@ All Modules
 
    :doc:`Displace <filter/Displace/Displace>` (:doc:`Filter <filter/index>`) *move vertices according to mapped data of first input*
 
+   :doc:`DisplaceVtkm <filter/DisplaceVtkm/DisplaceVtkm>` (:doc:`Filter <filter/index>`) *move vertices according to mapped data of first input*
+
    :doc:`Distribute <general/Distribute/Distribute>` (:doc:`General <general/index>`) *broadcast input objects to all ranks*
 
    :doc:`DomainSurface <map/DomainSurface/DomainSurface>` (:doc:`Map <map/index>`) *show surface of grid*
@@ -151,6 +153,8 @@ All Modules
    :doc:`MiniSim <develop/MiniSim/MiniSim>` (:doc:`Develop <develop/index>`) *small simulation to compare performance with other in situ interfaces*
 
    :doc:`MpiInfo <develop/MpiInfo/MpiInfo>` (:doc:`Develop <develop/index>`) *print MPI, CPU binding and shared memory info*
+
+   :doc:`MpiInfoVtkm <develop/MpiInfoVtkm/MpiInfoVtkm>` (:doc:`Develop <develop/index>`) *print MPI, Viskores/VTK-m, CPU binding and shared memory info*
 
 
 **O**
@@ -263,6 +267,10 @@ All Modules
    :doc:`Transform <general/Transform/Transform>` (:doc:`General <general/index>`) *apply transformation matrix to grid*
 
    :doc:`TransformGrid <develop/TransformGrid/TransformGrid>` (:doc:`Develop <develop/index>`) *shuffle and mirror axes of rectilinear grids*
+
+   :doc:`TriangulateVtkm <geometry/TriangulateVtkm/TriangulateVtkm>` (:doc:`Geometry <geometry/index>`) *decompose polygons to triangles*
+
+   :doc:`TubeVtkm <geometry/TubeVtkm/TubeVtkm>` (:doc:`Geometry <geometry/index>`) *turns lines into tubes*
 
 
 **V**

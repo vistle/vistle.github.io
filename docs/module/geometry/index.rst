@@ -48,6 +48,10 @@ Geometry
 
    :doc:`ToTriangles <ToTriangles/ToTriangles>` *decompose polygons to triangles*
 
+   :doc:`TriangulateVtkm <TriangulateVtkm/TriangulateVtkm>` *decompose polygons to triangles*
+
+   :doc:`TubeVtkm <TubeVtkm/TubeVtkm>` *turns lines into tubes*
+
 
 **S**
    :doc:`SpheresOverlap <SpheresOverlap/SpheresOverlap>` *create lines between overlapping spheres*
@@ -73,6 +77,8 @@ Geometry
    Thicken <Thicken/Thicken.md>
    ToPoints <ToPoints/ToPoints.md>
    ToTriangles <ToTriangles/ToTriangles.md>
+   TriangulateVtkm <TriangulateVtkm/TriangulateVtkm.md>
+   TubeVtkm <TubeVtkm/TubeVtkm.md>
    SpheresOverlap <SpheresOverlap/SpheresOverlap.md>
    VertexClusteringVtkm <VertexClusteringVtkm/VertexClusteringVtkm.md>
 

@@ -3,6 +3,9 @@
 # Calc
 compute with coordinates and data
 
+## Ports
+
+
 <svg width="50.0em" height="8.6em" >
 <style>.text { font: normal 1.0em sans-serif;}tspan{ font: italic 1.0em sans-serif;}.moduleName{ font: bold 1.0em sans-serif;}</style>
 <rect x="0em" y="3.8em" width="5.0em" height="3.0em" rx="0.1em" ry="0.1em" style="fill:#64c8c8ff;" />
@@ -27,6 +30,12 @@ compute with coordinates and data
 <rect x="0.7em" y="7.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="1.9em" y="7.8999999999999995em" class="text" >output data<tspan> (data_out)</tspan></text>
 </svg>
+
+The Calc module performs calculations on input data and input coordinates according to user-defined formulas.
+The output grid reuses the topology of the input geometry.
+If no `grid_formula` or `normal_formula` is provided, also the output coordinates or output normals are reused from the input geometry, respectively.
+The result of the calculation described by `formula` is mapped onto the output grid.
+
 
 ## Parameters
 
@@ -55,3 +64,46 @@ compute with coordinates and data
 The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
 :::
 
+
+The expressions in the parameters `formula`, `grid_formula`, and `normal_formula` are
+parsed with [ExprTK](https://www.partow.net/programming/exprtk/index.html), and so the operations and functions described in `SECTION 08 - BUILT-IN OPERATIONS & FUNCTIONS` of [this document](https://github.com/ArashPartow/exprtk) can be used.
+
+The variables listed in this table are available to be used in the expressions.
+Individual components of vector variables can be accessed using `.x`, `.y`, `.z` suffixes as shown,
+for 1-dimensional variables `var` and `var.x` are equivalent.
+
+:::{list-table} Available symbols and variables, and their meaning
+:header-rows: 1
+
+*  - Symbol / Variable
+   - Description
+
+*  - `result`
+   - assign the computed value to this variable (done implicitly if no assignment is made)
+*  - `outdim`
+   - result dimension (typically 1 or 3)
+*  - `p`
+   - position vector of current point
+*  - `x`, `p.x`
+   - x coordinate of current point
+*  - `y`, `p.y`
+   - y coordinate of current point
+*  - `z`, `p.z`
+   - z coordinate of current point
+*  - `d0`, `d`
+   - data value at current item (point or cell) received at `data_in0`
+*  - `d1`
+   - data value at current item (point or cell) received at `data_in1`
+*  - `d2`
+   - data value at current item (point or cell) received at `data_in2`
+*  - `timestep`, `step`
+   - timestep number for current block
+*  - `time`, `t`
+   - real time for current block
+*  - `rank`
+   - MPI rank number
+*  - `block`
+   - block ID number of current block
+*  - `i`, `idx`, `index`
+   - index of current item (point or cell) in current block
+:::

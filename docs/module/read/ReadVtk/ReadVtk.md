@@ -51,6 +51,7 @@ read VTK data
 |filename|name of VTK file|String|
 |read_pieces|create block for every piece in an unstructured grid|Int|
 |create_ghost_cells|create ghost cells for multi-piece unstructured grids|Int|
+|use_cache|cache for improved performance for transient data on stationary grids (VTK HDF format only)|Int|
 |point_field_0|point data field)|String|
 |point_field_1|point data field)|String|
 |point_field_2|point data field)|String|

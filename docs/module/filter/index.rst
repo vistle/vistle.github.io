@@ -24,6 +24,8 @@ Filter
 **D**
    :doc:`Displace <Displace/Displace>` *move vertices according to mapped data of first input*
 
+   :doc:`DisplaceVtkm <DisplaceVtkm/DisplaceVtkm>` *move vertices according to mapped data of first input*
+
 
 **F**
    :doc:`FilterCells <FilterCells/FilterCells>` *filter out some cells*
@@ -69,6 +71,7 @@ Filter
    CellToVert <CellToVert/CellToVert.md>
    CellToVertVtkm <CellToVertVtkm/CellToVertVtkm.md>
    Displace <Displace/Displace.md>
+   DisplaceVtkm <DisplaceVtkm/DisplaceVtkm.md>
    FilterCells <FilterCells/FilterCells.md>
    MapDrape <MapDrape/MapDrape.md>
    Sample <Sample/Sample.md>

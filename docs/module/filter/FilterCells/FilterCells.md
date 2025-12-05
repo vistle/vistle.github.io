@@ -3,6 +3,9 @@
 # FilterCells
 filter out some cells
 
+## Ports
+
+
 <svg width="73.8em" height="6.6em" >
 <style>.text { font: normal 1.0em sans-serif;}tspan{ font: italic 1.0em sans-serif;}.moduleName{ font: bold 1.0em sans-serif;}</style>
 <rect x="0em" y="1.8em" width="7.38em" height="3.0em" rx="0.1em" ry="0.1em" style="fill:#64c8c8ff;" />
@@ -18,15 +21,16 @@ filter out some cells
 <text x="1.9em" y="5.8999999999999995em" class="text" >filtered grid with or without data<tspan> (grid_out)</tspan></text>
 </svg>
 
+
 ## Parameters
 
 
 |name|description|type|
 |-|-|-|
 |filter_expression|elements for which this expression is true are filtered out, for supported symbols see selection lists|String|
-|filterType|filter type (Ghost, Elements, Vertices)|Int|
-|SupportedVariables|Supported Variables (cellDiameter, datavalue, dimensionality, edgeLength, elem, numFaces, numVertices, surface, type, volume, x_center, x_max, x_min, y_center, y_max, y_min, z_center, z_max, z_min)|Int|
-|SupportedConstants|Supported Constants (BAR, HEXA, HEXAHEDRON, LINE, NONE, PLG, PLH, POINT, POLYGON, POLYHEDRON, POLYLINE, PRISM, PT, PYR, PYRAMID, QUAD, TETRA, TETRAHEDRON, TRI, TRIANGLE)|Int|
+|filter_type|on what to filter (Ghost, Elements, Vertices)|Int|
+|supported_variables|variables available for use in filter expression (cellDiameter, datavalue, dimensionality, edgeLength, elem, numFaces, numVertices, surface, type, volume, x_center, x_max, x_min, y_center, y_max, y_min, z_center, z_max, z_min)|Int|
+|supported_constants|constants available for use in filter expression (BAR, HEXA, HEXAHEDRON, LINE, NONE, PLG, PLH, POINT, POLYGON, POLYHEDRON, POLYLINE, PRISM, PT, PYR, PYRAMID, QUAD, TETRA, TETRAHEDRON, TRI, TRIANGLE)|Int|
 
 
 :::{admonition} Supported System Parameters
@@ -44,3 +48,12 @@ filter out some cells
 The meaning of these parameters is described in more detail in the [System Parameters](../../system-parameters.md) documentation.
 :::
 
+
+The `filter_expression` is parsed with [ExprTK](https://www.partow.net/programming/exprtk/index.html), and so the operations and functions described in `SECTION 08 - BUILT-IN OPERATIONS & FUNCTIONS` of [this document](https://github.com/ArashPartow/exprtk) can be used.
+The available variables and constants are listed in the parameters `supported_variables` and `supported_constants` respectively.
+
+## Related Modules
+
+### Similar Modules
+
+[](project:#mod-Threshold), [](project:#mod-ClipVtkm)
