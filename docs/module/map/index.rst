@@ -58,7 +58,7 @@ Map
 **V**
    :doc:`VectorField <VectorField/VectorField>` *create lines from mapped vector data*
 
-   :doc:`VectorFieldVtkm <VectorFieldVtkm/VectorFieldVtkm>` *filter/VectorFieldWorklet.h*
+   :doc:`VectorFieldVtkm <VectorFieldVtkm/VectorFieldVtkm>` *create lines from mapped vector data*
 
 
 

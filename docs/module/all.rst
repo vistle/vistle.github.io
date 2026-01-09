@@ -282,7 +282,7 @@ All Modules
 
    :doc:`VectorField <map/VectorField/VectorField>` (:doc:`Map <map/index>`) *create lines from mapped vector data*
 
-   :doc:`VectorFieldVtkm <map/VectorFieldVtkm/VectorFieldVtkm>` (:doc:`Map <map/index>`) *filter/VectorFieldWorklet.h*
+   :doc:`VectorFieldVtkm <map/VectorFieldVtkm/VectorFieldVtkm>` (:doc:`Map <map/index>`) *create lines from mapped vector data*
 
    :doc:`VertToCellVtkm <filter/VertToCellVtkm/VertToCellVtkm>` (:doc:`Filter <filter/index>`) *convert vertex mapped data to cell mapped*
 
