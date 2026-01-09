@@ -78,8 +78,8 @@ block individually instead of for all blocks globally.
 ## Usage Examples
 
 <figure float="left">
-    <a href="vistle:///open#module/map/BoundingBox/tiny-covise"><img src="tiny-covise_workflow.png" width="200" /></a>
-    <img src="tiny-covise_result.png" width="300"/>
+    <a href="tiny-covise_workflow.png"><img src="tiny-covise_workflow.png" width="38%" /></a>
+    <a href="tiny-covise_result.png"><img src="tiny-covise_result.png" width="58%"/></a>
     <figcaption>Fig.1 <a href="vistle:///open#module/map/BoundingBox/tiny-covise">tiny-covise</a> workflow (left) and expected result (right).</figcaption>
 </figure>
 

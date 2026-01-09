@@ -25,6 +25,7 @@ small simulation to compare performance with other in situ interfaces
 |tEnd|end time|Float|
 |dt|time step length|Float|
 |frequency|the pipeline is processed for every nth simulation cycle|Int|
+|most_important_iteration|force the pipeline to process this iteration|Int|
 |keep_timesteps|if true timesteps are cached and processed as time series|Int|
 |path|path to the connection file written by the simulation|String|
 

@@ -58,6 +58,8 @@ Map
 **V**
    :doc:`VectorField <VectorField/VectorField>` *create lines from mapped vector data*
 
+   :doc:`VectorFieldVtkm <VectorFieldVtkm/VectorFieldVtkm>` *filter/VectorFieldWorklet.h*
+
 
 
 .. toctree::
@@ -79,4 +81,5 @@ Map
    ShowGrid <ShowGrid/ShowGrid.md>
    Tracer <Tracer/Tracer.md>
    VectorField <VectorField/VectorField.md>
+   VectorFieldVtkm <VectorFieldVtkm/VectorFieldVtkm.md>
 

@@ -81,8 +81,8 @@ There are different modes for setting the radius of the resulting geometric bodi
 ## Usage Examples
 
 <figure float="left">
-    <a href="vistle:///open#module/geometry/Thicken/thicken"><img src="thicken_workflow.png" width="200" /></a>
-    <img src="thicken_result.png" width="300"/>
+    <a href="thicken_workflow.png"><img src="thicken_workflow.png" width="38%" /></a>
+    <a href="thicken_result.png"><img src="thicken_result.png" width="58%"/></a>
     <figcaption>Fig.1 <a href="vistle:///open#module/geometry/Thicken/thicken">thicken</a> workflow (left) and expected result (right).</figcaption>
 </figure>On the top-right, a scalar data set is shown as points which can only be seen by zooming in considerably. In the center, the same data set is shown as spheres. At the bottom, the vector field has been added, after expanding its lines into tubes.
 

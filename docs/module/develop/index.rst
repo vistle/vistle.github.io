@@ -46,6 +46,8 @@ Develop
 
    :doc:`MpiInfo <MpiInfo/MpiInfo>` *print MPI, CPU binding and shared memory info*
 
+   :doc:`MpiInfoVtkm <MpiInfoVtkm/MpiInfoVtkm>` *print MPI, Viskores/VTK-m, CPU binding and shared memory info*
+
 
 **O**
    :doc:`ObjectStatistics <ObjectStatistics/ObjectStatistics>` *print object statistics*
@@ -99,6 +101,7 @@ Develop
    ManipulateGhosts <ManipulateGhosts/ManipulateGhosts.md>
    MiniSim <MiniSim/MiniSim.md>
    MpiInfo <MpiInfo/MpiInfo.md>
+   MpiInfoVtkm <MpiInfoVtkm/MpiInfoVtkm.md>
    ObjectStatistics <ObjectStatistics/ObjectStatistics.md>
    PassThroughVtkm <PassThroughVtkm/PassThroughVtkm.md>
    PrintObjects <PrintObjects/PrintObjects.md>

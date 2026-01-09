@@ -284,6 +284,8 @@ All Modules
 
    :doc:`VectorField <map/VectorField/VectorField>` (:doc:`Map <map/index>`) *create lines from mapped vector data*
 
+   :doc:`VectorFieldVtkm <map/VectorFieldVtkm/VectorFieldVtkm>` (:doc:`Map <map/index>`) *filter/VectorFieldWorklet.h*
+
    :doc:`VertToCellVtkm <filter/VertToCellVtkm/VertToCellVtkm>` (:doc:`Filter <filter/index>`) *convert vertex mapped data to cell mapped*
 
    :doc:`VertexClusteringVtkm <geometry/VertexClusteringVtkm/VertexClusteringVtkm>` (:doc:`Geometry <geometry/index>`) *simplify polygonal (i.e. triangle) mesh*

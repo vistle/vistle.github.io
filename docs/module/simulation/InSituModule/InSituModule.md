@@ -23,6 +23,7 @@ Output ports are created dynamically, based on information from the coupling def
 |-|-|-|
 |path|path to the connection file written by the simulation|String|
 |frequency|the pipeline is processed for every nth simulation cycle|Int|
+|most_important_iteration|force the pipeline to process this iteration|Int|
 |keep_timesteps|if true timesteps are cached and processed as time series|Int|
 
 

@@ -24,6 +24,7 @@ decompose polygons to triangles
 |name|description|type|
 |-|-|-|
 |transform_spheres|also generate triangles for sphere impostors|Int|
+|transform_tubes|also generate tessellated geometry for tubes|Int|
 |quality|tessellation quality|Int|
 
 

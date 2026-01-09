@@ -57,7 +57,7 @@ The meaning of these parameters is described in more detail in the [System Param
 ## Usage Examples
 
 <figure float="left">
-    <a href="vistle:///open#module/develop/GridElementStatistics/GridElementStatistics"><img src="GridElementStatistics_workflow.png" width="200" /></a>
-    <img src="GridElementStatistics_result.png" width="300"/>
+    <a href="GridElementStatistics_workflow.png"><img src="GridElementStatistics_workflow.png" width="38%" /></a>
+    <a href="GridElementStatistics_result.png"><img src="GridElementStatistics_result.png" width="58%"/></a>
     <figcaption>Fig.1 <a href="vistle:///open#module/develop/GridElementStatistics/GridElementStatistics">GridElementStatistics</a> workflow (left) and expected result (right).</figcaption>
 </figure>
