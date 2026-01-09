@@ -15,10 +15,6 @@ Render
 
 
 
-**O**
-   :doc:`OsgRenderer <OsgRenderer/OsgRenderer>` *OpenSceneGraph remote renderer*
-
-
 **B**
    :doc:`BlenderRenderer <BlenderRenderer/BlenderRenderer>` *Blender remote renderer*
 
@@ -40,7 +36,6 @@ Render
    :maxdepth: 1
    :hidden:
 
-   OsgRenderer <OsgRenderer/OsgRenderer.md>
    BlenderRenderer <BlenderRenderer/BlenderRenderer.md>
    DisCOVERay <DisCOVERay/DisCOVERay.md>
    ANARemote <ANARemote/ANARemote.md>

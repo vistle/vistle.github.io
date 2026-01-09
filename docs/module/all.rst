@@ -160,8 +160,6 @@ All Modules
 **O**
    :doc:`ObjectStatistics <develop/ObjectStatistics/ObjectStatistics>` (:doc:`Develop <develop/index>`) *print object statistics*
 
-   :doc:`OsgRenderer <render/OsgRenderer/OsgRenderer>` (:doc:`Render <render/index>`) *OpenSceneGraph remote renderer*
-
 
 **P**
    :doc:`PassThroughVtkm <develop/PassThroughVtkm/PassThroughVtkm>` (:doc:`Develop <develop/index>`) *convert data to Viskores/VTK-m and back, unmodified*
