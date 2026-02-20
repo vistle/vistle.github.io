@@ -363,9 +363,10 @@ For simplicity, predefined Viskores filters have been used for the two examples 
 
 ## How to Configure Vistle to Run Viskores Modules on the GPU
 
-Viskores is an open-source software that can be obtained through [GitHub](https://github.com/Viskores/viskores). It was added as submodule to the Vistle repository, so that Vistle can handle configuring Viskores appropriately for the user.
+Viskores is an open-source software that can be obtained through [GitHub](https://github.com/Viskores/viskores). It was added as submodule to the Vistle repository, so that Vistle can handle configuring Viskores appropriately for the user. 
 
-Only the CUDA version of Viskores is supported by Vistle, although, we are currently working on adding support for the Kokkos version as well. 
+### CUDA build
+This build is recommended for NVIDIA GPUs. 
 
 To compile Vistle with the CUDA version of Viskores, run the following commands from your build directory:
 
@@ -374,7 +375,32 @@ cmake -DVISTLE_USE_CUDA=ON ..
 make
 ```
 
-**Note:** If Viskores is already installed on your system, which is usually the case if [VTK](https://vtk.org) is installed, Vistle will not compile its own Viskores, but use the system Viskores instead. In that case, make sure that the system Viskores was compiled to use CUDA (or Kokkos), otherwise, the modules will be run on the CPU.
+Make sure the CUDA compiler is found (e.g., by checking `CMAKE_CUDA_COMPILER` after configuring cmake) before compiling, otherwise the CPU version of Vistle will be built.
+
+### Kokkos build
+This build has been tested on AMD and NVIDIA GPUs.
+
+To compile Vistle with the Kokkos version of Viskores, you will first need to install Kokkos on your system and enable the desired backends. You can either install it with the package manager of your choice or by yourself from source (see [Kokkos's GitHub](https://github.com/kokkos/kokkos) repository). In the latter case, please consult the [Kokkos documentation](https://kokkos.org/kokkos-core-wiki/get-started/building-from-source.html#configuring-and-building-kokkos) for the appropriate build options for your system.
+
+**Important:** Make sure `Kokkos_ENABLE_THREADS` is `OFF`.
+
+ Once Kokkos is installed, run the following commands from your Vistle build directory:
+
+```bash
+cmake -DVISTLE_USE_KOKKOS=ON ..
+make
+```
+
+If Kokkos isn't found automatically (which is typically the case if Kokkos was installed in a non-standard location), add `-DKokkos_DIR=<path to your Kokkos installation>/lib/cmake/Kokkos` to the `cmake` command.
+
+Vistle will detect which backends have been enabled in your Kokkos build and configure the Viskores submodule accordingly.
+
+**Please note:** If you enabled the CUDA version of Kokkos, Vistle will build both the CUDA and Kokkos (+CUDA) version of Viskores. By default, Viskores prefers CUDA over Kokkos. To make Vistle use the Kokkos version of Viskores, set the `VISKORES_DEVICE` environment variable to `Kokkos` before running vistle:
+```
+export VISKORES_DEVICE=Kokkos
+vistle
+```
+**NOTE:** All environment variables recognized by [viskores::cont::Initialize](https://viskores.readthedocs.io/en/v1.0.0/initialization.html#_CPPv4N8viskores4cont10InitializeERiA_Pc17InitializeOptions) can be used, including `VISKORES_LOG_LEVEL` which can be helpful for debugging.
 
 [^vtkm]: Bolstad, M., Moreland, K., Pugmire, D., Rogers, D., Lo, L.T., Geveci, B., Childs, H., Rizzi, S.: VTK-m: Visualization for the Exascale Era and Beyond. In: ACM SIGGRAPH 2023 Talks, pp. 1–2 (2023). [https://doi.org/10.1145/3587421.3595466](https://doi.org/10.1145/3587421.3595466)
 
