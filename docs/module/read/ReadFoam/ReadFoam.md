@@ -49,6 +49,7 @@ read OpenFOAM data
 |name|description|type|
 |-|-|-|
 |casedir|OpenFOAM case directory|String|
+|foam_case|select a case to set it's directory as casedir)|Int|
 |starttime|start reading at the first step after this time|Float|
 |stoptime|stop reading at the last step before this time|Float|
 |Data0|name of field ((NONE))|String|

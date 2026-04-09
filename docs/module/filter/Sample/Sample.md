@@ -29,10 +29,10 @@ sample data on points, unstructured and uniform grids to a uniform grid
 |name|description|type|
 |-|-|-|
 |mode|interpolation mode (First, Mean, Nearest, Linear)|Int|
-|create_celltree|create celltree|Int|
+|create_celltree|create celltree for accelerated cell search|Int|
 |value_outside|value to be used if target is outside source domain (NaN, Zero, userDefined)|Int|
 |user_defined_value|user defined value if target outside source domain|Float|
-|mulit_hits|handling if multiple interpolatied values found for one target point  (Any, Average)|Int|
+|multi_hits|handling if multiple interpolated values found for one target point (Any, Average)|Int|
 
 
 :::{admonition} Supported System Parameters

@@ -11,12 +11,12 @@ combine up to three scalar fields to a vector field
 <rect x="0.7em" y="0.7999999999999998em" width="0.03333333333333333em" height="3.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="0.7em" y="0.7999999999999998em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="1.9em" y="0.8999999999999998em" class="text" >scalar input to be combined<tspan> (data_in0)</tspan></text>
-<rect x="1.4em" y="3.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<rect x="1.4em" y="3.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c8c81eff;" >
 <title>data_in1</title></rect>
 <rect x="1.9em" y="1.7999999999999998em" width="0.03333333333333333em" height="2.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="1.9em" y="1.7999999999999998em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <text x="3.0999999999999996em" y="1.9em" class="text" >scalar input to be combined<tspan> (data_in1)</tspan></text>
-<rect x="2.5999999999999996em" y="3.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c81e1eff;" >
+<rect x="2.5999999999999996em" y="3.8em" width="1.0em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#c8c81eff;" >
 <title>data_in2</title></rect>
 <rect x="3.0999999999999996em" y="2.8em" width="0.03333333333333333em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="3.0999999999999996em" y="2.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
@@ -34,6 +34,7 @@ combine up to three scalar fields to a vector field
 |name|description|type|
 |-|-|-|
 |species|Species for output|String|
+|fill_mode|How to fill missing components (Zero, One)|Int|
 
 
 :::{admonition} Supported System Parameters

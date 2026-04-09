@@ -46,6 +46,8 @@ All Modules
 
    :doc:`Calc <general/Calc/Calc>` (:doc:`General <general/index>`) *compute with coordinates and data*
 
+   :doc:`CellClipVtkm <general/CellClipVtkm/CellClipVtkm>` (:doc:`General <general/index>`) *clip geometry at surface (CutGeometry)*
+
    :doc:`CellToVert <filter/CellToVert/CellToVert>` (:doc:`Filter <filter/index>`) *convert cell mapped data to vertice mapped*
 
    :doc:`CellToVertVtkm <filter/CellToVertVtkm/CellToVertVtkm>` (:doc:`Filter <filter/index>`) *convert cell mapped data to vertice mapped*

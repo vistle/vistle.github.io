@@ -25,6 +25,7 @@ show outlines of grid cells
 |-|-|-|
 |cells|show cells with these indices|String|
 |cell_scale|factor for scaling cells around their center|Float|
+|make_bars|create sequences of bars instead of line strips|Int|
 |normalcells|Show normal (non ghost) cells|Int|
 |ghostcells|Show ghost cells|Int|
 |tetrahedron|Show tetrahedron|Int|

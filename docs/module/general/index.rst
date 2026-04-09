@@ -32,6 +32,8 @@ General
 
    :doc:`Calc <Calc/Calc>` *compute with coordinates and data*
 
+   :doc:`CellClipVtkm <CellClipVtkm/CellClipVtkm>` *clip geometry at surface (CutGeometry)*
+
    :doc:`ClipVtkm <ClipVtkm/ClipVtkm>` *clip geometry at surface (CutGeometry)*
 
    :doc:`ColorAttribute <ColorAttribute/ColorAttribute>` *specify solid object color as an attribute*
@@ -83,6 +85,7 @@ General
    AttachShader <AttachShader/AttachShader.md>
    Cache <Cache/Cache.md>
    Calc <Calc/Calc.md>
+   CellClipVtkm <CellClipVtkm/CellClipVtkm.md>
    ClipVtkm <ClipVtkm/ClipVtkm.md>
    ColorAttribute <ColorAttribute/ColorAttribute.md>
    Distribute <Distribute/Distribute.md>

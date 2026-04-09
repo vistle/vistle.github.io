@@ -28,7 +28,7 @@ filter out some cells
 |name|description|type|
 |-|-|-|
 |filter_expression|elements for which this expression is true are filtered out, for supported symbols see selection lists|String|
-|filter_type|on what to filter (Ghost, Elements, Vertices)|Int|
+|filter_type|how to remove filtered cells (MarkAsGhost, RemoveElement, RemoveElementAndVertices)|Int|
 |supported_variables|variables available for use in filter expression (cellDiameter, datavalue, dimensionality, edgeLength, elem, numFaces, numVertices, surface, type, volume, x_center, x_max, x_min, y_center, y_max, y_min, z_center, z_max, z_min)|Int|
 |supported_constants|constants available for use in filter expression (BAR, HEXA, HEXAHEDRON, LINE, NONE, PLG, PLH, POINT, POLYGON, POLYHEDRON, POLYLINE, PRISM, PT, PYR, PYRAMID, QUAD, TETRA, TETRAHEDRON, TRI, TRIANGLE)|Int|
 

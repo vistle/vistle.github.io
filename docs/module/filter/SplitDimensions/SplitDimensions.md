@@ -30,7 +30,7 @@ separate grid into 1D, 2D and 3D components
 <title>data_out_0d</title></rect>
 <rect x="4.3em" y="4.8em" width="0.03333333333333333em" height="1.0em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
 <rect x="4.3em" y="5.8em" width="1.0em" height="0.03333333333333333em" rx="0.0em" ry="0.0em" style="fill:#000000;" />
-<text x="5.5em" y="5.8999999999999995em" class="text" >3-dimensional elements of input (points)<tspan> (data_out_0d)</tspan></text>
+<text x="5.5em" y="5.8999999999999995em" class="text" >0-dimensional elements of input (points)<tspan> (data_out_0d)</tspan></text>
 </svg>
 
 ## Parameters
