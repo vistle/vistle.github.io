@@ -1,6 +1,6 @@
 # How to Generate Snapshots for the Documentation Using CMake
 
-To keep the size of the repository as small as possible, screenshots should be generated automatically through Vistle's documentation pipeline if possible. Therefore Vistle provides some CMake macros that manage the generation. This allows recreation of the images if the dependencies change. These dependencies are the Vistle workflow file itself and a module or other CMake tarket whose functionality should be shown in the snapshot (for now only one target dependency is supported).
+To keep the size of the repository as small as possible, screenshots should be generated automatically through Vistle's documentation pipeline if possible. Therefore Vistle provides some CMake macros that manage the generation. This allows recreation of the images if the dependencies change. These dependencies are the Vistle workflow file itself and a module or other CMake target whose functionality should be shown in the snapshot (for now only one target dependency is supported).
 
 ## Snapshot of the Vistle Workflow
 
@@ -13,13 +13,13 @@ The macro **generate_snapshots(targetname network_file)** generates both snapsho
 
 The viewpoint file can be created by using the ViewPoint plugin.
 
-Further adaptions to the cover presentation can be done using coGRMsgs that can be send to COVER using Vislte's pythen interface e.g.:
+Further adaptions to the COVER presentation can be done using `coGRMsg`s that can be sent to COVER using Vistle's Python interface, e.g.:
 
 ```python
     sendCoverMessage(coGRColorBarPluginMsg(coGRColorBarPluginMsg.ShowColormap))
 ```
 
-will show all color tables.
+will show all used color tables.
 
 To automatically link and use the images in a module's documentation input file use the example tag:
 
