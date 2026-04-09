@@ -1,17 +1,17 @@
 # Using Acceleration Hardware and Many Core Processors
 
 For accelerated parallel processing, Vistle uses the [Viskores](https://github.com/Viskores/viskores) framework.
-Development of this framework started under the name [VTK-m](https://m.vtk.org).
-Its data structures are tightly integrated with the Vistle data structures.
 Viskores is a library for parallel processing of large datasets on many-core processors.
 It is also able to manage memory architectures where the main processor and the accelerator do not share memory.
  It enables implementation of parallel algorithms in a platform independent way and already provides implementations of many visualization algorithms.
+Its data structures are tightly integrated with the Vistle data structures.
 
 While Viskores is designed to be used with many backends, such as [Threading Building Blocks](https://github.com/uxlfoundation/oneTBB), [OpenMP](https://openmp.org), [CUDA](https://developer.nvidia.com/cuda-zone), and more via [Kokkos](https://kokkos.org), our work was focused on CUDA.
 
 Vistle wraps many of the algorithms provided by Viskores in modules.
 It also provides some modules based on this framework performing functions that are not available within Viskores.
-All of these modules are suffixed with `Vtkm` in the module library.
+All of these modules are suffixed with `Vtkm` in the module library,
+as development of the Viskores framework started under the name [VTK-m](https://m.vtk.org).
 
 Vistle strives to be as versatile as possible. Its own algorithms try to support a variety of grid and cell types. In particular, also polyhedral cells with an arbitrary number of vertices are supported within unstructured grids.
 Viskores, on the other hand, does not (yet) support this.
