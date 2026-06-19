@@ -75,6 +75,7 @@ Our :doc:`publications <publications/index>` describe the :doc:`architecture <ar
    HLRS (hlrs.de) <https://www.hlrs.de>
    OpenCOVER (hlrs.de/covise) <https://www.hlrs.de/solutions/types-of-computing/visualization/covise#:~:text=OpenCOVER>
    Source Code (github.com/vistle/vistle) <https://github.com/vistle/vistle>
+   Vistle Container (github.com/vistle/container) <https://github.com/vistle/container>
    About <copyright>
 
 
