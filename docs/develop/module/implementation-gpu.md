@@ -168,10 +168,15 @@ std::unique_ptr<viskores::filter::Filter> MyIsosurfaceVtkm::setUpFilter() const
 
 ### Adding the Module to Vistle
 
-Adding a Viskores module to Vistle is very similar to adding a regular module to Vistle. In the module's `CMakeLists.txt`, we call the `add_vtkm_module` target which makes sure the correct Viskores libraries are linked in addition to all necessary Vistle libraries:
+Adding a Viskores module to Vistle is similar to adding a regular module to Vistle. In the module's `CMakeLists.txt`, we call the `add_vtkm_module` target which makes sure the correct Viskores libraries are linked in addition to all necessary Vistle libraries:
 ```cmake
-add_vtkm_module(MyIsosurfaceVtkm "Basic GPU module using Viskores's Contour filter" MyIsosurfaceVtkm.h MyIsosurfaceVtkm.cpp)
+set(HEADERS MyIsosurfaceVtkm.h)
+set(SOURCES MyIsosurfaceVtkm.cpp)
+
+add_vtkm_module(MyIsosurfaceVtkm "Basic GPU module using Viskores's Contour filter" ${HEADERS} DEVICE_SOURCES ${SOURCES})
 ```
+
+Note the use of the keyword `DEVICE_SOURCES`, which is particularly important for Viskores modules consisting of multiple source files. It ensures that the files are processes correctly by device compilers such as `nvcc`.
 
 Then, we must choose the module category which fits best, and add the new subdirectory to the corresponding `CMakeLists.txt` file:
 ```cmake
