@@ -25,12 +25,16 @@ In order to implement a module wrapping a filter provided by or relying on Visko
 The `VtkmModule` constructor, which the derived class should call in its own constructor, creates the input and output ports of the Viskores module.
 
 ```cpp
-VtkmModule(const std::string &name, int moduleID, mpi::communicator comm, int numPorts = 1, bool requireMappedData = true);
+VtkmModule(const std::string &name, int moduleID, mpi::communicator comm, int numPorts = 1, MappedDataHandling mode = MappedDataHandling::Require);
 ```
 
 By default, a Viskores module provides one input port and one output port, but additional ports can be added by specifying the desired number in the base constructor (`numPorts`). Note that all data on the input ports must be defined on the same grid, as the module will throw an error, otherwise.
 
-Many Viskores filters work on data fields, so, by default, a Viskores module expects the data at the input ports to contain mapped data in addition to a grid and will throw an error if there is none. If desired, the derived class can remove this requirement by setting `requireMappedData` to `false`.
+Many Viskores filters work on data fields, so, by default, a Viskores module expects the data at the input ports to contain mapped data in addition to a grid and will throw an error if there is none. The `MappedDataHandling` mode can be changed, if desired:
+- `Use`: keep the existing mapped data and use it as is
+- `Require`: mapped data is mandatory; if it is missing, the module aborts with an error
+- `Discard`: mapped data is ignored and removed before exporting to Viskores
+- `Generate`: if mapped data is absent, the module creates it automatically so the filter can still run
 
 ### Defining the Viskores Filter
 
@@ -44,10 +48,22 @@ If the Viskores module has multiple input ports, the filter will only be applied
 
 ### Preparing the Input Data
 
-The `prepareInputGrid` transforms the input grid into a Viskores cellset and adds it to the Viskores dataset `dataset`. Similarly, `prepareOutputGrid`, which is called once per field, transforms the input fields into Viskores array handles and adds them to `dataset` as well. The filter will, subsequently, be applied to `dataset`.
+The `VtkmModule` class defines its own struct called `InputData` for encapsulating the input data in both the Vistle and the Viskores data formats:
 ```cpp
-virtual ModuleStatusPtr prepareInputGrid(const vistle::Object::const_ptr &grid, viskores::cont::DataSet &dataset) const;
-virtual ModuleStatusPtr prepareInputField(const vistle::Port *port, const vistle::Object::const_ptr &grid, const vistle::DataBase::const_ptr &field, std::string &fieldName, viskores::cont::DataSet &dataset) const;
+struct InputData {
+    vistle::Object::const_ptr vistleGrid;
+    std::vector<vistle::DataBase::const_ptr> fields;
+
+    viskores::cont::DataSet viskoresDataset;
+};
+```
+The struct makes sure that the modules have access to all the information they need when preparing the input (or output) for the filter.
+
+The `prepareInputGrid` method transforms the input grid into a Viskores cellset and adds it to the Viskores dataset inside `input`. Similarly, `prepareInputField`, which is called once per field, transforms the input fields into Viskores array handles and adds them to `input.viskoresDataset` as well. The filter will, subsequently, be applied to `input.viskoresDataset`.
+```cpp
+virtual ModuleStatusPtr prepareInputGrid(InputData &input) const;
+
+virtual ModuleStatusPtr prepareInputField(const vistle::Port *port, InputData &input, int index) const;
 ```
 
 A Viskores module only performs very basic checks on the input ports while reading in the data, i.e., in the `readInPorts` method: It ensures each input port contains data as long as its corresponding output port is connected. Additionally, it makes sure that at least one input grid provides an input grid and that all data fields are defined on the same grid.
@@ -55,11 +71,23 @@ Some filters might, however, require additional checks on the input data. These 
 
 ### Preparing the Output Data
 
-`prepareOutputGrid` and `prepareOutputField`, which is called once per field, transform the filter results that will be added to the output ports back into the Vistle format. The output data field, which contains the output grid, is added to the ports. If `requireMappedData` is `false`, only the output grid is added.
+Similar to the input struct, the `VtkmModule` class also contains a struct (called `OutputData`) for the output data:
 
 ```cpp
-virtual vistle::Object::ptr prepareOutputGrid(const viskores::cont::DataSet &dataset, const vistle::Object::const_ptr &inputGrid) const;
-virtual vistle::DataBase::ptr prepareOutputField(const viskores::cont::DataSet &dataset, const vistle::Object::const_ptr &inputGrid, const vistle::DataBase::const_ptr &inputField, const std::string &fieldName, const vistle::Object::ptr &outputGrid) const;
+struct OutputData {
+    vistle::Object::const_ptr vistleGrid;
+    std::vector<vistle::DataBase::ptr> fields;
+
+    viskores::cont::DataSet viskoresDataset;
+};
+```
+
+`prepareOutputGrid` and `prepareOutputField`, which is called once per field, transform the filter result into the Vistle format, so it can be added to the module's output ports.
+
+```cpp
+virtual vistle::Object::const_ptr prepareOutputGrid(const InputData &input, OutputData &output) const;
+
+virtual vistle::DataBase::ptr prepareOutputField(const InputData &input, OutputData &output, int index, const std::string &fieldName) const;
 ```
 
 By default, the Viskores module simply copies the attributes from the input grid and fields to the output grid and fields, respectively. It also sets the output field's grid to the output grid. To account for possible attribute changes after applying the filter, e.g., when the filter changes the field's mapping from element- to cell-based, the derived class can override these two methods as needed.
@@ -81,7 +109,6 @@ Let's first inspect the new module's header file:
 class MyIsosurfaceVtkm: public vistle::VtkmModule {
 public:
     MyIsosurfaceVtkm(const std::string &name, int moduleID, mpi::communicator comm);
-    ~MyIsosurfaceVtkm();
 
 private:
     vistle::FloatParameter *m_isovalue;
@@ -113,6 +140,7 @@ vistle::FloatParameter *m_isovalue;
 Next, the corresponding source file will be discussed:
 ```cpp
 #include <viskores/filter/contour/Contour.h>
+
 #include "MyIsosurfaceVtkm.h"
 
 MODULE_MAIN(MyIsosurfaceVtkm)
@@ -124,9 +152,6 @@ MyIsosurfaceVtkm::MyIsosurfaceVtkm(const std::string &name, int moduleID, mpi::c
 {
     m_isovalue = addFloatParameter("isovalue", "isovalue", 0.0);
 }
-
-MyIsosurfaceVtkm::~MyIsosurfaceVtkm()
-{}
 
 std::unique_ptr<viskores::filter::Filter> MyIsosurfaceVtkm::setUpFilter() const
 {
@@ -151,8 +176,8 @@ MyIsosurfaceVtkm::MyIsosurfaceVtkm(const std::string &name, int moduleID, mpi::c
     m_isovalue = addFloatParameter("isovalue", "isovalue", 0.0);
 }
 ```
-The base constructor lets us choose the number of ports. Here, the number of ports is 2. This means that the Contour filter will use the data field on the first input port to create the isosurface. The data on the second port will then simply be mapped to the resulting geometry.   
-The constructor can, e.g., be used to define module parameters like the isovalue.
+The base constructor lets us choose the number of ports (here, it is two). This means that the Contour filter will use the data field on the first input port to create the isosurface. The data on the second port will then simply be mapped to the resulting geometry.   
+The constructor can be used to define module parameters, such as the isovalue in this case.
 
 Finally, we create a Contour filter in the `setUpFilter` method, pass the isovalue to it and return it:
 
@@ -176,9 +201,9 @@ set(SOURCES MyIsosurfaceVtkm.cpp)
 add_vtkm_module(MyIsosurfaceVtkm "Basic GPU module using Viskores's Contour filter" ${HEADERS} DEVICE_SOURCES ${SOURCES})
 ```
 
-Note the use of the keyword `DEVICE_SOURCES`, which is particularly important for Viskores modules consisting of multiple source files. It ensures that the files are processes correctly by device compilers such as `nvcc`.
+Note the use of the keyword `DEVICE_SOURCES`, which is particularly important for Viskores modules consisting of multiple source files. It ensures that the files are processed correctly by device compilers such as `nvcc`.
 
-Then, we must choose the module category which fits best, and add the new subdirectory to the corresponding `CMakeLists.txt` file:
+Then, we must choose the module category which fits best and add the new subdirectory to the corresponding `CMakeLists.txt` file:
 ```cmake
 add_subdirectory(MyIsosurfaceVtkm)
 ```
@@ -216,16 +241,16 @@ To implement the desired behaviour, `MyCellToVertVtkm` overrides the `prepareInp
 class MyCellToVertVtkm: public vistle::VtkmModule {
 public:
     MyCellToVertVtkm(const std::string &name, int moduleID, mpi::communicator comm);
-    ~MyCellToVertVtkm();
 
 private:
-    ModuleStatusPtr prepareInputField(const vistle::Port *port, const vistle::Object::const_ptr &grid, const vistle::DataBase::const_ptr &field, std::string &fieldName,viskores::cont::DataSet &dataset) const override;
+    ModuleStatusPtr prepareInputField(const vistle::Port *port, InputData &input, int index) const override;
 
     std::unique_ptr<viskores::filter::Filter> setUpFilter() const override;
 
-    vistle::Object::ptr prepareOutputGrid(const viskores::cont::DataSet &dataset, vistle::Object::const_ptr &inputGrid) const override;
+    vistle::Object::const_ptr prepareOutputGrid(const InputData &input, OutputData &output) const override;
 
-    vistle::DataBase::ptr prepareOutputField(const viskores::cont::DataSet &dataset, const vistle::Object::const_ptr &inputGrid, const vistle::DataBase::const_ptr &inputField, const std::string &fieldName, const vistle::Object::ptr &outputGrid) const override;
+    vistle::DataBase::ptr prepareOutputField(const InputData &input, OutputData &output, int index,
+                                             const std::string &fieldName) const override;
 };
 
 #endif
@@ -249,48 +274,43 @@ MyCellToVertVtkm::MyCellToVertVtkm(const std::string &name, int moduleID, mpi::c
 : VtkmModule(name, moduleID, comm)
 {}
 
-MyCellToVertVtkm::~MyCellToVertVtkm()
-{}
-
 std::unique_ptr<viskores::filter::Filter> MyCellToVertVtkm::setUpFilter() const
 {
     return std::make_unique<viskores::filter::field_conversion::PointAverage>();
 }
 
-ModuleStatusPtr MyCellToVertVtkm::prepareInputField(const Port *port, const Object::const_ptr &grid,
-                                                    const DataBase::const_ptr &field, std::string &fieldName,
-                                                    viskores::cont::DataSet &dataset) const
+ModuleStatusPtr MyCellToVertVtkm::prepareInputField(const vistle::Port *port, InputData &input, int index) const
 {
-    if (field->guessMapping(grid) == DataBase::Element) {
-        return VtkmModule::prepareInputField(port, grid, field, fieldName, dataset);
+    auto field = input.fields[index];
+    auto mapping = field->guessMapping(input.vistleGrid);
+
+    if (mapping == DataBase::Element) {
+        return VtkmModule::prepareInputField(port, input, index);
     }
     return Info("No need to apply filter to port " + port->getName());
 }
 
-Object::ptr MyCellToVertVtkm::prepareOutputGrid(const viskores::cont::DataSet &dataset,
-                                                const Object::const_ptr &inputGrid) const
+vistle::Object::const_ptr MyCellToVertVtkm::prepareOutputGrid(const InputData &input, OutputData &output) const
 {
-    return nullptr;
+    return input.vistleGrid;
 }
 
 
-DataBase::ptr MyCellToVertVtkm::prepareOutputField(const viskores::cont::DataSet &dataset,
-                                                   const Object::const_ptr &inputGrid,
-                                                   const DataBase::const_ptr &inputField, const std::string &fieldName,
-                                                   const Object::ptr &outputGrid) const
+vistle::DataBase::ptr MyCellToVertVtkm::prepareOutputField(const InputData &input, OutputData &output, int index,
+                                                           const std::string &fieldName) const
 {
     // if filter was applied ...
-    if (dataset.HasField(fieldName)) {
+    if (output.viskoresDataset.HasField(fieldName)) {
         // ... add its output to the output port
-        auto outputField = VtkmModule::prepareOutputField(dataset, inputGrid, inputField, fieldName, outputGrid);
+        auto outputField = VtkmModule::prepareOutputField(input, output, index, fieldName);
         outputField->setMapping(DataBase::Vertex);
-        outputField->setGrid(inputGrid);
         return outputField;
     } else {
         // ... otherwise just copy the input field
-        auto ndata = inputField->clone();
-        ndata->setGrid(inputGrid);
+        auto ndata = input.fields[index]->clone();
+        ndata->setGrid(input.vistleGrid);
         updateMeta(ndata);
+
         return ndata;
     }
 }
@@ -308,55 +328,56 @@ std::unique_ptr<viskores::filter::Filter> MyCellToVertVtkm::setUpFilter() const
 Before transforming the input field into a Viskores field, **MyCellToVertVtkm** first determines the field's mapping using the `guessMapping` method. If the field is element-based (=cell-based), the `prepareInputField` method of the base class is called to add the field to the Viskores dataset that will be passed to the Viskores filter. Otherwise, nothing happens, only an informational message will be printed to the GUI.
 
 ```cpp
-ModuleStatusPtr MyCellToVertVtkm::prepareInputField(const Port *port, const Object::const_ptr &grid,
-                                                    const DataBase::const_ptr &field, std::string &fieldName,
-                                                    viskores::cont::DataSet &dataset) const
+ModuleStatusPtr MyCellToVertVtkm::prepareInputField(const vistle::Port *port, InputData &input, int index) const
 {
-    if (field->guessMapping(grid) == DataBase::Element) {
-        return VtkmModule::prepareInputField(port, grid, field, fieldName, dataset);
+    auto field = input.fields[index];
+    auto mapping = field->guessMapping(input.vistleGrid);
+
+    if (mapping == DataBase::Element) {
+        return VtkmModule::prepareInputField(port, input, index);
     }
     return Info("No need to apply filter to port " + port->getName());
 }
 ```
 
-**Note:** `ModuleStatusPtr` is used to pass module states to `VtkmModule` which handles the states through its `isValid` method. Currently, there are four states: `Success()`, `Info(const std::string &message)`, `Warning(const std::string &message)`, `Error(const std::string &message)`. Returning the latter three, results in `VtkmModule` printing `message` to the GUI's Vistle Console. Returning an `Error` state will stop the execution of the module, but not cause Vistle to crash.
+**Note:** `ModuleStatusPtr` is used to pass module states to `VtkmModule` which handles the states through its `checkAndNotify` method. Currently, there are four states: `Success()`, `Info(const std::string &message)`, `Warning(const std::string &message)`, `Error(const std::string &message)`. Returning the latter three, results in `VtkmModule` printing `message` to the GUI's Vistle Console. Returning an `Error` state will stop the execution of the module, but not cause Vistle to crash.
 
 In this example, the output grid is the same as the input grid. As there is no reason to convert the filter's output grid back to Vistle, we can skip this step:
 
 ```cpp
-Object::ptr MyCellToVertVtkm::prepareOutputGrid(const viskores::cont::DataSet &dataset,
-                                                const Object::const_ptr &inputGrid) const
+vistle::Object::const_ptr MyCellToVertVtkm::prepareOutputGrid(const InputData &input, OutputData &output) const
 {
-    return nullptr;
+    return input.vistleGrid;
 }
 ```
 
-The field we return in the `prepareOutputField` method is the field that will be passed to the output port (as long as it is not a nullptr, in that case `outputGrid` will be added to the port). We can use this to achieve the desired behavior: If the filter was applied, i.e., the input data field was cell-based, we want to add the filter's result to the output port.
-If the filter was not applied, i.e., the input field was vertex-based, we copy simply add the input field to the output port.
+Note, however, that you should not return a `nullptr` here, otherwise the output ports will remain empty, even if the filter did produce a valid output.
+
+The field we return in the `prepareOutputField` method is the field that will be passed to the output port (as long as the field is not a `nullptr`, in that case only the output grid will be added to the port). We can use this to achieve the desired behavior: If the filter was applied, i.e., the input data field was cell-based, we want to add the filter's result to the output port.
+If the filter was not applied, i.e., the input field was vertex-based, we simply add the input field to the output port.
 ```cpp
-DataBase::ptr MyCellToVertVtkm::prepareOutputField(const viskores::cont::DataSet &dataset,
-                                                   const Object::const_ptr &inputGrid,
-                                                   const DataBase::const_ptr &inputField, const std::string &fieldName,
-                                                   const Object::ptr &outputGrid) const
+vistle::DataBase::ptr MyCellToVertVtkm::prepareOutputField(const InputData &input, OutputData &output, int index,
+                                                           const std::string &fieldName) const
 {
     // if filter was applied ...
-    if (dataset.HasField(fieldName)) {
+    if (output.viskoresDataset.HasField(fieldName)) {
         // ... add its output to the output port
-        auto outputField = VtkmModule::prepareOutputField(dataset, inputGrid, inputField, fieldName, outputGrid);
+        auto outputField = VtkmModule::prepareOutputField(input, output, index, fieldName);
         outputField->setMapping(DataBase::Vertex);
-        outputField->setGrid(inputGrid);
+        
         return outputField;
     } else {
         // ... otherwise just copy the input field
-        auto ndata = inputField->clone();
-        ndata->setGrid(inputGrid);
+        auto ndata = input.fields[index]->clone();
+        ndata->setGrid(input.vistleGrid);
         updateMeta(ndata);
+
         return ndata;
     }
 }
 ```
 
-By default, the output field's grid is the output grid. Since we skipped calculating `outputGrid` and a field's grid cannot be `nullptr`, we set the output field's grid to the input grid instead using `setGrid`. `VtkmModule::prepareOutputField` additionally copies the input field's attributes to the output field. As the filter changed the field's mapping, we must set it to vertex-based using `setMapping`.
+By default, `VtkmModule::prepareOutputField` sets the output field's grid to the output grid (which we have previously set to the input grid) and additionally copies the input field's attributes to the output field. As the filter changed the field's mapping, we must set it to vertex-based using `setMapping`.
 
 ### The Result
 The code above creates the **MyCellToVertVtkm** module which consists of one input and one output port. It checks if it makes sense to apply the Point Average filter to the input field, i.e., it checks if the input field is cell-based. If so, the filter is applied. If not, an informational message is printed to the Vistle Console:
